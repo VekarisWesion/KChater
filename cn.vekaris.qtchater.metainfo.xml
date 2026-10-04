@@ -59,9 +59,9 @@
     </screenshot>
   </screenshots>
 
-  <url type="homepage">https://github.com/KodeRoots/ChatQT</url>
-  <url type="vcs-browser">https://github.com/KodeRoots/ChatQT</url>
-  <url type="bugtracker">https://github.com/KodeRoots/ChatQT/issues</url>
+  <url type="homepage">https://github.com/VekarisWesion/QtChater</url>
+  <url type="vcs-browser">https://github.com/VekarisWesion/QtChater</url>
+  <url type="bugtracker">https://github.com/VekarisWesion/QtChater/issues</url>
 
   <content_rating type="oars-1.1" />
 
@@ -82,7 +82,7 @@
           <li>Fixed tool messages appearing as empty assistant bubbles on session restore</li>
         </ul>
       </description>
-      <url type="details">https://github.com/KodeRoots/ChatQT/releases/tag/v1.1.0</url>
+      <url type="details">https://github.com/VekarisWesion/QtChater/releases/tag/v1.1.0</url>
     </release>
     <release version="1.0.1" date="2026-05-23">
       <description>
@@ -93,7 +93,7 @@
           <li>Removed default skill folder paths (users now add folders manually)</li>
         </ul>
       </description>
-      <url type="details">https://github.com/KodeRoots/ChatQT/releases/tag/v1.0.1</url>
+      <url type="details">https://github.com/VekarisWesion/QtChater/releases/tag/v1.0.1</url>
     </release>
     <release version="1.0.0" date="2026-05-23">
       <description>
@@ -109,7 +109,7 @@
           <li>Flatpak support</li>
         </ul>
       </description>
-      <url type="details">https://github.com/KodeRoots/ChatQT/releases/tag/v1.0.0</url>
+      <url type="details">https://github.com/VekarisWesion/QtChater/releases/tag/v1.0.0</url>
     </release>
   </releases>
 </component>

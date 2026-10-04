@@ -79,7 +79,7 @@ int main(int argc, char *argv[])
         i18n("A simple AI chat client for OpenAI-compatible providers"),
         KAboutLicense::LGPL_V2_1,
         i18n("© 2026 KodeRoots"));
-    aboutData.setBugAddress("https://github.com/KodeRoots/ChatQT/issues");
+    aboutData.setBugAddress("https://github.com/VekarisWesion/QtChater/issues");
     aboutData.setOrganizationDomain("vekaris.cn");
     aboutData.addAuthor(
         i18nc("@info:credit", "Denys Madureira"),

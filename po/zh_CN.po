@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: qtchater\n"
-"Report-Msgid-Bugs-To: https://github.com/KodeRoots/ChatQT/issues\n"
+"Report-Msgid-Bugs-To: https://github.com/VekarisWesion/QtChater/issues\n"
 "POT-Creation-Date: 2026-10-04 10:00+0800\n"
 "PO-Revision-Date: 2026-10-04 10:00+0800\n"
 "Last-Translator: qtchater <noreply@koderoots.org>\n"

@@ -9,7 +9,7 @@ cd "$(dirname "$0")/.."
 KEYWORDS="--keyword=i18n --keyword=i18nc:1c,2 --keyword=i18np:1,2 --keyword=i18ncp:1c,2,3"
 
 xgettext -L JavaScript $KEYWORDS --from-code=UTF-8 --package-name=qtchater \
-    --msgid-bugs-address=https://github.com/KodeRoots/ChatQT/issues \
+    --msgid-bugs-address=https://github.com/VekarisWesion/QtChater/issues \
     -o /tmp/qtchater-qml.pot $(find src -name '*.qml' -o -name '*.js')
 
 xgettext -L C++ $KEYWORDS --from-code=UTF-8 --package-name=qtchater \

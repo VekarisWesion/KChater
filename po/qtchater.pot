@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: qtchater\n"
-"Report-Msgid-Bugs-To: https://github.com/KodeRoots/ChatQT/issues\n"
-"POT-Creation-Date: 2026-10-04 11:05+0800\n"
+"Report-Msgid-Bugs-To: https://github.com/VekarisWesion/QtChater/issues\n"
+"POT-Creation-Date: 2026-10-04 11:17+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -866,6 +866,32 @@ msgctxt "@action"
 msgid "About"
 msgstr ""
 
+#: src/sessionstore.cpp:448
+msgid "Just now"
+msgstr ""
+
+#: src/sessionstore.cpp:451
+msgid "%1 min ago"
+msgid_plural "%1 mins ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/sessionstore.cpp:454
+msgid "%1 hour ago"
+msgid_plural "%1 hours ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src/sessionstore.cpp:456
+msgid "Yesterday"
+msgstr ""
+
+#: src/sessionstore.cpp:459
+msgid "%1 day ago"
+msgid_plural "%1 days ago"
+msgstr[0] ""
+msgstr[1] ""
+
 #: src/main.cpp:77
 msgctxt "@title"
 msgid "qtchater"
@@ -898,29 +924,3 @@ msgstr ""
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
-
-#: src/sessionstore.cpp:448
-msgid "Just now"
-msgstr ""
-
-#: src/sessionstore.cpp:451
-msgid "%1 min ago"
-msgid_plural "%1 mins ago"
-msgstr[0] ""
-msgstr[1] ""
-
-#: src/sessionstore.cpp:454
-msgid "%1 hour ago"
-msgid_plural "%1 hours ago"
-msgstr[0] ""
-msgstr[1] ""
-
-#: src/sessionstore.cpp:456
-msgid "Yesterday"
-msgstr ""
-
-#: src/sessionstore.cpp:459
-msgid "%1 day ago"
-msgid_plural "%1 days ago"
-msgstr[0] ""
-msgstr[1] ""

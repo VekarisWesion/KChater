@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="resources/icons/cn.vekaris.qtchater.svg" width="128" height="128" alt="qtchater Icon"/>
+  <img src="resources/icons/cn.vekaris.qtchater.svg" width="128" height="128" alt="qtchater icon"/>
 
   # qtchater
 
@@ -7,6 +7,7 @@
 
   Chat with AI models through multiple providers — directly from your desktop
 
+  [English](README.md) · [简体中文](README/zh-CN.md)
 </div>
 
 ---
@@ -32,6 +33,7 @@ qtchater is a native KDE Plasma application for chatting with AI models. Built w
 - **Session management** — Persistent sessions with sidebar, auto-restore on launch
 - **Cancel and stop** — Cancel pending requests or stop mid-stream
 - **Auto-scroll** — Automatic scrolling with manual override option
+- **Attachments** — Send files together with a message
 
 ### MCP (Model Context Protocol)
 
@@ -49,36 +51,111 @@ qtchater is a native KDE Plasma application for chatting with AI models. Built w
 
 ### Desktop Integration
 
-- **Packages** — Daily .deb and .rpm builds, installable as `qtchater`
-- **Flatpak support** — Available as a Flatpak with proper sandboxing utilities
+- **Language selection** — English and Simplified Chinese, switchable at runtime from the settings
+- **System-wide install** — The desktop entry, icon and AppStream metadata are installed for you
+- **Flatpak support** — A Flatpak manifest is available with proper sandboxing utilities
 
 ## Screenshots
 
 ### Main Window
 
-![Main Window showing a chat session with the session sidebar](screenshots/MainWindow.png)
+![Main window showing a chat session with the session sidebar](screenshots/MainWindow.png)
 
-### Settings — Agent
+### Settings
 
-![Agent settings page for loading AGENTS.md instructions](screenshots/SettingsAgent.png)
+![Settings window](screenshots/SettingsWindow.png)
 
 ### Settings — OpenAI Compatible
 
 ![OpenAI Compatible settings with multi-provider management and connection testing](screenshots/SettingsOpenAICompatible.png)
 
-### Settings — Skills and MCP Servers
+### MCP Servers
 
-![Skills and MCP Servers settings with skill discovery and server management](screenshots/SettingsSkillsMCPs.png)
+![MCP servers settings with server management](screenshots/SettingsMCPs.png)
 
-## Installation
+## Building from Source
 
-### Building from Source
+qtchater is developed and tested on **Fedora** with KDE Plasma. The instructions
+below are for Fedora; see [Other distributions](#other-distributions) if you use
+something else.
 
-For build instructions, see [BUILD.md](BUILD.md).
+### 1. Install the build dependencies
 
-### Flatpak
+```bash
+sudo dnf install cmake ninja-build gcc-c++ extra-cmake-modules gettext \
+    qt6-qtbase-devel qt6-qtdeclarative-devel qt6-qtsvg-devel \
+    kf6-kcoreaddons-devel kf6-ki18n-devel kf6-kirigami-devel \
+    kf6-kconfig-devel kf6-kcrash-devel kf6-kirigami-addons-devel
+```
 
-A Flatpak manifest is available at `cn.vekaris.qtchater.json`.
+For the runtime you also want the matching non-devel packages, which are already
+pulled in by your Plasma installation.
+
+### 2. Clone and build
+
+```bash
+git clone https://github.com/VekarisWesion/QtChater.git
+cd QtChater
+
+cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+cmake --build build
+```
+
+### 3. Run it
+
+```bash
+./build/bin/qtchater
+```
+
+### 4. Install it (optional)
+
+Installing puts `qtchater` on your `PATH` and adds the desktop entry, so you can
+start it from the application menu.
+
+User-local install, no root needed:
+
+```bash
+cmake -S . -B build -DCMAKE_INSTALL_PREFIX="$HOME/.local"
+cmake --build build
+cmake --install build
+```
+
+The binary then is `~/.local/bin/qtchater`.
+
+System-wide install:
+
+```bash
+cmake -S . -B build -DCMAKE_INSTALL_PREFIX=/usr
+cmake --build build
+sudo cmake --install build
+```
+
+### Building .deb / .rpm packages (optional)
+
+`cpack` produces distribution packages out of the same build. Use the generator
+that matches the machine you are building on:
+
+```bash
+cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
+cmake --build build
+cd build
+
+cpack -G RPM    # Fedora / openSUSE, needs rpm-build
+cpack -G DEB    # Debian / Ubuntu, needs dpkg-dev
+```
+
+Both packages install `/usr/bin/qtchater`, the desktop entry, the icon, the
+AppStream metadata and the translations.
+
+### Other distributions
+
+Only Fedora is covered here. On any other distribution, install the equivalent
+Qt 6 / KDE Frameworks 6 / Kirigami Addons / Extra CMake Modules development
+packages from your own repositories — the rest of the build is identical.
+
+If you are not sure which packages those are, ask an AI assistant to translate
+the Fedora package list above for your distribution; that is a perfect question
+for it.
 
 ## Experimental Features
 
@@ -110,4 +187,6 @@ Once enabled, new provider options appear in **Settings → General**.
 
 ## License
 
-This project is licensed under the GPL-3.0 License - see the LICENSE file for details.
+This project is licensed under the GPL-3.0 License — see the [LICENSE](LICENSE) file for details.
+
+qtchater is based on [ChatQT](https://github.com/KodeRoots/ChatQT) by Denys Madureira.
