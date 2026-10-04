@@ -3,27 +3,25 @@
   SPDX-FileCopyrightText: 2026 VekarisWesion <vekaris@zohomail.com>
   SPDX-License-Identifier: GPL-3.0-or-later
 
-  Original artwork drawn for KChater.
+  Original artwork drawn for KChater, using the Breeze blue palette.
 -->
 <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
   <defs>
-    <linearGradient id="kchater-bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#3b82f6"/>
-      <stop offset="1" stop-color="#8b5cf6"/>
+    <linearGradient id="kchater-tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4cb8f0"/>
+      <stop offset="1" stop-color="#2a9fdc"/>
     </linearGradient>
   </defs>
 
-  <!-- rounded app tile -->
-  <rect width="256" height="256" rx="52" fill="url(#kchater-bg)"/>
+  <!-- rounded tile with a subtle top gloss -->
+  <rect width="256" height="256" rx="48" fill="url(#kchater-tile)"/>
+  <path fill="#ffffff" opacity="0.10" d="M0 48A48 48 0 0 1 48 0h160a48 48 0 0 1 48 48v72H0z"/>
 
   <!-- speech bubble with a tail -->
-  <path fill="#ffffff" d="M72 72h80a28 28 0 0 1 28 28v44a28 28 0 0 1-28 28H120l-38 34v-34H72a28 28 0 0 1-28-28V100a28 28 0 0 1 28-28z"/>
+  <path fill="#ffffff" d="M74 68h108a26 26 0 0 1 26 26v52a26 26 0 0 1-26 26h-80l-40 36v-36h-14a26 26 0 0 1-26-26v-52a26 26 0 0 1 26-26z"/>
 
   <!-- message dots -->
-  <circle cx="88" cy="122" r="9" fill="#4f46e5"/>
-  <circle cx="116" cy="122" r="9" fill="#4f46e5"/>
-  <circle cx="144" cy="122" r="9" fill="#4f46e5"/>
-
-  <!-- spark, for the "AI" hint -->
-  <path fill="#fbbf24" d="M198 28l8.5 21.5L228 58l-21.5 8.5L198 88l-8.5-21.5L168 58l21.5-8.5z"/>
+  <circle cx="88" cy="120" r="11" fill="#2a9fdc"/>
+  <circle cx="128" cy="120" r="11" fill="#2a9fdc"/>
+  <circle cx="168" cy="120" r="11" fill="#2a9fdc"/>
 </svg>
