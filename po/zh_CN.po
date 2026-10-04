@@ -597,7 +597,7 @@ msgid "Token:"
 msgstr "令牌："
 
 msgctxt "@info"
-msgid "Configured — API key is saved securely"
+msgid "Configured — API key is saved"
 msgstr "已配置 — API 密钥已保存"
 
 msgctxt "@info"

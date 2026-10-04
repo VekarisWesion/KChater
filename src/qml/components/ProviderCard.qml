@@ -128,7 +128,7 @@ Kirigami.AbstractCard {
 
                 QQC2.Label {
                     text: root.providerToken != ""
-                        ? i18nc("@info", "Configured — API key is saved securely")
+                        ? i18nc("@info", "Configured — API key is saved")
                         : i18nc("@info", "Missing — no API key configured")
                     font: Kirigami.Theme.defaultFont
                     color: root.providerToken != "" ? Kirigami.Theme.textColor : Kirigami.Theme.disabledTextColor
