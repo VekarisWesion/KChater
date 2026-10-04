@@ -745,24 +745,16 @@ msgid "Denys Madureira"
 msgstr "Denys Madureira"
 
 msgctxt "@info:credit"
-msgid "Author"
-msgstr "作者"
+msgid "ChatQT author"
+msgstr "ChatQT 作者"
 
 msgctxt "@info:credit"
 msgid "VekarisWesion"
 msgstr "VekarisWesion"
 
 msgctxt "@info:credit"
-msgid "KChater fork and maintenance"
-msgstr "KChater 分支与维护"
-
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "译者姓名"
-
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "译者邮箱"
+msgid "KChater fork author"
+msgstr "KChater 分支作者"
 
 #: src/sessionstore.cpp
 msgid "Just now"

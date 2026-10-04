@@ -89,17 +89,15 @@ int main(int argc, char *argv[])
     aboutData.setOrganizationDomain("vekaris.cn");
     aboutData.addAuthor(
         i18nc("@info:credit", "Denys Madureira"),
-        i18nc("@info:credit", "Author"),
+        i18nc("@info:credit", "ChatQT author"),
         QStringLiteral("denys@koderoots.org"),
         QStringLiteral("https://denysmadureira.dev"));
     aboutData.addAuthor(
         i18nc("@info:credit", "VekarisWesion"),
-        i18nc("@info:credit", "KChater fork and maintenance"),
+        i18nc("@info:credit", "KChater fork author"),
         QStringLiteral("vekaris@zohomail.com"),
         QStringLiteral("https://vekaris.cn"));
-    aboutData.setTranslator(
-        i18nc("NAME OF TRANSLATORS", "Your names"),
-        i18nc("EMAIL OF TRANSLATORS", "Your emails"));
+    aboutData.setTranslator(QStringLiteral("VekarisWesion"), QStringLiteral("vekaris@zohomail.com"));
     aboutData.setDesktopFileName(QStringLiteral("cn.vekaris.kchater"));
     KAboutData::setApplicationData(aboutData);
 

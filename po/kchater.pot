@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kchater\n"
 "Report-Msgid-Bugs-To: https://github.com/VekarisWesion/KChater/issues\n"
-"POT-Creation-Date: 2026-10-04 15:07+0800\n"
+"POT-Creation-Date: 2026-10-04 15:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -866,66 +866,6 @@ msgctxt "@action"
 msgid "About"
 msgstr ""
 
-#: src/main.cpp:81
-msgctxt "@title"
-msgid "KChater"
-msgstr ""
-
-#: src/main.cpp:83
-msgid "A simple AI chat client for OpenAI-compatible providers"
-msgstr ""
-
-#: src/main.cpp:85
-msgid ""
-"© 2024–2026 Denys Madureira\n"
-"© 2026 VekarisWesion (KChater modifications)"
-msgstr ""
-
-#: src/main.cpp:86
-msgid ""
-"KChater is distributed under the GNU General Public License, version 3 or "
-"later (GPL-3.0-or-later). Individual source files carry an LGPL-2.1-or-later "
-"notice."
-msgstr ""
-
-#: src/main.cpp:87
-msgid ""
-"KChater is an independent project. It is not affiliated with, endorsed by, "
-"or sponsored by KDE e.V. \"KDE\" and \"Plasma\" are trademarks of KDE e.V., "
-"used here only to describe what the application is built for. Qt is a "
-"trademark of The Qt Company Ltd."
-msgstr ""
-
-#: src/main.cpp:91
-msgctxt "@info:credit"
-msgid "Denys Madureira"
-msgstr ""
-
-#: src/main.cpp:92
-msgctxt "@info:credit"
-msgid "Author"
-msgstr ""
-
-#: src/main.cpp:96
-msgctxt "@info:credit"
-msgid "VekarisWesion"
-msgstr ""
-
-#: src/main.cpp:97
-msgctxt "@info:credit"
-msgid "KChater fork and maintenance"
-msgstr ""
-
-#: src/main.cpp:101
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr ""
-
-#: src/main.cpp:102
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
-
 #: src/sessionstore.cpp:449
 msgid "Just now"
 msgstr ""
@@ -951,3 +891,53 @@ msgid "%1 day ago"
 msgid_plural "%1 days ago"
 msgstr[0] ""
 msgstr[1] ""
+
+#: src/main.cpp:82
+msgctxt "@title"
+msgid "KChater"
+msgstr ""
+
+#: src/main.cpp:84
+msgid "A simple AI chat client for OpenAI-compatible providers"
+msgstr ""
+
+#: src/main.cpp:86
+msgid ""
+"© 2024–2026 Denys Madureira\n"
+"© 2026 VekarisWesion (KChater modifications)"
+msgstr ""
+
+#: src/main.cpp:87
+msgid ""
+"KChater is distributed under the GNU General Public License, version 3 or "
+"later (GPL-3.0-or-later). Individual source files carry an LGPL-2.1-or-later "
+"notice."
+msgstr ""
+
+#: src/main.cpp:88
+msgid ""
+"KChater is an independent project. It is not affiliated with, endorsed by, "
+"or sponsored by KDE e.V. \"KDE\" and \"Plasma\" are trademarks of KDE e.V., "
+"used here only to describe what the application is built for. Qt is a "
+"trademark of The Qt Company Ltd."
+msgstr ""
+
+#: src/main.cpp:92
+msgctxt "@info:credit"
+msgid "Denys Madureira"
+msgstr ""
+
+#: src/main.cpp:93
+msgctxt "@info:credit"
+msgid "ChatQT author"
+msgstr ""
+
+#: src/main.cpp:97
+msgctxt "@info:credit"
+msgid "VekarisWesion"
+msgstr ""
+
+#: src/main.cpp:98
+msgctxt "@info:credit"
+msgid "KChater fork author"
+msgstr ""
