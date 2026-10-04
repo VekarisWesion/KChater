@@ -8,6 +8,7 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
+import org.koderoots.chatqt
 
 Kirigami.ScrollablePage {
     id: root
@@ -20,6 +21,23 @@ Kirigami.ScrollablePage {
 
     Kirigami.FormLayout {
         anchors.fill: parent
+        // Keep the same two-column structure in every language instead of
+        // letting the longer English labels flip the form into single-column mode.
+        wideMode: true
+
+        QQC2.ComboBox {
+            id: languageComboBox
+            Kirigami.FormData.label: i18nc("@label:listbox", "Language:")
+            textRole: "label"
+            valueRole: "code"
+            model: [
+                // Language names are always shown in their own language.
+                { code: "en_US", label: "English" },
+                { code: "zh_CN", label: "简体中文" }
+            ]
+            currentIndex: TranslationHelper.language === "zh_CN" ? 1 : 0
+            onActivated: TranslationHelper.setLanguage(currentValue)
+        }
 
         Kirigami.Separator {
             Kirigami.FormData.label: i18nc("@title:group", "Enabled Providers:")

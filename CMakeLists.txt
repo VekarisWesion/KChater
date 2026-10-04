@@ -46,6 +46,29 @@ ecm_setup_version(${PROJECT_VERSION}
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/chatqt_version.h"
 )
 
+# --- Translations ---------------------------------------------------------
+set(CHATQT_TRANSLATION_LANGUAGES zh_CN)
+set(CHATQT_LOCALE_BUILD_DIR "${CMAKE_CURRENT_BINARY_DIR}/locale")
+
+find_program(MSGFMT_EXECUTABLE msgfmt REQUIRED)
+
+set(CHATQT_MO_FILES "")
+foreach(_lang IN LISTS CHATQT_TRANSLATION_LANGUAGES)
+    set(_po_file "${CMAKE_CURRENT_SOURCE_DIR}/po/${_lang}.po")
+    set(_mo_file "${CHATQT_LOCALE_BUILD_DIR}/${_lang}/LC_MESSAGES/chatqt.mo")
+    add_custom_command(
+        OUTPUT "${_mo_file}"
+        COMMAND "${CMAKE_COMMAND}" -E make_directory "${CHATQT_LOCALE_BUILD_DIR}/${_lang}/LC_MESSAGES"
+        COMMAND "${MSGFMT_EXECUTABLE}" -o "${_mo_file}" "${_po_file}"
+        DEPENDS "${_po_file}"
+        COMMENT "Compiling translation ${_lang}"
+        VERBATIM
+    )
+    list(APPEND CHATQT_MO_FILES "${_mo_file}")
+    install(FILES "${_mo_file}" DESTINATION "${KDE_INSTALL_LOCALEDIR}/${_lang}/LC_MESSAGES")
+endforeach()
+add_custom_target(chatqt_translations ALL DEPENDS ${CHATQT_MO_FILES})
+
 add_subdirectory(src)
 
 install(FILES resources/icons/org.koderoots.chatqt.svg DESTINATION ${KDE_INSTALL_ICONDIR}/hicolor/scalable/apps)

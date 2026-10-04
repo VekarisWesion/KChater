@@ -14,6 +14,7 @@ target_sources(chatqt
     sessionstore.cpp
     filehelper.cpp
     hotreload.cpp
+    translationhelper.cpp
 )
 
 ecm_target_qml_sources(chatqt
@@ -56,6 +57,15 @@ target_link_libraries(chatqt PRIVATE
     KF6::Crash
 )
 
+# Fedora's kf6-ki18n-devel ships libKF6I18nQml.so and the KLocalizedQmlContext
+# header without a CMake package config, so link the library directly.
+find_library(KF6I18NQML_LIBRARY NAMES KF6I18nQml REQUIRED)
+target_link_libraries(chatqt PRIVATE ${KF6I18NQML_LIBRARY})
+
 target_include_directories(chatqt PRIVATE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_BINARY_DIR})
+
+target_compile_definitions(chatqt PRIVATE
+    CHATQT_LOCALE_DIR="${CHATQT_LOCALE_BUILD_DIR}"
+)
 
 install(TARGETS chatqt ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

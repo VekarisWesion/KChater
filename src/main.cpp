@@ -12,9 +12,11 @@
 #include <QUrl>
 #include <QQmlEngine>
 #include <QQuickWindow>
+#include <QSettings>
+#include <QDir>
 
 #include <KAboutData>
-#include <KLocalizedContext>
+#include <KLocalizedQmlContext>
 #include <KLocalizedString>
 #include <KCrash>
 
@@ -22,14 +24,53 @@
 #include "sessionstore.h"
 #include "filehelper.h"
 #include "hotreload.h"
+#include "translationhelper.h"
 
 int main(int argc, char *argv[])
 {
+    // The interface language is deterministic: the saved choice, defaulting to
+    // English. Align the process message locale with it before Qt initializes,
+    // so KI18n loads exactly that catalog instead of the system locale's, and
+    // language switching keeps working even under a C/POSIX locale.
+    {
+        const QByteArray lcAll = qgetenv("LC_ALL");
+        QSettings storedSettings(QStringLiteral("koderoots.org"), QStringLiteral("chatqt"));
+        const QString storedLanguage = storedSettings.value(QStringLiteral("Provider/language")).toString();
+        const QString startupLanguage = TranslationHelper::normalizeLanguage(storedLanguage);
+
+        QByteArray messageLocale = startupLanguage.toUtf8();
+        messageLocale += ".UTF-8";
+
+        if (!lcAll.isEmpty()) {
+            // LC_ALL takes precedence over LC_MESSAGES, so it has to be replaced.
+            qputenv("LC_ALL", messageLocale);
+        } else {
+            qputenv("LC_MESSAGES", messageLocale);
+            if (qgetenv("LANG").isEmpty()) {
+                qputenv("LANG", messageLocale);
+            }
+        }
+    }
+
     QApplication app(argc, argv);
     app.setWindowIcon(QIcon::fromTheme(QStringLiteral("org.koderoots.chatqt")));
 
     KCrash::initialize();
     KLocalizedString::setApplicationDomain("chatqt");
+
+#ifdef CHATQT_LOCALE_DIR
+    // Prefer catalogs next to the executable (e.g. an installed bin/locale dir),
+    // otherwise fall back to the build tree used during development.
+    const QString executableLocaleDir = QCoreApplication::applicationDirPath() + QStringLiteral("/locale");
+    if (QDir(executableLocaleDir).exists()) {
+        KLocalizedString::addDomainLocaleDir("chatqt", executableLocaleDir);
+    } else {
+        KLocalizedString::addDomainLocaleDir("chatqt", QStringLiteral(CHATQT_LOCALE_DIR));
+    }
+#endif
+    // Select the saved language before the first translatable string is created,
+    // otherwise KI18n caches an empty catalog lookup for the application domain.
+    TranslationHelper::instance();
 
     KAboutData aboutData(
         QStringLiteral("chatqt"),
@@ -56,7 +97,8 @@ int main(int argc, char *argv[])
     }
 
     QQmlApplicationEngine engine;
-    engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
+    KLocalization::setupLocalizedContext(&engine);
+    TranslationHelper::instance()->setEngine(&engine);
     engine.rootContext()->setContextProperty(QStringLiteral("experimentalFeaturesEnabled"),
         !qEnvironmentVariableIsEmpty("CHATQT_ENABLE_EXPERIMENTAL_FEATURES"));
 
@@ -64,6 +106,7 @@ int main(int argc, char *argv[])
     // Register SessionStore as singleton
     qmlRegisterSingletonInstance("org.kde.chatqt", 1, 0, "SessionStore", SessionStore::instance());
     qmlRegisterSingletonInstance("org.kde.chatqt", 1, 0, "FileHelper", FileHelper::instance());
+    qmlRegisterSingletonInstance("org.koderoots.chatqt", 1, 0, "TranslationHelper", TranslationHelper::instance());
     qWarning() << "SessionStore registered";
 
     QObject::connect(&engine, &QQmlApplicationEngine::warnings, [](const QList<QQmlError> &warnings) {

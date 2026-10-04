@@ -1,0 +1,752 @@
+# Simplified Chinese translation for chatqt.
+# Copyright (C) 2026 KodeRoots
+# This file is distributed under the same license as the chatqt package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: chatqt\n"
+"Report-Msgid-Bugs-To: https://github.com/KodeRoots/ChatQT/issues\n"
+"POT-Creation-Date: 2026-10-04 10:00+0800\n"
+"PO-Revision-Date: 2026-10-04 10:00+0800\n"
+"Last-Translator: ChatQT <noreply@koderoots.org>\n"
+"Language-Team: Chinese (Simplified)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/qml/settings/SettingsSoul.qml
+msgctxt "@title"
+msgid "Soul"
+msgstr "灵魂"
+
+msgctxt "@info"
+msgid ""
+"Define the AI's personality, tone, and behavior rules. This content is sent "
+"as the system message with every conversation."
+msgstr "定义 AI 的性格、语气和行为规则。每次对话时，此内容都会作为系统消息发送。"
+
+msgctxt "@info"
+msgid ""
+"Humanizer is enabled. Instructions for more human-like responses will be "
+"appended to your Soul content when sending messages."
+msgstr "已启用拟人化。发送消息时，会把让回复更像真人的指令追加到灵魂内容中。"
+
+msgctxt "@info:placeholder"
+msgid ""
+"You are a helpful, concise assistant.\n"
+"\n"
+"Rules:\n"
+"- Be direct and clear\n"
+"- Use simple language\n"
+"- Ask for clarification when unsure"
+msgstr ""
+"你是一个乐于助人、言简意赅的助手。\n"
+"\n"
+"规则：\n"
+"- 直接、清晰\n"
+"- 使用简单的语言\n"
+"- 不确定时先请求澄清"
+
+#: src/qml/settings/SettingsPage.qml
+msgctxt "@title"
+msgid "Settings"
+msgstr "设置"
+
+msgctxt "@action:button"
+msgid "General"
+msgstr "常规"
+
+msgctxt "@info:whatsthis"
+msgid "Select the active AI provider"
+msgstr "选择当前使用的 AI 服务商"
+
+msgctxt "@action:button"
+msgid "OpenClaw"
+msgstr "OpenClaw"
+
+msgctxt "@info:whatsthis"
+msgid "Configure OpenClaw URL and token"
+msgstr "配置 OpenClaw 的 URL 和令牌"
+
+msgctxt "@action:button"
+msgid "OpenAI Compatible"
+msgstr "OpenAI 兼容"
+
+msgctxt "@info:whatsthis"
+msgid "Configure OpenAI-compatible API settings"
+msgstr "配置 OpenAI 兼容 API 设置"
+
+msgctxt "@action:button"
+msgid "MCP Servers"
+msgstr "MCP 服务器"
+
+msgctxt "@info:whatsthis"
+msgid "Configure remote MCP servers"
+msgstr "配置远程 MCP 服务器"
+
+msgctxt "@action:button"
+msgid "Soul"
+msgstr "灵魂"
+
+msgctxt "@info:whatsthis"
+msgid "Configure the AI personality and behavior"
+msgstr "配置 AI 的性格与行为"
+
+msgctxt "@action:button"
+msgid "Memory"
+msgstr "记忆"
+
+msgctxt "@info:whatsthis"
+msgid "View and edit what the AI remembers across conversations"
+msgstr "查看并编辑 AI 在多次对话中记住的内容"
+
+#: src/qml/settings/SettingsOpenClaw.qml
+msgctxt "@title"
+msgid "OpenClaw"
+msgstr "OpenClaw"
+
+msgctxt "@info"
+msgid "New Instance"
+msgstr "新实例"
+
+msgctxt "@info"
+msgid ""
+"To use OpenClaw with ChatQT, you must enable the OpenAI-compatible Chat "
+"Completions endpoint in OpenClaw.\n"
+"The easiest way to do this is asking OpenClaw to do so."
+msgstr ""
+"要在 ChatQT 中使用 OpenClaw，必须在 OpenClaw 中启用兼容 OpenAI 的 Chat "
+"Completions 端点。\n"
+"最简单的方法是直接让 OpenClaw 去启用。"
+
+msgctxt "@info"
+msgid ""
+"Configure multiple OpenClaw instances. Add, edit, or remove instances using "
+"the buttons below."
+msgstr "配置多个 OpenClaw 实例。使用下方按钮添加、编辑或删除实例。"
+
+msgctxt "@title:group"
+msgid "Instances"
+msgstr "实例"
+
+msgctxt "@action:button"
+msgid "Add Instance"
+msgstr "添加实例"
+
+msgctxt "@title:window"
+msgid "Edit Instance"
+msgstr "编辑实例"
+
+msgctxt "@title:window"
+msgid "Add Instance"
+msgstr "添加实例"
+
+msgctxt "@label:textbox"
+msgid "Display Name:"
+msgstr "显示名称："
+
+msgctxt "@info:placeholder"
+msgid "e.g., Local OpenClaw, Remote Server"
+msgstr "例如：本地 OpenClaw、远程服务器"
+
+msgctxt "@label:textbox"
+msgid "URL:"
+msgstr "URL："
+
+msgctxt "@label:textbox"
+msgid "Token:"
+msgstr "令牌："
+
+msgctxt "@info:placeholder"
+msgid "Enter your token"
+msgstr "输入你的令牌"
+
+msgctxt "@info"
+msgid "Connection has not been tested."
+msgstr "尚未测试连接。"
+
+msgctxt "@info"
+msgid "Testing connection…"
+msgstr "正在测试连接…"
+
+msgctxt "@info"
+msgid "Connection successful!"
+msgstr "连接成功！"
+
+msgctxt "@info"
+msgid "Connection timed out after 10 seconds."
+msgstr "连接在 10 秒后超时。"
+
+msgctxt "@info"
+msgid "Could not reach the server. Check the URL and network connection."
+msgstr "无法连接到服务器。请检查 URL 和网络连接。"
+
+msgctxt "@info"
+msgid "Authentication failed. Check your API token."
+msgstr "身份验证失败。请检查 API 令牌。"
+
+msgctxt "@info"
+msgid "Server not found at this URL. Check the API URL."
+msgstr "在此 URL 未找到服务器。请检查 API 地址。"
+
+msgctxt "@info"
+msgid "Please enter a URL before testing."
+msgstr "请先输入 URL 再测试。"
+
+msgctxt "@info"
+msgid "Please enter a token before testing."
+msgstr "请先输入令牌再测试。"
+
+msgctxt "@info"
+msgid "URL must start with http:// or https://."
+msgstr "URL 必须以 http:// 或 https:// 开头。"
+
+msgctxt "@info"
+msgid "Server returned error %1: %2"
+msgstr "服务器返回错误 %1：%2"
+
+msgctxt "@info"
+msgid "Unknown connection error."
+msgstr "未知的连接错误。"
+
+msgctxt "@action:button"
+msgid "Test Now"
+msgstr "立即测试"
+
+#: src/qml/settings/SettingsOpenAICompatible.qml
+msgctxt "@title"
+msgid "OpenAI Compatible"
+msgstr "OpenAI 兼容"
+
+msgctxt "@info"
+msgid "New Provider"
+msgstr "新服务商"
+
+msgctxt "@info"
+msgid ""
+"Configure multiple OpenAI-compatible API providers (OpenAI, DeepSeek, Groq, "
+"etc.). Add, edit, or remove providers using the buttons below."
+msgstr ""
+"配置多个 OpenAI 兼容 API 服务商（OpenAI、DeepSeek、Groq 等）。"
+"使用下方按钮添加、编辑或删除服务商。"
+
+msgctxt "@title:group"
+msgid "Providers"
+msgstr "服务商"
+
+msgctxt "@action:button"
+msgid "Add Provider"
+msgstr "添加服务商"
+
+msgctxt "@title:window"
+msgid "Edit Provider"
+msgstr "编辑服务商"
+
+msgctxt "@title:window"
+msgid "Add Provider"
+msgstr "添加服务商"
+
+msgctxt "@info:placeholder"
+msgid "e.g., DeepSeek, Groq, OpenAI"
+msgstr "例如：DeepSeek、Groq、OpenAI"
+
+msgctxt "@label:textbox"
+msgid "API URL:"
+msgstr "API URL："
+
+msgctxt "@label:textbox"
+msgid "API Token:"
+msgstr "API 令牌："
+
+msgctxt "@info:placeholder"
+msgid "Enter your API token"
+msgstr "输入你的 API 令牌"
+
+msgctxt "@label:textbox"
+msgid "Model:"
+msgstr "模型："
+
+msgctxt "@info"
+msgid "Connection successful. %1 model(s) available."
+msgstr "连接成功。有 %1 个可用模型。"
+
+msgctxt "@info"
+msgid "Please enter an API URL before testing."
+msgstr "请先输入 API URL 再测试。"
+
+msgctxt "@info"
+msgid "Please enter an API token before testing."
+msgstr "请先输入 API 令牌再测试。"
+
+msgctxt "@info"
+msgid "Please enter a model name before testing."
+msgstr "请先输入模型名称再测试。"
+
+#: src/qml/settings/SettingsMemory.qml
+msgctxt "@title"
+msgid "Memory"
+msgstr "记忆"
+
+msgctxt "@info"
+msgid ""
+"The AI can save important information here to remember across conversations. "
+"You can also edit this manually."
+msgstr "AI 可以在这里保存重要信息，以便在多次对话中记住。你也可以手动编辑。"
+
+msgctxt "@info:placeholder"
+msgid ""
+"User prefers Portuguese.\n"
+"Works with KDE/Qt.\n"
+"Likes concise answers."
+msgstr ""
+"用户偏好葡萄牙语。\n"
+"使用 KDE/Qt。\n"
+"喜欢简洁的回答。"
+
+#: src/qml/settings/SettingsMCP.qml
+msgctxt "@title"
+msgid "MCP Servers"
+msgstr "MCP 服务器"
+
+msgctxt "@info"
+msgid "New MCP Server"
+msgstr "新 MCP 服务器"
+
+msgid "Connected to %1 — %2 tool(s) available"
+msgstr "已连接到 %1 — 有 %2 个可用工具"
+
+msgid "Connected to %1 but failed to list tools: %2"
+msgstr "已连接到 %1，但无法列出工具：%2"
+
+msgid "Failed to connect to %1: %2"
+msgstr "无法连接到 %1：%2"
+
+msgid "Disconnected from %1"
+msgstr "已断开与 %1 的连接"
+
+msgctxt "@info"
+msgid ""
+"Configure remote MCP (Model Context Protocol) servers to give AI models "
+"access to external tools via Streamable HTTP."
+msgstr ""
+"配置远程 MCP（模型上下文协议）服务器，让 AI 模型可通过 Streamable HTTP "
+"使用外部工具。"
+
+msgctxt "@title:group"
+msgid "Servers"
+msgstr "服务器"
+
+msgctxt "@action:button"
+msgid "Add MCP Server"
+msgstr "添加 MCP 服务器"
+
+msgctxt "@title:window"
+msgid "Edit MCP Server"
+msgstr "编辑 MCP 服务器"
+
+msgctxt "@title:window"
+msgid "Add MCP Server"
+msgstr "添加 MCP 服务器"
+
+msgctxt "@info:placeholder"
+msgid "e.g., Exa Search"
+msgstr "例如：Exa Search"
+
+msgctxt "@label:textbox"
+msgid "MCP Server URL:"
+msgstr "MCP 服务器 URL："
+
+msgctxt "@label:textbox"
+msgid "API Token (optional):"
+msgstr "API 令牌（可选）："
+
+msgctxt "@info:placeholder"
+msgid "Enter API token if required"
+msgstr "如有需要请输入 API 令牌"
+
+msgctxt "@label:textbox"
+msgid "Custom Headers (JSON, optional):"
+msgstr "自定义请求头（JSON，可选）："
+
+#: src/qml/settings/SettingsGeneral.qml
+msgctxt "@title"
+msgid "General"
+msgstr "常规"
+
+msgctxt "@label:listbox"
+msgid "Language:"
+msgstr "语言："
+
+msgctxt "@title:group"
+msgid "Enabled Providers:"
+msgstr "已启用的服务商："
+
+msgctxt "@label:checkbox"
+msgid "Ollama:"
+msgstr "Ollama："
+
+msgctxt "@option:check"
+msgid "Enable Ollama provider"
+msgstr "启用 Ollama 服务商"
+
+msgctxt "@label:checkbox"
+msgid "OpenAI Compatible:"
+msgstr "OpenAI 兼容："
+
+msgctxt "@option:check"
+msgid "Enable OpenAI Compatible provider"
+msgstr "启用 OpenAI 兼容服务商"
+
+msgctxt "@label:checkbox"
+msgid "OpenClaw:"
+msgstr "OpenClaw："
+
+msgctxt "@option:check"
+msgid "Enable OpenClaw provider"
+msgstr "启用 OpenClaw 服务商"
+
+msgctxt "@title:group"
+msgid "Behavior:"
+msgstr "行为："
+
+msgctxt "@label:checkbox"
+msgid "Humanized output:"
+msgstr "拟人化输出："
+
+msgctxt "@option:check"
+msgid "Enable humanized output"
+msgstr "启用拟人化输出"
+
+msgctxt "@info"
+msgid ""
+"Appends writing guidelines to the Soul system message so responses read more "
+"human. Increases token usage."
+msgstr "将写作指南追加到灵魂系统消息中，使回复读起来更像真人。会增加令牌用量。"
+
+msgctxt "@title:group"
+msgid "MCP (Model Context Protocol):"
+msgstr "MCP（模型上下文协议）："
+
+msgctxt "@info"
+msgid ""
+"MCP allows AI models to use external tools. Configure MCP servers in the MCP "
+"Servers settings page."
+msgstr "MCP 让 AI 模型可以使用外部工具。请在“MCP 服务器”设置页中配置 MCP 服务器。"
+
+msgctxt "@info"
+msgid "Disabled providers will not appear in the provider dropdown."
+msgstr "已禁用的服务商不会出现在服务商下拉列表中。"
+
+#: src/qml/pages/ChatPage.qml
+msgid "Thinking"
+msgstr "思考"
+
+msgid "Settings"
+msgstr "设置"
+
+msgid "New chat"
+msgstr "新对话"
+
+msgid "Connecting to %1…"
+msgstr "正在连接到 %1…"
+
+msgid "Failed to connect to %1: no URL configured"
+msgstr "无法连接到 %1：未配置 URL"
+
+msgid "Connected to %1 but failed to list tools"
+msgstr "已连接到 %1，但无法列出工具"
+
+msgid "Switched to %1"
+msgstr "已切换到 %1"
+
+msgid "enabled"
+msgstr "已启用"
+
+msgid "disabled"
+msgstr "已禁用"
+
+msgid "Thinking %1"
+msgstr "思考功能%1"
+
+msgid ""
+"No local model found.\n"
+"Please install some first.\n"
+"\n"
+"If you need help, check Ollama documentation."
+msgstr ""
+"未找到本地模型。\n"
+"请先安装一些模型。\n"
+"\n"
+"如需帮助，请查阅 Ollama 文档。"
+
+msgid ""
+"OpenClaw instance not configured.\n"
+"Please set URL and Token in settings."
+msgstr ""
+"未配置 OpenClaw 实例。\n"
+"请在设置中填写 URL 和令牌。"
+
+msgid ""
+"OpenAI Compatible provider not configured.\n"
+"Please configure it in settings."
+msgstr ""
+"未配置 OpenAI 兼容服务商。\n"
+"请在设置中进行配置。"
+
+msgid "Provider not configured."
+msgstr "未配置服务商。"
+
+msgid "Calling tools: %1"
+msgstr "正在调用工具：%1"
+
+msgid "Calling %1…"
+msgstr "正在调用 %1…"
+
+msgid "Memory saved"
+msgstr "记忆已保存"
+
+msgid "save_memory: Memory saved"
+msgstr "save_memory：记忆已保存"
+
+msgid "Tool %1 is not an MCP tool"
+msgstr "工具 %1 不是 MCP 工具"
+
+msgid "MCP server not found for tool %1"
+msgstr "未找到工具 %1 对应的 MCP 服务器"
+
+msgid "Error: %1"
+msgstr "错误：%1"
+
+msgid "%1: %2"
+msgstr "%1：%2"
+
+msgid "%1 result: %2"
+msgstr "%1 结果：%2"
+
+msgid "Tool %1 failed: %2"
+msgstr "工具 %1 失败：%2"
+
+msgid "What can you tell me about the attached files?"
+msgstr "关于这些附件，你能告诉我什么？"
+
+msgid "Attachments: %1"
+msgstr "附件：%1"
+
+msgid "Select AI provider"
+msgstr "选择 AI 服务商"
+
+msgid "I am waiting for your questions..."
+msgstr "我在等待你的提问……"
+
+msgid "Refresh model list"
+msgstr "刷新模型列表"
+
+msgid "Refresh models list"
+msgstr "刷新模型列表"
+
+#: src/qml/components
+msgid "Sessions"
+msgstr "会话"
+
+msgid "Your chat sessions will appear here"
+msgstr "你的聊天会话将显示在这里"
+
+msgid "Start a new conversation to see it listed in this sidebar."
+msgstr "开始新对话后，它会出现在此侧边栏中。"
+
+msgctxt "@info"
+msgid "New Chat"
+msgstr "新对话"
+
+msgctxt "@action:button"
+msgid "Delete"
+msgstr "删除"
+
+msgctxt "@info"
+msgid "Unknown provider"
+msgstr "未知服务商"
+
+msgctxt "@info"
+msgid "Unnamed Provider"
+msgstr "未命名服务商"
+
+msgctxt "@action:button"
+msgid "Edit"
+msgstr "编辑"
+
+msgctxt "@action:button"
+msgid "Remove"
+msgstr "移除"
+
+msgctxt "@label"
+msgid "URL:"
+msgstr "URL："
+
+msgctxt "@info"
+msgid "Not set"
+msgstr "未设置"
+
+msgctxt "@label"
+msgid "Model:"
+msgstr "模型："
+
+msgctxt "@label"
+msgid "Token:"
+msgstr "令牌："
+
+msgctxt "@info"
+msgid "Configured — API key is saved securely"
+msgstr "已配置 — API 密钥已安全保存"
+
+msgctxt "@info"
+msgid "Missing — no API key configured"
+msgstr "缺失 — 未配置 API 密钥"
+
+msgid "Remove attachment"
+msgstr "移除附件"
+
+msgid "Type your message..."
+msgstr "输入消息……"
+
+msgid "Attach files"
+msgstr "添加附件"
+
+msgid "Could not attach %1: %2"
+msgstr "无法添加 %1：%2"
+
+msgid "Stop"
+msgstr "停止"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "Send"
+msgstr "发送"
+
+msgid "Stop streaming (Ctrl+Enter)"
+msgstr "停止流式输出（Ctrl+Enter）"
+
+msgid "Cancel request (Ctrl+Enter)"
+msgstr "取消请求（Ctrl+Enter）"
+
+msgid "Send message (Ctrl+Enter)"
+msgstr "发送消息（Ctrl+Enter）"
+
+msgid "Configure a provider to start chatting"
+msgstr "配置一个服务商以开始聊天"
+
+msgctxt "@info"
+msgid "Unnamed MCP Server"
+msgstr "未命名的 MCP 服务器"
+
+msgctxt "@action:button"
+msgid "Disconnect"
+msgstr "断开连接"
+
+msgctxt "@action:button"
+msgid "Connect"
+msgstr "连接"
+
+msgctxt "@label"
+msgid "Status:"
+msgstr "状态："
+
+msgctxt "@info"
+msgid "Connected"
+msgstr "已连接"
+
+msgctxt "@info"
+msgid "Connecting…"
+msgstr "正在连接…"
+
+msgctxt "@info"
+msgid "Error"
+msgstr "错误"
+
+msgctxt "@info"
+msgid "Disconnected"
+msgstr "已断开"
+
+msgctxt "@info"
+msgid "Configured"
+msgstr "已配置"
+
+msgctxt "@label"
+msgid "Tools:"
+msgstr "工具："
+
+msgctxt "@info"
+msgid "%1 tool(s) available"
+msgstr "有 %1 个可用工具"
+
+msgctxt "@info"
+msgid "Unnamed Instance"
+msgstr "未命名实例"
+
+msgid "Error"
+msgstr "错误"
+
+msgid "Thinking..."
+msgstr "思考中……"
+
+msgid "Copy"
+msgstr "复制"
+
+#: src/qml/Main.qml
+msgid "ChatQT"
+msgstr "ChatQT"
+
+msgid "Disable auto scroll"
+msgstr "禁用自动滚动"
+
+msgctxt "@action"
+msgid "About"
+msgstr "关于"
+
+#: src/main.cpp
+msgctxt "@title"
+msgid "ChatQT"
+msgstr "ChatQT"
+
+msgid "A simple AI chat client for OpenAI-compatible providers"
+msgstr "一个简单、面向 OpenAI 兼容服务商的 AI 聊天客户端"
+
+msgid "© 2026 KodeRoots"
+msgstr "© 2026 KodeRoots"
+
+msgctxt "@info:credit"
+msgid "Denys Madureira"
+msgstr "Denys Madureira"
+
+msgctxt "@info:credit"
+msgid "Author"
+msgstr "作者"
+
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "你的名字"
+
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "你的邮箱"
+
+#: src/sessionstore.cpp
+msgid "Just now"
+msgstr "刚刚"
+
+msgid "%1 min ago"
+msgid_plural "%1 mins ago"
+msgstr[0] "%1 分钟前"
+
+msgid "%1 hour ago"
+msgid_plural "%1 hours ago"
+msgstr[0] "%1 小时前"
+
+msgid "Yesterday"
+msgstr "昨天"
+
+msgid "%1 day ago"
+msgid_plural "%1 days ago"
+msgstr[0] "%1 天前"
