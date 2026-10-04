@@ -1,7 +1,7 @@
 <div align="center">
-  <img src="resources/icons/cn.vekaris.qtchater.svg" width="128" height="128" alt="qtchater icon"/>
+  <img src="resources/icons/cn.vekaris.qtchater.svg" width="128" height="128" alt="QtChater icon"/>
 
-  # qtchater
+  # QtChater
 
   **A native AI chat client for the KDE Plasma desktop**
 
@@ -14,7 +14,7 @@
 
 ## About
 
-qtchater is a native KDE Plasma application for chatting with AI models. Built with Qt6/QML and Kirigami, it integrates seamlessly into the KDE desktop with a native look and feel and Plasma-style dialogs.
+QtChater is a native KDE Plasma application for chatting with AI models. Built with Qt6/QML and Kirigami, it integrates seamlessly into the KDE desktop with a native look and feel and Plasma-style dialogs.
 
 ## Features
 
@@ -56,7 +56,7 @@ qtchater is a native KDE Plasma application for chatting with AI models. Built w
 
 ## Building from Source
 
-qtchater is developed and tested on **Fedora** with KDE Plasma. The instructions
+QtChater is developed and tested on **Fedora** with KDE Plasma. The instructions
 below are for Fedora; see [Other distributions](#other-distributions) if you use
 something else.
 
@@ -172,13 +172,13 @@ If you rename the application, or build it by hand, copy the file to
 |-----|------------|
 | `Exec` | the installed executable name, `qtchater` |
 | `Icon` | the icon file name without the `.svg` suffix, `cn.vekaris.qtchater` |
-| `Name` | the name shown in the menu, `qtchater` |
+| `Name` | the name shown in the menu, `QtChater` |
 
 Then run `update-desktop-database ~/.local/share/applications` once.
 
 ## Experimental Features
 
-qtchater includes experimental features that are disabled by default. These features are functional but may have rough edges, change between releases, or lack full polish.
+QtChater includes experimental features that are disabled by default. These features are functional but may have rough edges, change between releases, or lack full polish.
 
 ### Enabling Experimental Features
 
@@ -201,11 +201,11 @@ Once enabled, new provider options appear in **Settings → General**.
 | Provider | Description |
 |----------|-------------|
 | **OpenClaw** | Connect to OpenClaw agent instances. Supports multiple instances with URL/token configuration and connection testing. Requires the OpenAI-compatible Chat Completions endpoint enabled in OpenClaw. |
-| **OpenCode** | Manages an OpenCode server process directly from qtchater. Configure the binary path, auto-detect, start/stop/restart, set host/port, and view server logs. Supports auto-start on launch and auto-restart on crash (up to 3 attempts). |
+| **OpenCode** | Manages an OpenCode server process directly from QtChater. Configure the binary path, auto-detect, start/stop/restart, set host/port, and view server logs. Supports auto-start on launch and auto-restart on crash (up to 3 attempts). |
 | **Pi** | Connects to a Pi coding agent via RPC mode (stdin/stdout JSONL protocol). Configure the binary path, auto-detect, start/stop, and view logs. Supports auto-start when Pi is the active provider. |
 
 ## License
 
 This project is licensed under the GPL-3.0 License — see the [LICENSE](LICENSE) file for details.
 
-qtchater is based on [ChatQT](https://github.com/KodeRoots/ChatQT) by Denys Madureira.
+QtChater is based on [ChatQT](https://github.com/KodeRoots/ChatQT) by Denys Madureira.

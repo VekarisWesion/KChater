@@ -75,7 +75,7 @@ QtObject {
             }
             return openaiCompatibleModel || "OpenAI"
         }
-        return "qtchater"
+        return "QtChater"
     }
 
     function generateUuid() {

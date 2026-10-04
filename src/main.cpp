@@ -74,7 +74,7 @@ int main(int argc, char *argv[])
 
     KAboutData aboutData(
         QStringLiteral("qtchater"),
-        i18nc("@title", "qtchater"),
+        i18nc("@title", "QtChater"),
         QStringLiteral(QTCHATER_VERSION_STRING),
         i18n("A simple AI chat client for OpenAI-compatible providers"),
         KAboutLicense::LGPL_V2_1,

@@ -1,7 +1,7 @@
 <div align="center">
-  <img src="../resources/icons/cn.vekaris.qtchater.svg" width="128" height="128" alt="qtchater 图标"/>
+  <img src="../resources/icons/cn.vekaris.qtchater.svg" width="128" height="128" alt="QtChater 图标"/>
 
-  # qtchater
+  # QtChater
 
   **为 KDE Plasma 桌面打造的原生 AI 聊天客户端**
 
@@ -14,7 +14,7 @@
 
 ## 简介
 
-qtchater 是一个原生的 KDE Plasma 应用，用于和 AI 模型聊天。它基于 Qt6/QML 和 Kirigami 构建，拥有原生的外观与 Plasma 风格的对话框，可以无缝融入 KDE 桌面。
+QtChater 是一个原生的 KDE Plasma 应用，用于和 AI 模型聊天。它基于 Qt6/QML 和 Kirigami 构建，拥有原生的外观与 Plasma 风格的对话框，可以无缝融入 KDE 桌面。
 
 ## 功能
 
@@ -56,7 +56,7 @@ qtchater 是一个原生的 KDE Plasma 应用，用于和 AI 模型聊天。它�
 
 ## 从源码构建
 
-qtchater 在 **Fedora** + KDE Plasma 上开发和测试。下面是 Fedora 的步骤；其他发行版请看 [其他发行版](#其他发行版)。
+QtChater 在 **Fedora** + KDE Plasma 上开发和测试。下面是 Fedora 的步骤；其他发行版请看 [其他发行版](#其他发行版)。
 
 ### 1. 安装构建依赖
 
@@ -154,13 +154,13 @@ cpack -G DEB    # Debian / Ubuntu，需要 dpkg-dev
 |-----|---------|
 | `Exec` | 安装后的可执行文件名，`qtchater` |
 | `Icon` | 去掉 `.svg` 后缀的图标文件名，`cn.vekaris.qtchater` |
-| `Name` | 菜单里显示的名字，`qtchater` |
+| `Name` | 菜单里显示的名字，`QtChater` |
 
 然后执行一次 `update-desktop-database ~/.local/share/applications`。
 
 ## 实验性功能
 
-qtchater 包含一些默认关闭的实验性功能。它们可用，但可能不够完善、会随版本变化，或缺少打磨。
+QtChater 包含一些默认关闭的实验性功能。它们可用，但可能不够完善、会随版本变化，或缺少打磨。
 
 ### 启用实验性功能
 
@@ -183,11 +183,11 @@ QTCHATER_ENABLE_EXPERIMENTAL_FEATURES=1 ./build/bin/qtchater
 | 服务商 | 说明 |
 |----------|-------------|
 | **OpenClaw** | 连接 OpenClaw agent 实例，支持多实例的 URL/令牌配置与连接测试。需要在 OpenClaw 中启用兼容 OpenAI 的 Chat Completions 端点。 |
-| **OpenCode** | 由 qtchater 直接管理 OpenCode 服务进程。可配置二进制路径、自动探测、启动/停止/重启、设置主机与端口，并查看服务日志。支持启动时自动启动与崩溃后自动重启（最多 3 次）。 |
+| **OpenCode** | 由 QtChater 直接管理 OpenCode 服务进程。可配置二进制路径、自动探测、启动/停止/重启、设置主机与端口，并查看服务日志。支持启动时自动启动与崩溃后自动重启（最多 3 次）。 |
 | **Pi** | 通过 RPC 模式（stdin/stdout JSONL 协议）连接 Pi 编码 agent。可配置二进制路径、自动探测、启动/停止并查看日志。当 Pi 为当前服务商时支持自动启动。 |
 
 ## 许可证
 
 本项目使用 GPL-3.0 许可证 —— 详见 [LICENSE](../LICENSE)。
 
-qtchater 基于 Denys Madureira 的 [ChatQT](https://github.com/KodeRoots/ChatQT)。
+QtChater 基于 Denys Madureira 的 [ChatQT](https://github.com/KodeRoots/ChatQT)。

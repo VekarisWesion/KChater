@@ -6,7 +6,7 @@
 # you rename the application.
 
 [Desktop Entry]
-Name=qtchater
+Name=QtChater
 Exec=qtchater
 Icon=cn.vekaris.qtchater
 Type=Application

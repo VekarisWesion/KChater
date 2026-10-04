@@ -20,7 +20,7 @@ Kirigami.ApplicationWindow {
     minimumHeight: Kirigami.Units.gridUnit * 40
 
     globalDrawer: Kirigami.GlobalDrawer {
-        title: i18n("qtchater")
+        title: i18n("QtChater")
         titleIcon: "dialog-messages"
         isMenu: true
 

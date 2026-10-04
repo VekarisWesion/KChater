@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: qtchater\n"
 "Report-Msgid-Bugs-To: https://github.com/VekarisWesion/QtChater/issues\n"
-"POT-Creation-Date: 2026-10-04 11:17+0800\n"
+"POT-Creation-Date: 2026-10-04 11:28+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -695,7 +695,7 @@ msgstr ""
 #: src/qml/settings/SettingsOpenClaw.qml:125
 msgctxt "@info"
 msgid ""
-"To use OpenClaw with qtchater, you must enable the OpenAI-compatible Chat "
+"To use OpenClaw with QtChater, you must enable the OpenAI-compatible Chat "
 "Completions endpoint in OpenClaw.\n"
 "The easiest way to do this is asking OpenClaw to do so."
 msgstr ""
@@ -854,7 +854,7 @@ msgid ""
 msgstr ""
 
 #: src/qml/Main.qml:23
-msgid "qtchater"
+msgid "QtChater"
 msgstr ""
 
 #: src/qml/Main.qml:29
@@ -894,7 +894,7 @@ msgstr[1] ""
 
 #: src/main.cpp:77
 msgctxt "@title"
-msgid "qtchater"
+msgid "QtChater"
 msgstr ""
 
 #: src/main.cpp:79

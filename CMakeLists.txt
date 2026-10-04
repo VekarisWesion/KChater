@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(qtchater VERSION 1.1.0 LANGUAGES CXX)
+project(QtChater VERSION 1.1.0 LANGUAGES CXX)
 
 set(KF_MIN_VERSION "6.0.0")
 set(QT_MIN_VERSION "6.5.0")
@@ -87,7 +87,7 @@ set(CPACK_PACKAGE_NAME "cn.vekaris.qtchater")
 set(CPACK_PACKAGE_VENDOR "vekaris.cn")
 set(CPACK_PACKAGE_CONTACT "Vekaris <vekaris@zohomail.com>")
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Native AI chat client for the KDE Plasma desktop")
-set(CPACK_PACKAGE_DESCRIPTION "qtchater is a native KDE Plasma chat client for AI models, built with Qt6, QML and Kirigami.")
+set(CPACK_PACKAGE_DESCRIPTION "QtChater is a native KDE Plasma chat client for AI models, built with Qt6, QML and Kirigami.")
 set(CPACK_PACKAGE_HOMEPAGE_URL "https://vekaris.cn")
 set(CPACK_PACKAGE_VERSION "${QTCHATER_PACKAGE_VERSION}")
 set(CPACK_PACKAGE_FILE_NAME "cn.vekaris.qtchater-${QTCHATER_PACKAGE_VERSION}-${CMAKE_SYSTEM_PROCESSOR}")
