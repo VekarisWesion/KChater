@@ -1,14 +1,14 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# SPDX-FileCopyrightText: 2024-2026 Denys Madureira
+# SPDX-FileCopyrightText: 2026 VekarisWesion <vekaris@zohomail.com>
+# SPDX-License-Identifier: GPL-3.0-or-later
 # This file is distributed under the same license as the qtchater package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: qtchater\n"
 "Report-Msgid-Bugs-To: https://github.com/VekarisWesion/QtChater/issues\n"
-"POT-Creation-Date: 2026-10-04 14:50+0800\n"
+"POT-Creation-Date: 2026-10-04 15:04+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,54 +29,6 @@ msgstr ""
 msgid "Copy"
 msgstr ""
 
-#: src/qml/components/InstanceCard.qml:38
-msgctxt "@info"
-msgid "Unnamed Instance"
-msgstr ""
-
-#: src/qml/components/InstanceCard.qml:46 src/qml/components/McpCard.qml:81
-#: src/qml/components/ProviderCard.qml:48
-msgctxt "@action:button"
-msgid "Edit"
-msgstr ""
-
-#: src/qml/components/InstanceCard.qml:58 src/qml/components/McpCard.qml:93
-#: src/qml/components/ProviderCard.qml:60
-msgctxt "@action:button"
-msgid "Remove"
-msgstr ""
-
-#: src/qml/components/InstanceCard.qml:83 src/qml/components/McpCard.qml:151
-#: src/qml/components/ProviderCard.qml:86
-msgctxt "@label"
-msgid "URL:"
-msgstr ""
-
-#: src/qml/components/InstanceCard.qml:89 src/qml/components/McpCard.qml:157
-#: src/qml/components/McpCard.qml:178 src/qml/components/ProviderCard.qml:92
-#: src/qml/components/ProviderCard.qml:111
-msgctxt "@info"
-msgid "Not set"
-msgstr ""
-
-#: src/qml/components/InstanceCard.qml:102 src/qml/components/McpCard.qml:170
-#: src/qml/components/ProviderCard.qml:124
-msgctxt "@label"
-msgid "Token:"
-msgstr ""
-
-#: src/qml/components/InstanceCard.qml:109
-#: src/qml/components/ProviderCard.qml:131
-msgctxt "@info"
-msgid "Configured — API key is saved"
-msgstr ""
-
-#: src/qml/components/InstanceCard.qml:110
-#: src/qml/components/ProviderCard.qml:132
-msgctxt "@info"
-msgid "Missing — no API key configured"
-msgstr ""
-
 #: src/qml/components/McpCard.qml:43
 msgctxt "@info"
 msgid "Unnamed MCP Server"
@@ -90,6 +42,18 @@ msgstr ""
 #: src/qml/components/McpCard.qml:69
 msgctxt "@action:button"
 msgid "Connect"
+msgstr ""
+
+#: src/qml/components/McpCard.qml:81 src/qml/components/InstanceCard.qml:47
+#: src/qml/components/ProviderCard.qml:49
+msgctxt "@action:button"
+msgid "Edit"
+msgstr ""
+
+#: src/qml/components/McpCard.qml:93 src/qml/components/InstanceCard.qml:59
+#: src/qml/components/ProviderCard.qml:61
+msgctxt "@action:button"
+msgid "Remove"
 msgstr ""
 
 #: src/qml/components/McpCard.qml:118
@@ -117,6 +81,26 @@ msgctxt "@info"
 msgid "Disconnected"
 msgstr ""
 
+#: src/qml/components/McpCard.qml:151 src/qml/components/InstanceCard.qml:84
+#: src/qml/components/ProviderCard.qml:87
+msgctxt "@label"
+msgid "URL:"
+msgstr ""
+
+#: src/qml/components/McpCard.qml:157 src/qml/components/McpCard.qml:178
+#: src/qml/components/InstanceCard.qml:90
+#: src/qml/components/ProviderCard.qml:93
+#: src/qml/components/ProviderCard.qml:112
+msgctxt "@info"
+msgid "Not set"
+msgstr ""
+
+#: src/qml/components/McpCard.qml:170 src/qml/components/InstanceCard.qml:103
+#: src/qml/components/ProviderCard.qml:125
+msgctxt "@label"
+msgid "Token:"
+msgstr ""
+
 #: src/qml/components/McpCard.qml:177
 msgctxt "@info"
 msgid "Configured"
@@ -130,60 +114,6 @@ msgstr ""
 #: src/qml/components/McpCard.qml:198
 msgctxt "@info"
 msgid "%1 tool(s) available"
-msgstr ""
-
-#: src/qml/components/MessageInput.qml:103
-msgid "Remove attachment"
-msgstr ""
-
-#: src/qml/components/MessageInput.qml:152
-msgid "Type your message..."
-msgstr ""
-
-#: src/qml/components/MessageInput.qml:187
-msgid "Attach files"
-msgstr ""
-
-#: src/qml/components/MessageInput.qml:212
-msgid "Could not attach %1: %2"
-msgstr ""
-
-#: src/qml/components/MessageInput.qml:232
-msgid "Stop"
-msgstr ""
-
-#: src/qml/components/MessageInput.qml:232
-msgid "Cancel"
-msgstr ""
-
-#: src/qml/components/MessageInput.qml:232
-msgid "Send"
-msgstr ""
-
-#: src/qml/components/MessageInput.qml:240
-msgid "Stop streaming (Enter)"
-msgstr ""
-
-#: src/qml/components/MessageInput.qml:240
-msgid "Cancel request (Enter)"
-msgstr ""
-
-#: src/qml/components/MessageInput.qml:241
-msgid "Send message (Enter)"
-msgstr ""
-
-#: src/qml/components/MessageInput.qml:258
-msgid "Configure a provider to start chatting"
-msgstr ""
-
-#: src/qml/components/ProviderCard.qml:40
-msgctxt "@info"
-msgid "Unnamed Provider"
-msgstr ""
-
-#: src/qml/components/ProviderCard.qml:105
-msgctxt "@label"
-msgid "Model:"
 msgstr ""
 
 #: src/qml/components/SessionCard.qml:48
@@ -201,67 +131,138 @@ msgctxt "@info"
 msgid "Unknown provider"
 msgstr ""
 
-#: src/qml/components/SessionSidebar.qml:33
+#: src/qml/components/InstanceCard.qml:39
+msgctxt "@info"
+msgid "Unnamed Instance"
+msgstr ""
+
+#: src/qml/components/InstanceCard.qml:110
+#: src/qml/components/ProviderCard.qml:132
+msgctxt "@info"
+msgid "Configured — API key is saved"
+msgstr ""
+
+#: src/qml/components/InstanceCard.qml:111
+#: src/qml/components/ProviderCard.qml:133
+msgctxt "@info"
+msgid "Missing — no API key configured"
+msgstr ""
+
+#: src/qml/components/MessageInput.qml:104
+msgid "Remove attachment"
+msgstr ""
+
+#: src/qml/components/MessageInput.qml:153
+msgid "Type your message..."
+msgstr ""
+
+#: src/qml/components/MessageInput.qml:188
+msgid "Attach files"
+msgstr ""
+
+#: src/qml/components/MessageInput.qml:213
+msgid "Could not attach %1: %2"
+msgstr ""
+
+#: src/qml/components/MessageInput.qml:233
+msgid "Stop"
+msgstr ""
+
+#: src/qml/components/MessageInput.qml:233
+msgid "Cancel"
+msgstr ""
+
+#: src/qml/components/MessageInput.qml:233
+msgid "Send"
+msgstr ""
+
+#: src/qml/components/MessageInput.qml:241
+msgid "Stop streaming (Enter)"
+msgstr ""
+
+#: src/qml/components/MessageInput.qml:241
+msgid "Cancel request (Enter)"
+msgstr ""
+
+#: src/qml/components/MessageInput.qml:242
+msgid "Send message (Enter)"
+msgstr ""
+
+#: src/qml/components/MessageInput.qml:259
+msgid "Configure a provider to start chatting"
+msgstr ""
+
+#: src/qml/components/ProviderCard.qml:41
+msgctxt "@info"
+msgid "Unnamed Provider"
+msgstr ""
+
+#: src/qml/components/ProviderCard.qml:106
+msgctxt "@label"
+msgid "Model:"
+msgstr ""
+
+#: src/qml/components/SessionSidebar.qml:34
 msgid "Sessions"
 msgstr ""
 
-#: src/qml/components/SessionSidebar.qml:64
+#: src/qml/components/SessionSidebar.qml:65
 msgid "Your chat sessions will appear here"
 msgstr ""
 
-#: src/qml/components/SessionSidebar.qml:66
+#: src/qml/components/SessionSidebar.qml:67
 msgid "Start a new conversation to see it listed in this sidebar."
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:26
+#: src/qml/pages/ChatPage.qml:27
 msgid "Thinking"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:33 src/qml/pages/ChatPage.qml:1026
+#: src/qml/pages/ChatPage.qml:34 src/qml/pages/ChatPage.qml:1027
 msgid "Settings"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:38
+#: src/qml/pages/ChatPage.qml:39
 msgid "New chat"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:81
+#: src/qml/pages/ChatPage.qml:82
 msgid "Connecting to %1…"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:84
+#: src/qml/pages/ChatPage.qml:85
 msgid "Failed to connect to %1: no URL configured"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:109 src/qml/settings/SettingsMCP.qml:176
+#: src/qml/pages/ChatPage.qml:110 src/qml/settings/SettingsMCP.qml:177
 msgid "Connected to %1 — %2 tool(s) available"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:115
+#: src/qml/pages/ChatPage.qml:116
 msgid "Connected to %1 but failed to list tools"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:123 src/qml/settings/SettingsMCP.qml:199
+#: src/qml/pages/ChatPage.qml:124 src/qml/settings/SettingsMCP.qml:200
 msgid "Failed to connect to %1: %2"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:268
+#: src/qml/pages/ChatPage.qml:269
 msgid "Switched to %1"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:273
+#: src/qml/pages/ChatPage.qml:274
 msgid "enabled"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:273
+#: src/qml/pages/ChatPage.qml:274
 msgid "disabled"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:274
+#: src/qml/pages/ChatPage.qml:275
 msgid "Thinking %1"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:293
+#: src/qml/pages/ChatPage.qml:294
 msgid ""
 "No local model found.\n"
 "Please install some first.\n"
@@ -269,245 +270,84 @@ msgid ""
 "If you need help, check Ollama documentation."
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:295
+#: src/qml/pages/ChatPage.qml:296
 msgid ""
 "OpenClaw instance not configured.\n"
 "Please set URL and Token in settings."
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:297
+#: src/qml/pages/ChatPage.qml:298
 msgid ""
 "OpenAI Compatible provider not configured.\n"
 "Please configure it in settings."
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:299
+#: src/qml/pages/ChatPage.qml:300
 msgid "Provider not configured."
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:423
+#: src/qml/pages/ChatPage.qml:424
 msgid "Calling tools: %1"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:489
+#: src/qml/pages/ChatPage.qml:490
 msgid "Calling %1…"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:500
+#: src/qml/pages/ChatPage.qml:501
 msgid "Memory saved"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:505
+#: src/qml/pages/ChatPage.qml:506
 msgid "save_memory: Memory saved"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:517
+#: src/qml/pages/ChatPage.qml:518
 msgid "Tool %1 is not an MCP tool"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:547
+#: src/qml/pages/ChatPage.qml:548
 msgid "MCP server not found for tool %1"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:567
+#: src/qml/pages/ChatPage.qml:568
 msgid "Error: %1"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:572
+#: src/qml/pages/ChatPage.qml:573
 msgid "%1: %2"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:577
+#: src/qml/pages/ChatPage.qml:578
 msgid "%1 result: %2"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:589
+#: src/qml/pages/ChatPage.qml:590
 msgid "Tool %1 failed: %2"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:767
+#: src/qml/pages/ChatPage.qml:768
 msgid "What can you tell me about the attached files?"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:771
+#: src/qml/pages/ChatPage.qml:772
 msgid "Attachments: %1"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:1187
+#: src/qml/pages/ChatPage.qml:1188
 msgid "Select AI provider"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:1213
+#: src/qml/pages/ChatPage.qml:1214
 msgid "I am waiting for your questions..."
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:1281
+#: src/qml/pages/ChatPage.qml:1282
 msgid "Refresh model list"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:1319
+#: src/qml/pages/ChatPage.qml:1320
 msgid "Refresh models list"
-msgstr ""
-
-#: src/qml/settings/SettingsGeneral.qml:16
-msgctxt "@title"
-msgid "General"
-msgstr ""
-
-#: src/qml/settings/SettingsGeneral.qml:27
-msgctxt "@label:listbox"
-msgid "Language:"
-msgstr ""
-
-#: src/qml/settings/SettingsGeneral.qml:40
-msgctxt "@title:group"
-msgid "Enabled Providers:"
-msgstr ""
-
-#: src/qml/settings/SettingsGeneral.qml:46
-msgctxt "@label:checkbox"
-msgid "Ollama:"
-msgstr ""
-
-#: src/qml/settings/SettingsGeneral.qml:47
-msgctxt "@option:check"
-msgid "Enable Ollama provider"
-msgstr ""
-
-#: src/qml/settings/SettingsGeneral.qml:58
-msgctxt "@label:checkbox"
-msgid "OpenAI Compatible:"
-msgstr ""
-
-#: src/qml/settings/SettingsGeneral.qml:59
-msgctxt "@option:check"
-msgid "Enable OpenAI Compatible provider"
-msgstr ""
-
-#: src/qml/settings/SettingsGeneral.qml:71
-msgctxt "@label:checkbox"
-msgid "OpenClaw:"
-msgstr ""
-
-#: src/qml/settings/SettingsGeneral.qml:72
-msgctxt "@option:check"
-msgid "Enable OpenClaw provider"
-msgstr ""
-
-#: src/qml/settings/SettingsGeneral.qml:82
-msgctxt "@title:group"
-msgid "Behavior:"
-msgstr ""
-
-#: src/qml/settings/SettingsGeneral.qml:88
-msgctxt "@label:checkbox"
-msgid "Humanized output:"
-msgstr ""
-
-#: src/qml/settings/SettingsGeneral.qml:89
-msgctxt "@option:check"
-msgid "Enable humanized output"
-msgstr ""
-
-#: src/qml/settings/SettingsGeneral.qml:99
-msgctxt "@info"
-msgid ""
-"Appends writing guidelines to the Soul system message so responses read more "
-"human. Increases token usage."
-msgstr ""
-
-#: src/qml/settings/SettingsGeneral.qml:110
-msgctxt "@title:group"
-msgid "MCP (Model Context Protocol):"
-msgstr ""
-
-#: src/qml/settings/SettingsGeneral.qml:115
-msgctxt "@info"
-msgid ""
-"MCP allows AI models to use external tools. Configure MCP servers in the MCP "
-"Servers settings page."
-msgstr ""
-
-#: src/qml/settings/SettingsGeneral.qml:124
-msgctxt "@info"
-msgid "Disabled providers will not appear in the provider dropdown."
-msgstr ""
-
-#: src/qml/settings/SettingsMCP.qml:17
-msgctxt "@title"
-msgid "MCP Servers"
-msgstr ""
-
-#: src/qml/settings/SettingsMCP.qml:83 src/qml/settings/SettingsMCP.qml:294
-msgctxt "@info"
-msgid "New MCP Server"
-msgstr ""
-
-#: src/qml/settings/SettingsMCP.qml:188
-msgid "Connected to %1 but failed to list tools: %2"
-msgstr ""
-
-#: src/qml/settings/SettingsMCP.qml:222
-msgid "Disconnected from %1"
-msgstr ""
-
-#: src/qml/settings/SettingsMCP.qml:231
-msgctxt "@info"
-msgid ""
-"Configure remote MCP (Model Context Protocol) servers to give AI models "
-"access to external tools via Streamable HTTP."
-msgstr ""
-
-#: src/qml/settings/SettingsMCP.qml:241
-msgctxt "@title:group"
-msgid "Servers"
-msgstr ""
-
-#: src/qml/settings/SettingsMCP.qml:272
-msgctxt "@action:button"
-msgid "Add MCP Server"
-msgstr ""
-
-#: src/qml/settings/SettingsMCP.qml:286 src/qml/settings/SettingsMCP.qml:309
-msgctxt "@title:window"
-msgid "Edit MCP Server"
-msgstr ""
-
-#: src/qml/settings/SettingsMCP.qml:298
-msgctxt "@title:window"
-msgid "Add MCP Server"
-msgstr ""
-
-#: src/qml/settings/SettingsMCP.qml:334
-#: src/qml/settings/SettingsOpenAICompatible.qml:307
-#: src/qml/settings/SettingsOpenClaw.qml:304
-msgctxt "@label:textbox"
-msgid "Display Name:"
-msgstr ""
-
-#: src/qml/settings/SettingsMCP.qml:342
-msgctxt "@info:placeholder"
-msgid "e.g., Exa Search"
-msgstr ""
-
-#: src/qml/settings/SettingsMCP.qml:346
-msgctxt "@label:textbox"
-msgid "MCP Server URL:"
-msgstr ""
-
-#: src/qml/settings/SettingsMCP.qml:358
-msgctxt "@label:textbox"
-msgid "API Token (optional):"
-msgstr ""
-
-#: src/qml/settings/SettingsMCP.qml:366
-msgctxt "@info:placeholder"
-msgid "Enter API token if required"
-msgstr ""
-
-#: src/qml/settings/SettingsMCP.qml:371
-msgctxt "@label:textbox"
-msgid "Custom Headers (JSON, optional):"
 msgstr ""
 
 #: src/qml/settings/SettingsMemory.qml:15
@@ -529,233 +369,6 @@ msgid ""
 "User prefers Portuguese.\n"
 "Works with KDE/Qt.\n"
 "Likes concise answers."
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:16
-msgctxt "@title"
-msgid "OpenAI Compatible"
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:79
-#: src/qml/settings/SettingsOpenAICompatible.qml:182
-msgctxt "@info"
-msgid "New Provider"
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:122
-msgctxt "@info"
-msgid ""
-"Configure multiple OpenAI-compatible API providers (OpenAI, DeepSeek, Groq, "
-"etc.). Add, edit, or remove providers using the buttons below."
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:132
-msgctxt "@title:group"
-msgid "Providers"
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:160
-msgctxt "@action:button"
-msgid "Add Provider"
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:174
-#: src/qml/settings/SettingsOpenAICompatible.qml:197
-msgctxt "@title:window"
-msgid "Edit Provider"
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:186
-msgctxt "@title:window"
-msgid "Add Provider"
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:315
-msgctxt "@info:placeholder"
-msgid "e.g., DeepSeek, Groq, OpenAI"
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:319
-msgctxt "@label:textbox"
-msgid "API URL:"
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:332
-msgctxt "@label:textbox"
-msgid "API Token:"
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:340
-msgctxt "@info:placeholder"
-msgid "Enter your API token"
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:346
-msgctxt "@label:textbox"
-msgid "Model:"
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:371
-#: src/qml/settings/SettingsOpenClaw.qml:355
-msgctxt "@info"
-msgid "Connection has not been tested."
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:372
-#: src/qml/settings/SettingsOpenClaw.qml:356
-msgctxt "@info"
-msgid "Testing connection…"
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:374
-msgctxt "@info"
-msgid "Connection successful. %1 model(s) available."
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:375
-#: src/qml/settings/SettingsOpenClaw.qml:357
-msgctxt "@info"
-msgid "Connection successful!"
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:377
-#: src/qml/settings/SettingsOpenClaw.qml:358
-msgctxt "@info"
-msgid "Connection timed out after 10 seconds."
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:378
-#: src/qml/settings/SettingsOpenClaw.qml:359
-msgctxt "@info"
-msgid "Could not reach the server. Check the URL and network connection."
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:379
-#: src/qml/settings/SettingsOpenClaw.qml:360
-msgctxt "@info"
-msgid "Authentication failed. Check your API token."
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:380
-#: src/qml/settings/SettingsOpenClaw.qml:361
-msgctxt "@info"
-msgid "Server not found at this URL. Check the API URL."
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:381
-msgctxt "@info"
-msgid "Please enter an API URL before testing."
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:382
-msgctxt "@info"
-msgid "Please enter an API token before testing."
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:383
-msgctxt "@info"
-msgid "Please enter a model name before testing."
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:384
-#: src/qml/settings/SettingsOpenClaw.qml:364
-msgctxt "@info"
-msgid "URL must start with http:// or https://."
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:385
-#: src/qml/settings/SettingsOpenClaw.qml:365
-msgctxt "@info"
-msgid "Server returned error %1: %2"
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:386
-#: src/qml/settings/SettingsOpenClaw.qml:366
-msgctxt "@info"
-msgid "Unknown connection error."
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:390
-#: src/qml/settings/SettingsOpenClaw.qml:370
-msgctxt "@action:button"
-msgid "Test Now"
-msgstr ""
-
-#: src/qml/settings/SettingsOpenClaw.qml:16
-msgctxt "@title"
-msgid "OpenClaw"
-msgstr ""
-
-#: src/qml/settings/SettingsOpenClaw.qml:78
-#: src/qml/settings/SettingsOpenClaw.qml:188
-msgctxt "@info"
-msgid "New Instance"
-msgstr ""
-
-#: src/qml/settings/SettingsOpenClaw.qml:125
-msgctxt "@info"
-msgid ""
-"To use OpenClaw with QtChater, you must enable the OpenAI-compatible Chat "
-"Completions endpoint in OpenClaw.\n"
-"The easiest way to do this is asking OpenClaw to do so."
-msgstr ""
-
-#: src/qml/settings/SettingsOpenClaw.qml:129
-msgctxt "@info"
-msgid ""
-"Configure multiple OpenClaw instances. Add, edit, or remove instances using "
-"the buttons below."
-msgstr ""
-
-#: src/qml/settings/SettingsOpenClaw.qml:139
-msgctxt "@title:group"
-msgid "Instances"
-msgstr ""
-
-#: src/qml/settings/SettingsOpenClaw.qml:166
-msgctxt "@action:button"
-msgid "Add Instance"
-msgstr ""
-
-#: src/qml/settings/SettingsOpenClaw.qml:180
-#: src/qml/settings/SettingsOpenClaw.qml:201
-msgctxt "@title:window"
-msgid "Edit Instance"
-msgstr ""
-
-#: src/qml/settings/SettingsOpenClaw.qml:191
-msgctxt "@title:window"
-msgid "Add Instance"
-msgstr ""
-
-#: src/qml/settings/SettingsOpenClaw.qml:312
-msgctxt "@info:placeholder"
-msgid "e.g., Local OpenClaw, Remote Server"
-msgstr ""
-
-#: src/qml/settings/SettingsOpenClaw.qml:316
-msgctxt "@label:textbox"
-msgid "URL:"
-msgstr ""
-
-#: src/qml/settings/SettingsOpenClaw.qml:329
-msgctxt "@label:textbox"
-msgid "Token:"
-msgstr ""
-
-#: src/qml/settings/SettingsOpenClaw.qml:337
-msgctxt "@info:placeholder"
-msgid "Enter your token"
-msgstr ""
-
-#: src/qml/settings/SettingsOpenClaw.qml:362
-msgctxt "@info"
-msgid "Please enter a URL before testing."
-msgstr ""
-
-#: src/qml/settings/SettingsOpenClaw.qml:363
-msgctxt "@info"
-msgid "Please enter a token before testing."
 msgstr ""
 
 #: src/qml/settings/SettingsPage.qml:16
@@ -853,74 +466,481 @@ msgid ""
 "- Ask for clarification when unsure"
 msgstr ""
 
-#: src/qml/Main.qml:23
+#: src/qml/settings/SettingsGeneral.qml:17
+msgctxt "@title"
+msgid "General"
+msgstr ""
+
+#: src/qml/settings/SettingsGeneral.qml:28
+msgctxt "@label:listbox"
+msgid "Language:"
+msgstr ""
+
+#: src/qml/settings/SettingsGeneral.qml:41
+msgctxt "@title:group"
+msgid "Enabled Providers:"
+msgstr ""
+
+#: src/qml/settings/SettingsGeneral.qml:47
+msgctxt "@label:checkbox"
+msgid "Ollama:"
+msgstr ""
+
+#: src/qml/settings/SettingsGeneral.qml:48
+msgctxt "@option:check"
+msgid "Enable Ollama provider"
+msgstr ""
+
+#: src/qml/settings/SettingsGeneral.qml:59
+msgctxt "@label:checkbox"
+msgid "OpenAI Compatible:"
+msgstr ""
+
+#: src/qml/settings/SettingsGeneral.qml:60
+msgctxt "@option:check"
+msgid "Enable OpenAI Compatible provider"
+msgstr ""
+
+#: src/qml/settings/SettingsGeneral.qml:72
+msgctxt "@label:checkbox"
+msgid "OpenClaw:"
+msgstr ""
+
+#: src/qml/settings/SettingsGeneral.qml:73
+msgctxt "@option:check"
+msgid "Enable OpenClaw provider"
+msgstr ""
+
+#: src/qml/settings/SettingsGeneral.qml:83
+msgctxt "@title:group"
+msgid "Behavior:"
+msgstr ""
+
+#: src/qml/settings/SettingsGeneral.qml:89
+msgctxt "@label:checkbox"
+msgid "Humanized output:"
+msgstr ""
+
+#: src/qml/settings/SettingsGeneral.qml:90
+msgctxt "@option:check"
+msgid "Enable humanized output"
+msgstr ""
+
+#: src/qml/settings/SettingsGeneral.qml:100
+msgctxt "@info"
+msgid ""
+"Appends writing guidelines to the Soul system message so responses read more "
+"human. Increases token usage."
+msgstr ""
+
+#: src/qml/settings/SettingsGeneral.qml:111
+msgctxt "@title:group"
+msgid "MCP (Model Context Protocol):"
+msgstr ""
+
+#: src/qml/settings/SettingsGeneral.qml:116
+msgctxt "@info"
+msgid ""
+"MCP allows AI models to use external tools. Configure MCP servers in the MCP "
+"Servers settings page."
+msgstr ""
+
+#: src/qml/settings/SettingsGeneral.qml:125
+msgctxt "@info"
+msgid "Disabled providers will not appear in the provider dropdown."
+msgstr ""
+
+#: src/qml/settings/SettingsMCP.qml:18
+msgctxt "@title"
+msgid "MCP Servers"
+msgstr ""
+
+#: src/qml/settings/SettingsMCP.qml:84 src/qml/settings/SettingsMCP.qml:295
+msgctxt "@info"
+msgid "New MCP Server"
+msgstr ""
+
+#: src/qml/settings/SettingsMCP.qml:189
+msgid "Connected to %1 but failed to list tools: %2"
+msgstr ""
+
+#: src/qml/settings/SettingsMCP.qml:223
+msgid "Disconnected from %1"
+msgstr ""
+
+#: src/qml/settings/SettingsMCP.qml:232
+msgctxt "@info"
+msgid ""
+"Configure remote MCP (Model Context Protocol) servers to give AI models "
+"access to external tools via Streamable HTTP."
+msgstr ""
+
+#: src/qml/settings/SettingsMCP.qml:242
+msgctxt "@title:group"
+msgid "Servers"
+msgstr ""
+
+#: src/qml/settings/SettingsMCP.qml:273
+msgctxt "@action:button"
+msgid "Add MCP Server"
+msgstr ""
+
+#: src/qml/settings/SettingsMCP.qml:287 src/qml/settings/SettingsMCP.qml:310
+msgctxt "@title:window"
+msgid "Edit MCP Server"
+msgstr ""
+
+#: src/qml/settings/SettingsMCP.qml:299
+msgctxt "@title:window"
+msgid "Add MCP Server"
+msgstr ""
+
+#: src/qml/settings/SettingsMCP.qml:335
+#: src/qml/settings/SettingsOpenAICompatible.qml:308
+#: src/qml/settings/SettingsOpenClaw.qml:305
+msgctxt "@label:textbox"
+msgid "Display Name:"
+msgstr ""
+
+#: src/qml/settings/SettingsMCP.qml:343
+msgctxt "@info:placeholder"
+msgid "e.g., Exa Search"
+msgstr ""
+
+#: src/qml/settings/SettingsMCP.qml:347
+msgctxt "@label:textbox"
+msgid "MCP Server URL:"
+msgstr ""
+
+#: src/qml/settings/SettingsMCP.qml:359
+msgctxt "@label:textbox"
+msgid "API Token (optional):"
+msgstr ""
+
+#: src/qml/settings/SettingsMCP.qml:367
+msgctxt "@info:placeholder"
+msgid "Enter API token if required"
+msgstr ""
+
+#: src/qml/settings/SettingsMCP.qml:372
+msgctxt "@label:textbox"
+msgid "Custom Headers (JSON, optional):"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:17
+msgctxt "@title"
+msgid "OpenAI Compatible"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:80
+#: src/qml/settings/SettingsOpenAICompatible.qml:183
+msgctxt "@info"
+msgid "New Provider"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:123
+msgctxt "@info"
+msgid ""
+"Configure multiple OpenAI-compatible API providers (OpenAI, DeepSeek, Groq, "
+"etc.). Add, edit, or remove providers using the buttons below."
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:133
+msgctxt "@title:group"
+msgid "Providers"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:161
+msgctxt "@action:button"
+msgid "Add Provider"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:175
+#: src/qml/settings/SettingsOpenAICompatible.qml:198
+msgctxt "@title:window"
+msgid "Edit Provider"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:187
+msgctxt "@title:window"
+msgid "Add Provider"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:316
+msgctxt "@info:placeholder"
+msgid "e.g., DeepSeek, Groq, OpenAI"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:320
+msgctxt "@label:textbox"
+msgid "API URL:"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:333
+msgctxt "@label:textbox"
+msgid "API Token:"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:341
+msgctxt "@info:placeholder"
+msgid "Enter your API token"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:347
+msgctxt "@label:textbox"
+msgid "Model:"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:372
+#: src/qml/settings/SettingsOpenClaw.qml:356
+msgctxt "@info"
+msgid "Connection has not been tested."
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:373
+#: src/qml/settings/SettingsOpenClaw.qml:357
+msgctxt "@info"
+msgid "Testing connection…"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:375
+msgctxt "@info"
+msgid "Connection successful. %1 model(s) available."
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:376
+#: src/qml/settings/SettingsOpenClaw.qml:358
+msgctxt "@info"
+msgid "Connection successful!"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:378
+#: src/qml/settings/SettingsOpenClaw.qml:359
+msgctxt "@info"
+msgid "Connection timed out after 10 seconds."
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:379
+#: src/qml/settings/SettingsOpenClaw.qml:360
+msgctxt "@info"
+msgid "Could not reach the server. Check the URL and network connection."
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:380
+#: src/qml/settings/SettingsOpenClaw.qml:361
+msgctxt "@info"
+msgid "Authentication failed. Check your API token."
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:381
+#: src/qml/settings/SettingsOpenClaw.qml:362
+msgctxt "@info"
+msgid "Server not found at this URL. Check the API URL."
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:382
+msgctxt "@info"
+msgid "Please enter an API URL before testing."
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:383
+msgctxt "@info"
+msgid "Please enter an API token before testing."
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:384
+msgctxt "@info"
+msgid "Please enter a model name before testing."
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:385
+#: src/qml/settings/SettingsOpenClaw.qml:365
+msgctxt "@info"
+msgid "URL must start with http:// or https://."
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:386
+#: src/qml/settings/SettingsOpenClaw.qml:366
+msgctxt "@info"
+msgid "Server returned error %1: %2"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:387
+#: src/qml/settings/SettingsOpenClaw.qml:367
+msgctxt "@info"
+msgid "Unknown connection error."
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:391
+#: src/qml/settings/SettingsOpenClaw.qml:371
+msgctxt "@action:button"
+msgid "Test Now"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenClaw.qml:17
+msgctxt "@title"
+msgid "OpenClaw"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenClaw.qml:79
+#: src/qml/settings/SettingsOpenClaw.qml:189
+msgctxt "@info"
+msgid "New Instance"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenClaw.qml:126
+msgctxt "@info"
+msgid ""
+"To use OpenClaw with QtChater, you must enable the OpenAI-compatible Chat "
+"Completions endpoint in OpenClaw.\n"
+"The easiest way to do this is asking OpenClaw to do so."
+msgstr ""
+
+#: src/qml/settings/SettingsOpenClaw.qml:130
+msgctxt "@info"
+msgid ""
+"Configure multiple OpenClaw instances. Add, edit, or remove instances using "
+"the buttons below."
+msgstr ""
+
+#: src/qml/settings/SettingsOpenClaw.qml:140
+msgctxt "@title:group"
+msgid "Instances"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenClaw.qml:167
+msgctxt "@action:button"
+msgid "Add Instance"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenClaw.qml:181
+#: src/qml/settings/SettingsOpenClaw.qml:202
+msgctxt "@title:window"
+msgid "Edit Instance"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenClaw.qml:192
+msgctxt "@title:window"
+msgid "Add Instance"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenClaw.qml:313
+msgctxt "@info:placeholder"
+msgid "e.g., Local OpenClaw, Remote Server"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenClaw.qml:317
+msgctxt "@label:textbox"
+msgid "URL:"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenClaw.qml:330
+msgctxt "@label:textbox"
+msgid "Token:"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenClaw.qml:338
+msgctxt "@info:placeholder"
+msgid "Enter your token"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenClaw.qml:363
+msgctxt "@info"
+msgid "Please enter a URL before testing."
+msgstr ""
+
+#: src/qml/settings/SettingsOpenClaw.qml:364
+msgctxt "@info"
+msgid "Please enter a token before testing."
+msgstr ""
+
+#: src/qml/Main.qml:24
 msgid "QtChater"
 msgstr ""
 
-#: src/qml/Main.qml:29
+#: src/qml/Main.qml:30
 msgid "Disable auto scroll"
 msgstr ""
 
-#: src/qml/Main.qml:36
+#: src/qml/Main.qml:37
 msgctxt "@action"
 msgid "About"
 msgstr ""
 
-#: src/sessionstore.cpp:448
+#: src/main.cpp:81
+msgctxt "@title"
+msgid "QtChater"
+msgstr ""
+
+#: src/main.cpp:83
+msgid "A simple AI chat client for OpenAI-compatible providers"
+msgstr ""
+
+#: src/main.cpp:85
+msgid ""
+"© 2024–2026 Denys Madureira\n"
+"© 2026 VekarisWesion (QtChater modifications)"
+msgstr ""
+
+#: src/main.cpp:86
+msgid ""
+"QtChater is distributed under the GNU General Public License, version 3 or "
+"later (GPL-3.0-or-later). Individual source files carry an LGPL-2.1-or-later "
+"notice."
+msgstr ""
+
+#: src/main.cpp:90
+msgctxt "@info:credit"
+msgid "Denys Madureira"
+msgstr ""
+
+#: src/main.cpp:91
+msgctxt "@info:credit"
+msgid "Author"
+msgstr ""
+
+#: src/main.cpp:95
+msgctxt "@info:credit"
+msgid "VekarisWesion"
+msgstr ""
+
+#: src/main.cpp:96
+msgctxt "@info:credit"
+msgid "QtChater fork and maintenance"
+msgstr ""
+
+#: src/main.cpp:100
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: src/main.cpp:101
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: src/sessionstore.cpp:449
 msgid "Just now"
 msgstr ""
 
-#: src/sessionstore.cpp:451
+#: src/sessionstore.cpp:452
 msgid "%1 min ago"
 msgid_plural "%1 mins ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/sessionstore.cpp:454
+#: src/sessionstore.cpp:455
 msgid "%1 hour ago"
 msgid_plural "%1 hours ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/sessionstore.cpp:456
+#: src/sessionstore.cpp:457
 msgid "Yesterday"
 msgstr ""
 
-#: src/sessionstore.cpp:459
+#: src/sessionstore.cpp:460
 msgid "%1 day ago"
 msgid_plural "%1 days ago"
 msgstr[0] ""
 msgstr[1] ""
-
-#: src/main.cpp:77
-msgctxt "@title"
-msgid "QtChater"
-msgstr ""
-
-#: src/main.cpp:79
-msgid "A simple AI chat client for OpenAI-compatible providers"
-msgstr ""
-
-#: src/main.cpp:81
-msgid "© 2026 KodeRoots"
-msgstr ""
-
-#: src/main.cpp:85
-msgctxt "@info:credit"
-msgid "Denys Madureira"
-msgstr ""
-
-#: src/main.cpp:86
-msgctxt "@info:credit"
-msgid "Author"
-msgstr ""
-
-#: src/main.cpp:90
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr ""
-
-#: src/main.cpp:91
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""

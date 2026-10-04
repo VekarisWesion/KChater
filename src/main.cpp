@@ -1,6 +1,10 @@
 /*
     SPDX-FileCopyrightText: 2024 Denys Madureira <denysmb@zoho.com>
+    SPDX-FileCopyrightText: 2026 VekarisWesion <vekaris@zohomail.com>
+    SPDX-FileContributor: VekarisWesion <vekaris@zohomail.com>
     SPDX-License-Identifier: LGPL-2.1-or-later
+
+    Modifications for QtChater (rename, translations, packaging) made in 2026.
 */
 
 #include <QApplication>
@@ -77,8 +81,9 @@ int main(int argc, char *argv[])
         i18nc("@title", "QtChater"),
         QStringLiteral(QTCHATER_VERSION_STRING),
         i18n("A simple AI chat client for OpenAI-compatible providers"),
-        KAboutLicense::LGPL_V2_1,
-        i18n("© 2026 KodeRoots"));
+        KAboutLicense::GPL_V3,
+        i18n("© 2024–2026 Denys Madureira\n© 2026 VekarisWesion (QtChater modifications)"));
+    aboutData.setLicenseText(i18n("QtChater is distributed under the GNU General Public License, version 3 or later (GPL-3.0-or-later). Individual source files carry an LGPL-2.1-or-later notice."));
     aboutData.setBugAddress("https://github.com/VekarisWesion/QtChater/issues");
     aboutData.setOrganizationDomain("vekaris.cn");
     aboutData.addAuthor(
@@ -86,6 +91,11 @@ int main(int argc, char *argv[])
         i18nc("@info:credit", "Author"),
         QStringLiteral("denys@koderoots.org"),
         QStringLiteral("https://denysmadureira.dev"));
+    aboutData.addAuthor(
+        i18nc("@info:credit", "VekarisWesion"),
+        i18nc("@info:credit", "QtChater fork and maintenance"),
+        QStringLiteral("vekaris@zohomail.com"),
+        QStringLiteral("https://vekaris.cn"));
     aboutData.setTranslator(
         i18nc("NAME OF TRANSLATORS", "Your names"),
         i18nc("EMAIL OF TRANSLATORS", "Your emails"));

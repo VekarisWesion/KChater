@@ -1,5 +1,6 @@
 /*
     SPDX-FileCopyrightText: 2024 Denys Madureira <denysmb@zoho.com>
+    SPDX-FileContributor: VekarisWesion <vekaris@zohomail.com>
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 

@@ -193,6 +193,23 @@ QTCHATER_ENABLE_EXPERIMENTAL_FEATURES=1 ./build/bin/qtchater
 
 ## 许可证
 
-本项目使用 GPL-3.0 许可证 —— 详见 [LICENSE](../LICENSE)。
+QtChater 以 **GNU 通用公共许可证第 3 版或更高版本**（GPL-3.0-or-later）分发 ——
+详见 [LICENSE](../LICENSE)。
 
-QtChater 基于 Denys Madureira 的 [ChatQT](https://github.com/KodeRoots/ChatQT)。
+各个文件带有自己的 `SPDX-License-Identifier`，其中大多数是
+**LGPL-2.1-or-later**，许可证全文见
+[LICENSES/LGPL-2.1-or-later.txt](../LICENSES/LGPL-2.1-or-later.txt)。
+
+### 修改说明
+
+QtChater 是 Denys Madureira 的 [ChatQT](https://github.com/KodeRoots/ChatQT)
+的修改版本，保留了上游全部版权声明，仓库中也完整保留了上游的 git 历史。
+
+2026 年所做的修改：重命名应用及其应用 ID、重新绘制图标、重写简体中文翻译、
+新增运行时语言切换、移除系统托盘、Flatpak 清单与 AppStream 元数据、加入 CPack
+打包、替换内置的拟人化文本。被修改过的文件都带有 `SPDX-FileContributor` 标识。
+
+### 第三方内容
+
+本仓库不包含任何第三方美术素材、字体或文本。应用图标是为本项目绘制的原创作品，
+内置的写作规范也是为本项目撰写的。

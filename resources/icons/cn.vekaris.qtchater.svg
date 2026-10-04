@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  SPDX-FileCopyrightText: 2026 VekarisWesion <vekaris@zohomail.com>
+  SPDX-License-Identifier: GPL-3.0-or-later
+
+  Original artwork drawn for QtChater.
+-->
 <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
   <defs>
     <linearGradient id="qtchater-bg" x1="0" y1="0" x2="1" y2="1">

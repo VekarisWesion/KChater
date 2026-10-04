@@ -1,3 +1,10 @@
+# SPDX-FileCopyrightText: 2024 Denys Madureira <denysmb@zoho.com>
+# SPDX-FileCopyrightText: 2026 VekarisWesion <vekaris@zohomail.com>
+# SPDX-FileContributor: VekarisWesion <vekaris@zohomail.com>
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# Modifications for QtChater (rename, translations) made in 2026.
+
 set(QT_QML_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/src)
 
 add_executable(qtchater)

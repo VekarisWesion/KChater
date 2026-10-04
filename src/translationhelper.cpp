@@ -1,5 +1,5 @@
 /*
-    SPDX-FileCopyrightText: 2026 Denys Madureira <denys@koderoots.org>
+    SPDX-FileCopyrightText: 2026 VekarisWesion <vekaris@zohomail.com>
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 

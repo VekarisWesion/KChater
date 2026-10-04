@@ -212,6 +212,27 @@ Once enabled, new provider options appear in **Settings → General**.
 
 ## License
 
-This project is licensed under the GPL-3.0 License — see the [LICENSE](LICENSE) file for details.
+QtChater is distributed under the **GNU General Public License, version 3 or
+later** (GPL-3.0-or-later) — see [LICENSE](LICENSE).
 
-QtChater is based on [ChatQT](https://github.com/KodeRoots/ChatQT) by Denys Madureira.
+Individual files carry their own `SPDX-License-Identifier`. Most of them are
+**LGPL-2.1-or-later**, whose text is in
+[LICENSES/LGPL-2.1-or-later.txt](LICENSES/LGPL-2.1-or-later.txt).
+
+### Modifications
+
+QtChater is a modified version of [ChatQT](https://github.com/KodeRoots/ChatQT)
+by Denys Madureira, and it keeps every upstream copyright notice. The original
+git history is preserved in this repository.
+
+Changes made in 2026: renamed the application and its application ID, drew a
+new icon, rewrote the Simplified Chinese translation, added the runtime
+language switcher, removed the system tray, the Flatpak manifest and the
+AppStream metadata, added CPack packaging, and replaced the built-in humanizer
+text. Files that were changed carry an `SPDX-FileContributor` tag.
+
+### Third-party content
+
+This repository ships no third-party artwork, fonts or text. The application
+icon is original artwork drawn for this project, and the built-in writing
+guidelines were written for it.

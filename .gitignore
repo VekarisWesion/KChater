@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 VekarisWesion <vekaris@zohomail.com>
+# SPDX-FileContributor: VekarisWesion <vekaris@zohomail.com>
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 build/
 bin/
 

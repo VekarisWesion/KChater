@@ -1,3 +1,11 @@
+# SPDX-FileCopyrightText: 2024 Denys Madureira <denysmb@zoho.com>
+# SPDX-FileCopyrightText: 2026 VekarisWesion <vekaris@zohomail.com>
+# SPDX-FileContributor: VekarisWesion <vekaris@zohomail.com>
+# SPDX-License-Identifier: GPL-3.0-or-later
+#
+# QtChater is a modified version of ChatQT. Changes: application rename,
+# AppStream/Flatpak removal, packaging support (2026).
+
 cmake_minimum_required(VERSION 3.20)
 
 project(QtChater VERSION 1.1.0 LANGUAGES CXX)
