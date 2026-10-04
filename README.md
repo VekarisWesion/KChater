@@ -1,4 +1,6 @@
 <div align="center">
+  <img src="resources/icons/cn.vekaris.qtchater.svg" width="128" height="128" alt="qtchater icon"/>
+
   # qtchater
 
   **A native AI chat client for the KDE Plasma desktop**

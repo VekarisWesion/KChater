@@ -1,4 +1,6 @@
 <div align="center">
+  <img src="../resources/icons/cn.vekaris.qtchater.svg" width="128" height="128" alt="qtchater 图标"/>
+
   # qtchater
 
   **为 KDE Plasma 桌面打造的原生 AI 聊天客户端**
