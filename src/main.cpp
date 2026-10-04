@@ -30,6 +30,39 @@
 #include "hotreload.h"
 #include "translationhelper.h"
 
+namespace {
+// KAboutData resolves every translatable string when it is built, so the About
+// page would keep the language the application started with. Build it from
+// scratch whenever the interface language changes.
+KAboutData buildAboutData()
+{
+    KAboutData aboutData(
+        QStringLiteral("kchater"),
+        i18nc("@title", "KChater"),
+        QStringLiteral(KCHATER_VERSION_STRING),
+        i18n("A simple AI chat client for OpenAI-compatible providers"),
+        KAboutLicense::GPL_V3,
+        i18n("© 2024–2026 Denys Madureira\n© 2026 VekarisWesion (KChater modifications)"));
+    aboutData.setLicenseText(i18n("KChater is distributed under the GNU General Public License, version 3 or later (GPL-3.0-or-later). Individual source files carry an LGPL-2.1-or-later notice."));
+    aboutData.setOtherText(i18n("KChater is an independent project. It is not affiliated with, endorsed by, or sponsored by KDE e.V. \"KDE\" and \"Plasma\" are trademarks of KDE e.V., used here only to describe what the application is built for. Qt is a trademark of The Qt Company Ltd."));
+    aboutData.setBugAddress("https://github.com/VekarisWesion/KChater/issues");
+    aboutData.setOrganizationDomain("vekaris.cn");
+    aboutData.addAuthor(
+        i18nc("@info:credit", "Denys Madureira"),
+        i18nc("@info:credit", "ChatQT author"),
+        QStringLiteral("denys@koderoots.org"),
+        QStringLiteral("https://denysmadureira.dev"));
+    aboutData.addAuthor(
+        i18nc("@info:credit", "VekarisWesion"),
+        i18nc("@info:credit", "KChater fork author"),
+        QStringLiteral("vekaris@zohomail.com"),
+        QStringLiteral("https://vekaris.cn"));
+    aboutData.setTranslator(QStringLiteral("VekarisWesion"), QStringLiteral("vekaris@zohomail.com"));
+    aboutData.setDesktopFileName(QStringLiteral("cn.vekaris.kchater"));
+    return aboutData;
+}
+}
+
 int main(int argc, char *argv[])
 {
     // The interface language is deterministic: the saved choice, defaulting to
@@ -76,30 +109,12 @@ int main(int argc, char *argv[])
     // otherwise KI18n caches an empty catalog lookup for the application domain.
     TranslationHelper::instance();
 
-    KAboutData aboutData(
-        QStringLiteral("kchater"),
-        i18nc("@title", "KChater"),
-        QStringLiteral(KCHATER_VERSION_STRING),
-        i18n("A simple AI chat client for OpenAI-compatible providers"),
-        KAboutLicense::GPL_V3,
-        i18n("© 2024–2026 Denys Madureira\n© 2026 VekarisWesion (KChater modifications)"));
-    aboutData.setLicenseText(i18n("KChater is distributed under the GNU General Public License, version 3 or later (GPL-3.0-or-later). Individual source files carry an LGPL-2.1-or-later notice."));
-    aboutData.setOtherText(i18n("KChater is an independent project. It is not affiliated with, endorsed by, or sponsored by KDE e.V. \"KDE\" and \"Plasma\" are trademarks of KDE e.V., used here only to describe what the application is built for. Qt is a trademark of The Qt Company Ltd."));
-    aboutData.setBugAddress("https://github.com/VekarisWesion/KChater/issues");
-    aboutData.setOrganizationDomain("vekaris.cn");
-    aboutData.addAuthor(
-        i18nc("@info:credit", "Denys Madureira"),
-        i18nc("@info:credit", "ChatQT author"),
-        QStringLiteral("denys@koderoots.org"),
-        QStringLiteral("https://denysmadureira.dev"));
-    aboutData.addAuthor(
-        i18nc("@info:credit", "VekarisWesion"),
-        i18nc("@info:credit", "KChater fork author"),
-        QStringLiteral("vekaris@zohomail.com"),
-        QStringLiteral("https://vekaris.cn"));
-    aboutData.setTranslator(QStringLiteral("VekarisWesion"), QStringLiteral("vekaris@zohomail.com"));
-    aboutData.setDesktopFileName(QStringLiteral("cn.vekaris.kchater"));
-    KAboutData::setApplicationData(aboutData);
+    KAboutData::setApplicationData(buildAboutData());
+
+    // Keep the About page in the current language when it is switched at runtime.
+    QObject::connect(TranslationHelper::instance(), &TranslationHelper::languageChanged, &app, []() {
+        KAboutData::setApplicationData(buildAboutData());
+    });
 
     if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
         QQuickStyle::setStyle(QStringLiteral("org.kde.desktop"));

@@ -8,6 +8,7 @@ import QtQuick
 import QtQuick.Controls as Controls
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
+import org.kde.kirigamiaddons.formcard as FormCard
 import org.kde.coreaddons
 import cn.vekaris.kchater
 
@@ -44,13 +45,60 @@ Kirigami.ApplicationWindow {
 
     Component {
         id: aboutPage
-        Kirigami.AboutPage {
-            aboutData: AboutData
+        FormCard.AboutPage {
+            aboutData: root.buildAboutData()
             getInvolvedUrl: "https://github.com/VekarisWesion/KChater"
         }
     }
 
     pageStack.initialPage: ChatPage {
         id: chatPage
+    }
+
+    // Built here instead of using the AboutData singleton: that singleton takes
+    // a snapshot of KAboutData when it is first read, so it would keep the
+    // language the application started with.
+    function buildAboutData() {
+        return {
+            "componentName": "cn.vekaris.kchater",
+            "productName": "KChater",
+            "displayName": "KChater",
+            "version": Qt.application.version,
+            "shortDescription": i18n("A simple AI chat client for OpenAI-compatible providers"),
+            "copyrightStatement": i18n("© 2024–2026 Denys Madureira\n© 2026 VekarisWesion (KChater modifications)"),
+            "otherText": i18n("KChater is an independent project. It is not affiliated with, endorsed by, or sponsored by KDE e.V. \"KDE\" and \"Plasma\" are trademarks of KDE e.V., used here only to describe what the application is built for. Qt is a trademark of The Qt Company Ltd."),
+            "homepage": "https://vekaris.cn",
+            "bugAddress": "https://github.com/VekarisWesion/KChater/issues",
+            "desktopFileName": "cn.vekaris.kchater",
+            "programLogo": "",
+            "licenses": [
+                {
+                    "name": "GPL-3.0-or-later",
+                    "spdx": "GPL-3.0-or-later",
+                    "text": AboutData.licenses.length > 0 ? AboutData.licenses[0].text : ""
+                }
+            ],
+            "authors": [
+                {
+                    "name": "Denys Madureira",
+                    "task": i18n("ChatQT author"),
+                    "emailAddress": "denys@koderoots.org",
+                    "webAddress": "https://denysmadureira.dev"
+                },
+                {
+                    "name": "VekarisWesion",
+                    "task": i18n("KChater fork author"),
+                    "emailAddress": "vekaris@zohomail.com",
+                    "webAddress": "https://vekaris.cn"
+                }
+            ],
+            "credits": [],
+            "translators": [
+                {
+                    "name": "VekarisWesion",
+                    "emailAddress": "vekaris@zohomail.com"
+                }
+            ]
+        }
     }
 }
