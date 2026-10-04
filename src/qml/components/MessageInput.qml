@@ -9,7 +9,7 @@ import QtQuick.Controls as Controls
 import QtQuick.Layouts
 import Qt.labs.platform as Labs
 import org.kde.kirigami as Kirigami
-import org.kde.chatqt
+import cn.vekaris.qtchater
 
 RowLayout {
     id: root

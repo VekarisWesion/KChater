@@ -13,7 +13,7 @@
 1. **Clone the repository:**
    ```bash
    git clone https://invent.kde.org/denysmb/ChatQT.git
-   cd ChatQT
+   cd qtchater
    ```
 
 2. **Configure the build:**
@@ -39,9 +39,9 @@
 
 6. **Run:**
    ```bash
-   ~/.local/bin/chatqt
+   ~/.local/bin/qtchater
    ```
-   Or search for "ChatQT" in your application launcher.
+   Or search for "qtchater" in your application launcher.
 
 ### System-wide Installation
 
@@ -65,5 +65,27 @@ cmake --build build -j
 
 Run directly from build directory:
 ```bash
-./build/bin/chatqt
+./build/bin/qtchater
 ```
+
+### Packages (.deb / .rpm)
+
+```bash
+cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
+cmake --build build
+cd build
+cpack -G "DEB;RPM"   # or a single one: cpack -G DEB / cpack -G RPM
+```
+
+The packages install `/usr/bin/qtchater`, the desktop entry in
+`/usr/share/applications`, the icon in `/usr/share/icons/hicolor`, the AppStream
+metadata and the translations, so the app shows up in the application menu and
+can be started as `qtchater` from anywhere.
+
+Generating a `.deb` needs `dpkg-shlibdeps` (Debian/Ubuntu) and generating a
+`.rpm` needs `rpmbuild` (Fedora/openSUSE); each one is best built on its own
+distribution. `dnf install -y rpm-build` or `apt install -y dpkg-dev`.
+
+The CI workflow `.github/workflows/release.yml` does this every day and
+publishes the packages as a GitHub release, but only when something changed
+since the previous release.

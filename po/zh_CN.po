@@ -1,14 +1,14 @@
-# Simplified Chinese translation for chatqt.
+# Simplified Chinese translation for qtchater.
 # Copyright (C) 2026 KodeRoots
-# This file is distributed under the same license as the chatqt package.
+# This file is distributed under the same license as the qtchater package.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: chatqt\n"
+"Project-Id-Version: qtchater\n"
 "Report-Msgid-Bugs-To: https://github.com/KodeRoots/ChatQT/issues\n"
 "POT-Creation-Date: 2026-10-04 10:00+0800\n"
 "PO-Revision-Date: 2026-10-04 10:00+0800\n"
-"Last-Translator: ChatQT <noreply@koderoots.org>\n"
+"Last-Translator: qtchater <noreply@koderoots.org>\n"
 "Language-Team: Chinese (Simplified)\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -113,11 +113,11 @@ msgstr "新实例"
 
 msgctxt "@info"
 msgid ""
-"To use OpenClaw with ChatQT, you must enable the OpenAI-compatible Chat "
+"To use OpenClaw with qtchater, you must enable the OpenAI-compatible Chat "
 "Completions endpoint in OpenClaw.\n"
 "The easiest way to do this is asking OpenClaw to do so."
 msgstr ""
-"要在 ChatQT 中使用 OpenClaw，必须在 OpenClaw 中启用兼容 OpenAI 的 Chat "
+"要在 qtchater 中使用 OpenClaw，必须在 OpenClaw 中启用兼容 OpenAI 的 Chat "
 "Completions 端点。\n"
 "最简单的方法是直接让 OpenClaw 去启用。"
 
@@ -695,8 +695,8 @@ msgid "Copy"
 msgstr "复制"
 
 #: src/qml/Main.qml
-msgid "ChatQT"
-msgstr "ChatQT"
+msgid "qtchater"
+msgstr "qtchater"
 
 msgid "Disable auto scroll"
 msgstr "禁用自动滚动"
@@ -707,8 +707,8 @@ msgstr "关于"
 
 #: src/main.cpp
 msgctxt "@title"
-msgid "ChatQT"
-msgstr "ChatQT"
+msgid "qtchater"
+msgstr "qtchater"
 
 msgid "A simple AI chat client for OpenAI-compatible providers"
 msgstr "一个简单、面向 OpenAI 兼容服务商的 AI 聊天客户端"

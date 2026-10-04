@@ -1,24 +1,23 @@
 name: Release
 
-# Creates a git tag and a GitHub release whenever the version declared in
-# CMakeLists.txt (project(<name> VERSION X.Y.Z)) does not have a matching tag
-# on the remote yet. Release notes are extracted from the <release> entry of
-# the *.metainfo.xml file at the repository root.
+# Builds Linux packages once a day and publishes them as a GitHub release.
+# Nothing is released when there are no commits since the previous release, so
+# an unchanged project stays quiet. Can also be started by hand from the
+# Actions tab, optionally forcing a release.
 #
-# Reusable in any project following the same convention:
-#   - version in the root CMakeLists.txt: project(foo VERSION X.Y.Z)
-#   - changelog in a root *.metainfo.xml: <release version="X.Y.Z">...
-# Just copy this file. Adjust TAG_PREFIX below if the project tags releases
-# with a prefix (e.g. "v1.2.3").
+# The version of a daily release is "<project version>.<YYYYMMDD>", taken from
+# the project() line in the root CMakeLists.txt.
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - CMakeLists.txt
-      - .github/workflows/release.yml
+  schedule:
+    # Every day at 03:23 UTC.
+    - cron: "23 3 * * *"
   workflow_dispatch:
+    inputs:
+      force:
+        description: Release even when nothing changed
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -27,111 +26,222 @@ concurrency:
   group: release
   cancel-in-progress: false
 
-env:
-  TAG_PREFIX: ""
-
 jobs:
-  release:
-    name: Tag and release
+  check:
+    name: Check for changes
     runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.check.outputs.changed }}
+      version: ${{ steps.check.outputs.version }}
+      tag: ${{ steps.check.outputs.tag }}
+      notes: ${{ steps.check.outputs.notes }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Read version from CMakeLists.txt
-        id: project
-        run: |
-          VERSION=$(grep -m1 -oP 'project\s*\(\s*[A-Za-z0-9_]+\s+VERSION\s+\K[0-9]+(\.[0-9]+)*' CMakeLists.txt)
-          CMAKE_NAME=$(grep -m1 -oP 'project\s*\(\s*\K[A-Za-z0-9_]+' CMakeLists.txt)
-          if [[ -z "${VERSION}" ]]; then
-            echo "::error::Could not find 'project(<name> VERSION X.Y.Z)' in CMakeLists.txt"
-            exit 1
-          fi
-          echo "version=${VERSION}" >> "${GITHUB_OUTPUT}"
-          echo "name=${CMAKE_NAME}" >> "${GITHUB_OUTPUT}"
-          echo "Project version: ${VERSION} (${CMAKE_NAME})"
-
-      - name: Check if tag already exists
+      - name: Look for commits since the last release
         id: check
         env:
-          VERSION: ${{ steps.project.outputs.version }}
+          FORCE: ${{ inputs.force }}
         run: |
-          TAG="${TAG_PREFIX}${VERSION}"
-          if git rev-parse -q --verify "refs/tags/${TAG}" > /dev/null; then
-            echo "exists=true" >> "${GITHUB_OUTPUT}"
-            echo "::notice::Tag ${TAG} already exists, nothing to do."
+          set -euo pipefail
+
+          git fetch --tags --force
+
+          base_version=$(grep -m1 -oP 'project\s*\(\s*[A-Za-z0-9_]+\s+VERSION\s+\K[0-9]+(\.[0-9]+)*' CMakeLists.txt)
+          last_tag=$(git describe --tags --abbrev=0 --match 'v*' 2>/dev/null || true)
+
+          if [ -n "${last_tag}" ]; then
+            range="${last_tag}..HEAD"
           else
-            echo "exists=false" >> "${GITHUB_OUTPUT}"
-            echo "Tag ${TAG} does not exist yet, a release will be created."
+            range="HEAD"
+          fi
+          count=$(git rev-list --count "${range}")
+
+          echo "Project version: ${base_version}"
+          echo "Previous release: ${last_tag:-<none>}"
+          echo "Commits since then: ${count}"
+
+          if [ "${count}" -eq 0 ] && [ "${FORCE:-false}" != "true" ]; then
+            echo "changed=false" >> "${GITHUB_OUTPUT}"
+            echo "::notice::Nothing changed since ${last_tag}, nothing to release."
+            exit 0
           fi
 
-      - name: Extract release notes from metainfo.xml
-        id: notes
-        if: steps.check.outputs.exists == 'false'
-        env:
-          VERSION: ${{ steps.project.outputs.version }}
+          version="${base_version}.$(date -u +%Y%m%d)"
+          tag="v${version}"
+          if git rev-parse -q --verify "refs/tags/${tag}" > /dev/null; then
+            # A release was already published today, keep the tag unique.
+            version="${version}.${GITHUB_RUN_NUMBER}"
+            tag="v${version}"
+          fi
+
+          {
+            echo "changed=true"
+            echo "version=${version}"
+            echo "tag=${tag}"
+          } >> "${GITHUB_OUTPUT}"
+
+          {
+            echo "notes<<NOTES_EOF"
+            echo "Automated Linux package build ${version}."
+            echo
+            if [ -n "${last_tag}" ]; then
+              echo "Changes since ${last_tag}:"
+              echo
+              git log --no-merges --pretty='- %s (%h)' "${range}"
+            else
+              echo "Commits:"
+              echo
+              git log --no-merges --pretty='- %s (%h)' -n 40 HEAD
+            fi
+            echo "NOTES_EOF"
+          } >> "${GITHUB_OUTPUT}"
+
+          echo "::notice::Releasing ${tag}"
+
+  deb:
+    name: Build .deb
+    needs: check
+    if: needs.check.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+    container:
+      image: debian:trixie
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install build dependencies
         run: |
-          python3 << 'PYEOF'
-          import glob
-          import os
-          import sys
-          import xml.etree.ElementTree as ET
+          set -eux
+          apt-get update
+          apt-get install -y --no-install-recommends \
+            build-essential cmake ninja-build git gettext extra-cmake-modules \
+            qt6-base-dev qt6-declarative-dev \
+            libkf6coreaddons-dev libkf6i18n-dev libkf6kirigami-dev \
+            libkf6config-dev libkf6crash-dev
+          # Kirigami Addons is packaged under different names across releases.
+          apt-get install -y --no-install-recommends kirigami-addons-dev \
+            || apt-get install -y --no-install-recommends libkf6kirigami-addons-dev
 
-          version = os.environ["VERSION"]
+      - name: Collect QML module dependencies
+        id: qml
+        run: |
+          set -eu
+          depends=""
+          for package in \
+            qml6-module-org-kde-kirigami \
+            qml6-module-org-kde-kirigamiaddons-formcard \
+            qml6-module-org-kde-ki18n \
+            qml6-module-org-kde-qqc2desktopstyle \
+            qml6-module-qtquick \
+            qml6-module-qtquick-controls \
+            qml6-module-qtquick-layouts \
+            qml6-module-qtquick-templates \
+            qml6-module-qtquick-window \
+            qml6-module-qtqml-workerscript \
+            qml6-module-qt-labs-platform ; do
+            if apt-cache show "${package}" > /dev/null 2>&1; then
+              depends="${depends:+${depends}, }${package}"
+            else
+              echo "::warning::No package named ${package} here, skipping it."
+            fi
+          done
+          echo "depends=${depends}" >> "${GITHUB_OUTPUT}"
+          echo "QML dependencies: ${depends}"
 
-          files = glob.glob("*.metainfo.xml")
-          if not files:
-              print("::error::No *.metainfo.xml file found at the repository root")
-              sys.exit(1)
+      - name: Configure, build and package
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: |
+          set -eux
+          cmake -S . -B build -G Ninja \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DCMAKE_INSTALL_PREFIX=/usr \
+            -DQTCHATER_PACKAGE_VERSION="${{ needs.check.outputs.version }}" \
+            -DQTCHATER_DEBIAN_EXTRA_DEPENDS="${{ steps.qml.outputs.depends }}"
+          cmake --build build
+          timeout 15 ./build/bin/qtchater || [ $? -eq 124 ]
+          cd build
+          cpack -G DEB
+          ls -l ./*.deb
 
-          root = ET.parse(files[0]).getroot()
-          name = (root.findtext("name") or "").strip()
+      - name: Upload .deb
+        uses: actions/upload-artifact@v4
+        with:
+          name: deb-package
+          path: build/*.deb
+          if-no-files-found: error
 
-          items = []
-          found = False
-          for release in root.iter("release"):
-              if release.get("version") != version:
-                  continue
-              found = True
-              description = release.find("description")
-              if description is not None:
-                  for element in description.iter():
-                      if element.tag not in ("p", "li"):
-                          continue
-                      text = " ".join("".join(element.itertext()).split())
-                      if text:
-                          items.append(f"- {text}")
-              break
+  rpm:
+    name: Build .rpm
+    needs: check
+    if: needs.check.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+    container:
+      image: fedora:latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-          if not found:
-              print(f"::error::No <release version=\"{version}\"> entry found in {files[0]}.")
-              print("::error::Add the release changelog to the metainfo file before bumping the version.")
-              sys.exit(1)
+      - name: Install build dependencies
+        run: |
+          set -eux
+          dnf install -y --setopt=install_weak_deps=False \
+            cmake ninja-build gcc-c++ git gettext extra-cmake-modules rpm-build \
+            qt6-qtbase-devel qt6-qtdeclarative-devel qt6-qtsvg-devel \
+            kf6-kcoreaddons-devel kf6-ki18n-devel kf6-kirigami-devel \
+            kf6-kconfig-devel kf6-kcrash-devel kf6-kirigami-addons-devel
 
-          if not items:
-              print(f"::error::<release version=\"{version}\"> in {files[0]} has no <description> paragraphs.")
-              sys.exit(1)
+      - name: Configure, build and package
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: |
+          set -eux
+          cmake -S . -B build -G Ninja \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DCMAKE_INSTALL_PREFIX=/usr \
+            -DQTCHATER_PACKAGE_VERSION="${{ needs.check.outputs.version }}"
+          cmake --build build
+          timeout 15 ./build/bin/qtchater || [ $? -eq 124 ]
+          cd build
+          cpack -G RPM
+          ls -l ./*.rpm
 
-          with open("release_notes.md", "w") as notes_file:
-              notes_file.write("\n".join(items) + "\n")
+      - name: Upload .rpm
+        uses: actions/upload-artifact@v4
+        with:
+          name: rpm-package
+          path: build/*.rpm
+          if-no-files-found: error
 
-          with open(os.environ["GITHUB_OUTPUT"], "a") as output_file:
-              output_file.write(f"name={name}\n")
+  release:
+    name: Publish release
+    needs: [check, deb, rpm]
+    if: needs.check.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download packages
+        uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
 
-          print(f"Extracted {len(items)} changelog item(s) for {version} from {files[0]}")
-          PYEOF
-
-      - name: Create tag and GitHub release
-        if: steps.check.outputs.exists == 'false'
+      - name: Create GitHub release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VERSION: ${{ steps.project.outputs.version }}
-          NAME: ${{ steps.notes.outputs.name || steps.project.outputs.name }}
+          GH_REPO: ${{ github.repository }}
+          TAG: ${{ needs.check.outputs.tag }}
+          VERSION: ${{ needs.check.outputs.version }}
+          NOTES: ${{ needs.check.outputs.notes }}
         run: |
-          TAG="${TAG_PREFIX}${VERSION}"
+          set -eux
+          ls -l dist
+          printf '%s\n' "${NOTES}" > release-notes.md
           gh release create "${TAG}" \
-            --title "${NAME} - Release ${VERSION}" \
-            --notes-file release_notes.md \
-            --target "${GITHUB_SHA}"
+            --title "qtchater ${VERSION}" \
+            --notes-file release-notes.md \
+            --target "${GITHUB_SHA}" \
+            dist/*

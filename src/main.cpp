@@ -20,7 +20,7 @@
 #include <KLocalizedString>
 #include <KCrash>
 
-#include "chatqt_version.h"
+#include "qtchater_version.h"
 #include "sessionstore.h"
 #include "filehelper.h"
 #include "hotreload.h"
@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
     // language switching keeps working even under a C/POSIX locale.
     {
         const QByteArray lcAll = qgetenv("LC_ALL");
-        QSettings storedSettings(QStringLiteral("koderoots.org"), QStringLiteral("chatqt"));
+        QSettings storedSettings(QStringLiteral("vekaris.cn"), QStringLiteral("qtchater"));
         const QString storedLanguage = storedSettings.value(QStringLiteral("Provider/language")).toString();
         const QString startupLanguage = TranslationHelper::normalizeLanguage(storedLanguage);
 
@@ -53,19 +53,19 @@ int main(int argc, char *argv[])
     }
 
     QApplication app(argc, argv);
-    app.setWindowIcon(QIcon::fromTheme(QStringLiteral("org.koderoots.chatqt")));
+    app.setWindowIcon(QIcon::fromTheme(QStringLiteral("cn.vekaris.qtchater")));
 
     KCrash::initialize();
-    KLocalizedString::setApplicationDomain("chatqt");
+    KLocalizedString::setApplicationDomain("qtchater");
 
-#ifdef CHATQT_LOCALE_DIR
+#ifdef QTCHATER_LOCALE_DIR
     // Prefer catalogs next to the executable (e.g. an installed bin/locale dir),
     // otherwise fall back to the build tree used during development.
     const QString executableLocaleDir = QCoreApplication::applicationDirPath() + QStringLiteral("/locale");
     if (QDir(executableLocaleDir).exists()) {
-        KLocalizedString::addDomainLocaleDir("chatqt", executableLocaleDir);
+        KLocalizedString::addDomainLocaleDir("qtchater", executableLocaleDir);
     } else {
-        KLocalizedString::addDomainLocaleDir("chatqt", QStringLiteral(CHATQT_LOCALE_DIR));
+        KLocalizedString::addDomainLocaleDir("qtchater", QStringLiteral(QTCHATER_LOCALE_DIR));
     }
 #endif
     // Select the saved language before the first translatable string is created,
@@ -73,14 +73,14 @@ int main(int argc, char *argv[])
     TranslationHelper::instance();
 
     KAboutData aboutData(
-        QStringLiteral("chatqt"),
-        i18nc("@title", "ChatQT"),
-        QStringLiteral(CHATQT_VERSION_STRING),
+        QStringLiteral("qtchater"),
+        i18nc("@title", "qtchater"),
+        QStringLiteral(QTCHATER_VERSION_STRING),
         i18n("A simple AI chat client for OpenAI-compatible providers"),
         KAboutLicense::LGPL_V2_1,
         i18n("© 2026 KodeRoots"));
     aboutData.setBugAddress("https://github.com/KodeRoots/ChatQT/issues");
-    aboutData.setOrganizationDomain("koderoots.org");
+    aboutData.setOrganizationDomain("vekaris.cn");
     aboutData.addAuthor(
         i18nc("@info:credit", "Denys Madureira"),
         i18nc("@info:credit", "Author"),
@@ -89,7 +89,7 @@ int main(int argc, char *argv[])
     aboutData.setTranslator(
         i18nc("NAME OF TRANSLATORS", "Your names"),
         i18nc("EMAIL OF TRANSLATORS", "Your emails"));
-    aboutData.setDesktopFileName(QStringLiteral("org.koderoots.chatqt"));
+    aboutData.setDesktopFileName(QStringLiteral("cn.vekaris.qtchater"));
     KAboutData::setApplicationData(aboutData);
 
     if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
@@ -100,13 +100,13 @@ int main(int argc, char *argv[])
     KLocalization::setupLocalizedContext(&engine);
     TranslationHelper::instance()->setEngine(&engine);
     engine.rootContext()->setContextProperty(QStringLiteral("experimentalFeaturesEnabled"),
-        !qEnvironmentVariableIsEmpty("CHATQT_ENABLE_EXPERIMENTAL_FEATURES"));
+        !qEnvironmentVariableIsEmpty("QTCHATER_ENABLE_EXPERIMENTAL_FEATURES"));
 
     qWarning() << "About to register SessionStore";
     // Register SessionStore as singleton
-    qmlRegisterSingletonInstance("org.kde.chatqt", 1, 0, "SessionStore", SessionStore::instance());
-    qmlRegisterSingletonInstance("org.kde.chatqt", 1, 0, "FileHelper", FileHelper::instance());
-    qmlRegisterSingletonInstance("org.koderoots.chatqt", 1, 0, "TranslationHelper", TranslationHelper::instance());
+    qmlRegisterSingletonInstance("cn.vekaris.qtchater", 1, 0, "SessionStore", SessionStore::instance());
+    qmlRegisterSingletonInstance("cn.vekaris.qtchater", 1, 0, "FileHelper", FileHelper::instance());
+    qmlRegisterSingletonInstance("cn.vekaris.qtchater", 1, 0, "TranslationHelper", TranslationHelper::instance());
     qWarning() << "SessionStore registered";
 
     QObject::connect(&engine, &QQmlApplicationEngine::warnings, [](const QList<QQmlError> &warnings) {
@@ -139,7 +139,7 @@ int main(int argc, char *argv[])
             hotReload->setWindow(window);
         }
     } else {
-        engine.loadFromModule("org.koderoots.chatqt", "Main");
+        engine.loadFromModule("cn.vekaris.qtchater", "Main");
 
         qWarning() << "Root objects:" << engine.rootObjects().size();
 

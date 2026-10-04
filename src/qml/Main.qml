@@ -8,7 +8,7 @@ import QtQuick.Controls as Controls
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.coreaddons
-import org.koderoots.chatqt
+import cn.vekaris.qtchater
 
 Kirigami.ApplicationWindow {
     id: root
@@ -20,7 +20,7 @@ Kirigami.ApplicationWindow {
     minimumHeight: Kirigami.Units.gridUnit * 40
 
     globalDrawer: Kirigami.GlobalDrawer {
-        title: i18n("ChatQT")
+        title: i18n("qtchater")
         titleIcon: "dialog-messages"
         isMenu: true
 

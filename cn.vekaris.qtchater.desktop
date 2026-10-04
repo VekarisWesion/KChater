@@ -2,9 +2,9 @@
 # SPDX-License-Identifier: CC0-1.0
 
 [Desktop Entry]
-Name=ChatQT
-Exec=chatqt
-Icon=org.koderoots.chatqt
+Name=qtchater
+Exec=qtchater
+Icon=cn.vekaris.qtchater
 Type=Application
 Terminal=false
 Categories=Network;Chat;KDE;

@@ -7,8 +7,8 @@ import QtQuick
 import QtQuick.Controls as Controls
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
-import org.kde.chatqt
-import org.koderoots.chatqt
+import cn.vekaris.qtchater
+import cn.vekaris.qtchater
 
 Kirigami.Page {
     id: root

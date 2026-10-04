@@ -16,8 +16,8 @@ namespace
 constexpr QLatin1String SettingsKey("Provider/language");
 constexpr QLatin1String DefaultLanguage("en_US");
 // Matches KAboutData's organization domain and component name.
-constexpr QLatin1String SettingsOrganization("koderoots.org");
-constexpr QLatin1String SettingsApplication("chatqt");
+constexpr QLatin1String SettingsOrganization("vekaris.cn");
+constexpr QLatin1String SettingsApplication("qtchater");
 }
 
 TranslationHelper::TranslationHelper(QObject *parent)

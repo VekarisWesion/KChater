@@ -1,14 +1,14 @@
 set(QT_QML_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/src)
 
-add_executable(chatqt)
+add_executable(qtchater)
 
-ecm_add_qml_module(chatqt
-    URI org.koderoots.chatqt
+ecm_add_qml_module(qtchater
+    URI cn.vekaris.qtchater
 )
 
 qt_policy(SET QTP0001 NEW)
 
-target_sources(chatqt
+target_sources(qtchater
     PRIVATE
     main.cpp
     sessionstore.cpp
@@ -17,7 +17,7 @@ target_sources(chatqt
     translationhelper.cpp
 )
 
-ecm_target_qml_sources(chatqt
+ecm_target_qml_sources(qtchater
     SOURCES
     qml/Main.qml
     qml/pages/ChatPage.qml
@@ -41,7 +41,7 @@ ecm_target_qml_sources(chatqt
     qml/logic/McpClient.js
 )
 
-target_link_libraries(chatqt PRIVATE
+target_link_libraries(qtchater PRIVATE
     Qt6::Core
     Qt6::Quick
     Qt6::Qml
@@ -60,12 +60,12 @@ target_link_libraries(chatqt PRIVATE
 # Fedora's kf6-ki18n-devel ships libKF6I18nQml.so and the KLocalizedQmlContext
 # header without a CMake package config, so link the library directly.
 find_library(KF6I18NQML_LIBRARY NAMES KF6I18nQml REQUIRED)
-target_link_libraries(chatqt PRIVATE ${KF6I18NQML_LIBRARY})
+target_link_libraries(qtchater PRIVATE ${KF6I18NQML_LIBRARY})
 
-target_include_directories(chatqt PRIVATE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_BINARY_DIR})
+target_include_directories(qtchater PRIVATE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_BINARY_DIR})
 
-target_compile_definitions(chatqt PRIVATE
-    CHATQT_LOCALE_DIR="${CHATQT_LOCALE_BUILD_DIR}"
+target_compile_definitions(qtchater PRIVATE
+    QTCHATER_LOCALE_DIR="${QTCHATER_LOCALE_BUILD_DIR}"
 )
 
-install(TARGETS chatqt ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS qtchater ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

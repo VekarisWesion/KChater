@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-  <id>org.koderoots.chatqt</id>
+  <id>cn.vekaris.qtchater</id>
 
-  <name>ChatQT</name>
+  <name>qtchater</name>
   <summary>A simple AI chat client for OpenAI-compatible providers</summary>
 
   <developer id="org.koderoots">
     <name>Denys Madureira</name>
   </developer>
 
-  <launchable type="desktop-id">org.koderoots.chatqt.desktop</launchable>
+  <launchable type="desktop-id">cn.vekaris.qtchater.desktop</launchable>
 
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-3.0-or-later</project_license>
@@ -27,7 +27,7 @@
 
   <description>
     <p>
-      ChatQT is a native KDE application that provides a simple and intuitive interface for
+      qtchater is a native KDE application that provides a simple and intuitive interface for
       chatting with AI models via OpenAI-compatible APIs.
     </p>
     <p>
@@ -46,15 +46,15 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>https://kaftnndedwgveoywpzyl.supabase.co/storage/v1/object/public/flathub/chatqt/1.1.0/MainWindow.png</image>
-      <caption>ChatQT main window</caption>
+      <image>https://kaftnndedwgveoywpzyl.supabase.co/storage/v1/object/public/flathub/qtchater/1.1.0/MainWindow.png</image>
+      <caption>qtchater main window</caption>
     </screenshot>
     <screenshot>
-      <image>https://kaftnndedwgveoywpzyl.supabase.co/storage/v1/object/public/flathub/chatqt/1.1.0/SettingsMCPs.png</image>
+      <image>https://kaftnndedwgveoywpzyl.supabase.co/storage/v1/object/public/flathub/qtchater/1.1.0/SettingsMCPs.png</image>
       <caption>MCP servers settings</caption>
     </screenshot>
     <screenshot>
-      <image>https://kaftnndedwgveoywpzyl.supabase.co/storage/v1/object/public/flathub/chatqt/1.1.0/SettingsOpenAICompatible.png</image>
+      <image>https://kaftnndedwgveoywpzyl.supabase.co/storage/v1/object/public/flathub/qtchater/1.1.0/SettingsOpenAICompatible.png</image>
       <caption>OpenAI Compatible settings</caption>
     </screenshot>
   </screenshots>
@@ -68,7 +68,7 @@
   <releases>
     <release version="1.1.0" date="2026-05-26">
       <description>
-        <p>Refocusing release. ChatQT had drifted from its original goal of being a simple chat assistant. This version realigns the project with its core purpose, removing features that belong in coding agents — not chat clients — and ensuring cleaner, more maintainable code.</p>
+        <p>Refocusing release. qtchater had drifted from its original goal of being a simple chat assistant. This version realigns the project with its core purpose, removing features that belong in coding agents — not chat clients — and ensuring cleaner, more maintainable code.</p>
         <ul>
           <li>Removed coding agent features (OpenCode, Pi process managers, SkillScanner, AGENTS.md loader) that were outside the app's chat assistant scope</li>
           <li>Removed stdio MCP server support and built-in MCP defaults (bash-mcp, filesystem) which required flatpak-spawn — only remote (Streamable HTTP) MCP servers remain</li>
@@ -97,7 +97,7 @@
     </release>
     <release version="1.0.0" date="2026-05-23">
       <description>
-        <p>Initial stable release of ChatQT, a native AI chat client for KDE Plasma built with Qt6, QML, and Kirigami.</p>
+        <p>Initial stable release of qtchater, a native AI chat client for KDE Plasma built with Qt6, QML, and Kirigami.</p>
         <ul>
           <li>Connect to Ollama with automatic model discovery</li>
           <li>Connect to any OpenAI-compatible API with multi-provider support</li>

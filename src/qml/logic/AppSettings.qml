@@ -5,7 +5,7 @@
 
 import QtQuick
 import QtCore
-import org.kde.chatqt
+import cn.vekaris.qtchater
 import "HumanizerSoul.js" as HumanizerSoul
 
 QtObject {
@@ -75,7 +75,7 @@ QtObject {
             }
             return openaiCompatibleModel || "OpenAI"
         }
-        return "ChatQT"
+        return "qtchater"
     }
 
     function generateUuid() {

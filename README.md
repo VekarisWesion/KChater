@@ -1,7 +1,7 @@
 <div align="center">
-  <img src="resources/icons/org.koderoots.chatqt.svg" width="128" height="128" alt="ChatQT Icon"/>
+  <img src="resources/icons/cn.vekaris.qtchater.svg" width="128" height="128" alt="qtchater Icon"/>
 
-  # ChatQT
+  # qtchater
 
   **A native AI chat client for the KDE Plasma desktop**
 
@@ -13,7 +13,7 @@
 
 ## About
 
-ChatQT is a native KDE Plasma application for chatting with AI models. Built with Qt6/QML and Kirigami, it integrates seamlessly into the KDE desktop with a system tray icon, native look and feel, and Plasma-style dialogs.
+qtchater is a native KDE Plasma application for chatting with AI models. Built with Qt6/QML and Kirigami, it integrates seamlessly into the KDE desktop with a native look and feel and Plasma-style dialogs.
 
 ## Features
 
@@ -49,7 +49,7 @@ ChatQT is a native KDE Plasma application for chatting with AI models. Built wit
 
 ### Desktop Integration
 
-- **System tray** — Minimizes to system tray, click to toggle visibility
+- **Packages** — Daily .deb and .rpm builds, installable as `qtchater`
 - **Flatpak support** — Available as a Flatpak with proper sandboxing utilities
 
 ## Screenshots
@@ -78,24 +78,24 @@ For build instructions, see [BUILD.md](BUILD.md).
 
 ### Flatpak
 
-A Flatpak manifest is available at `org.koderoots.chatqt.json`.
+A Flatpak manifest is available at `cn.vekaris.qtchater.json`.
 
 ## Experimental Features
 
-ChatQT includes experimental features that are disabled by default. These features are functional but may have rough edges, change between releases, or lack full polish.
+qtchater includes experimental features that are disabled by default. These features are functional but may have rough edges, change between releases, or lack full polish.
 
 ### Enabling Experimental Features
 
 Set the environment variable before launching:
 
 ```bash
-CHATQT_ENABLE_EXPERIMENTAL_FEATURES=1 chatqt
+QTCHATER_ENABLE_EXPERIMENTAL_FEATURES=1 qtchater
 ```
 
 Or for development builds:
 
 ```bash
-CHATQT_ENABLE_EXPERIMENTAL_FEATURES=1 ./build/bin/chatqt
+QTCHATER_ENABLE_EXPERIMENTAL_FEATURES=1 ./build/bin/qtchater
 ```
 
 Once enabled, new provider options appear in **Settings → General**.
@@ -105,7 +105,7 @@ Once enabled, new provider options appear in **Settings → General**.
 | Provider | Description |
 |----------|-------------|
 | **OpenClaw** | Connect to OpenClaw agent instances. Supports multiple instances with URL/token configuration and connection testing. Requires the OpenAI-compatible Chat Completions endpoint enabled in OpenClaw. |
-| **OpenCode** | Manages an OpenCode server process directly from ChatQT. Configure the binary path, auto-detect, start/stop/restart, set host/port, and view server logs. Supports auto-start on launch and auto-restart on crash (up to 3 attempts). |
+| **OpenCode** | Manages an OpenCode server process directly from qtchater. Configure the binary path, auto-detect, start/stop/restart, set host/port, and view server logs. Supports auto-start on launch and auto-restart on crash (up to 3 attempts). |
 | **Pi** | Connects to a Pi coding agent via RPC mode (stdin/stdout JSONL protocol). Configure the binary path, auto-detect, start/stop, and view logs. Supports auto-start when Pi is the active provider. |
 
 ## License
