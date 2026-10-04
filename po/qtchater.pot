@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: qtchater\n"
 "Report-Msgid-Bugs-To: https://github.com/VekarisWesion/QtChater/issues\n"
-"POT-Creation-Date: 2026-10-04 11:28+0800\n"
+"POT-Creation-Date: 2026-10-04 14:46+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -132,47 +132,47 @@ msgctxt "@info"
 msgid "%1 tool(s) available"
 msgstr ""
 
-#: src/qml/components/MessageInput.qml:88
+#: src/qml/components/MessageInput.qml:103
 msgid "Remove attachment"
 msgstr ""
 
-#: src/qml/components/MessageInput.qml:137
+#: src/qml/components/MessageInput.qml:152
 msgid "Type your message..."
 msgstr ""
 
-#: src/qml/components/MessageInput.qml:182
+#: src/qml/components/MessageInput.qml:187
 msgid "Attach files"
 msgstr ""
 
-#: src/qml/components/MessageInput.qml:207
+#: src/qml/components/MessageInput.qml:212
 msgid "Could not attach %1: %2"
 msgstr ""
 
-#: src/qml/components/MessageInput.qml:227
+#: src/qml/components/MessageInput.qml:232
 msgid "Stop"
 msgstr ""
 
-#: src/qml/components/MessageInput.qml:227
+#: src/qml/components/MessageInput.qml:232
 msgid "Cancel"
 msgstr ""
 
-#: src/qml/components/MessageInput.qml:227
+#: src/qml/components/MessageInput.qml:232
 msgid "Send"
 msgstr ""
 
-#: src/qml/components/MessageInput.qml:235
-msgid "Stop streaming (Ctrl+Enter)"
+#: src/qml/components/MessageInput.qml:240
+msgid "Stop streaming (Enter)"
 msgstr ""
 
-#: src/qml/components/MessageInput.qml:235
-msgid "Cancel request (Ctrl+Enter)"
+#: src/qml/components/MessageInput.qml:240
+msgid "Cancel request (Enter)"
 msgstr ""
 
-#: src/qml/components/MessageInput.qml:236
-msgid "Send message (Ctrl+Enter)"
+#: src/qml/components/MessageInput.qml:241
+msgid "Send message (Enter)"
 msgstr ""
 
-#: src/qml/components/MessageInput.qml:253
+#: src/qml/components/MessageInput.qml:258
 msgid "Configure a provider to start chatting"
 msgstr ""
 

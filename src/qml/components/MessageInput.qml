@@ -26,6 +26,21 @@ RowLayout {
 
     spacing: Kirigami.Units.smallSpacing
 
+    // Enter sends the message, Ctrl+Enter (or Shift+Enter) inserts a newline.
+    function handleReturnKey(event) {
+        if (event.modifiers & (Qt.ControlModifier | Qt.ShiftModifier)) {
+            // Let the TextArea handle it, which inserts a line break.
+            event.accepted = false
+            return
+        }
+        if (root.isLoading) {
+            root.cancelOrStop()
+        } else {
+            root.sendCurrentMessage()
+        }
+        event.accepted = true
+    }
+
     function sendCurrentMessage() {
         root.sendMessage(messageField.text, root.attachedFiles)
         messageField.text = ""
@@ -142,18 +157,8 @@ RowLayout {
                     bottomPadding: Kirigami.Units.smallSpacing
                     background: null
 
-                    Keys.onReturnPressed: {
-                        if (event.modifiers & Qt.ControlModifier) {
-                            if (root.isLoading) {
-                                root.cancelOrStop()
-                                event.accepted = true
-                            } else {
-                                root.sendCurrentMessage()
-                            }
-                        } else {
-                            event.accepted = false;
-                        }
-                    }
+                    Keys.onReturnPressed: root.handleReturnKey(event)
+                    Keys.onEnterPressed: root.handleReturnKey(event)
 
                     Controls.BusyIndicator {
                         anchors.centerIn: parent
@@ -232,8 +237,8 @@ RowLayout {
         display: Controls.AbstractButton.IconOnly
 
         Controls.ToolTip.text: root.isLoading
-            ? (root.isStreaming ? i18n("Stop streaming (Ctrl+Enter)") : i18n("Cancel request (Ctrl+Enter)"))
-            : i18n("Send message (Ctrl+Enter)")
+            ? (root.isStreaming ? i18n("Stop streaming (Enter)") : i18n("Cancel request (Enter)"))
+            : i18n("Send message (Enter)")
         Controls.ToolTip.delay: Kirigami.Units.toolTipDelay
         Controls.ToolTip.visible: hovered
 
