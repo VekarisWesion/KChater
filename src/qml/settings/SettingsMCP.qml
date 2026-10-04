@@ -9,8 +9,8 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
-import cn.vekaris.qtchater
-import cn.vekaris.qtchater
+import cn.vekaris.kchater
+import cn.vekaris.kchater
 
 Kirigami.ScrollablePage {
     id: root

@@ -4,7 +4,7 @@
     SPDX-FileContributor: VekarisWesion <vekaris@zohomail.com>
     SPDX-License-Identifier: LGPL-2.1-or-later
 
-    Modifications for QtChater (rename, translations, packaging) made in 2026.
+    Modifications for KChater (rename, translations, packaging) made in 2026.
 */
 
 #include <QApplication>
@@ -24,7 +24,7 @@
 #include <KLocalizedString>
 #include <KCrash>
 
-#include "qtchater_version.h"
+#include "kchater_version.h"
 #include "sessionstore.h"
 #include "filehelper.h"
 #include "hotreload.h"
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
     // language switching keeps working even under a C/POSIX locale.
     {
         const QByteArray lcAll = qgetenv("LC_ALL");
-        QSettings storedSettings(QStringLiteral("vekaris.cn"), QStringLiteral("qtchater"));
+        QSettings storedSettings(QStringLiteral("vekaris.cn"), QStringLiteral("kchater"));
         const QString storedLanguage = storedSettings.value(QStringLiteral("Provider/language")).toString();
         const QString startupLanguage = TranslationHelper::normalizeLanguage(storedLanguage);
 
@@ -57,19 +57,19 @@ int main(int argc, char *argv[])
     }
 
     QApplication app(argc, argv);
-    app.setWindowIcon(QIcon::fromTheme(QStringLiteral("cn.vekaris.qtchater")));
+    app.setWindowIcon(QIcon::fromTheme(QStringLiteral("cn.vekaris.kchater")));
 
     KCrash::initialize();
-    KLocalizedString::setApplicationDomain("qtchater");
+    KLocalizedString::setApplicationDomain("kchater");
 
-#ifdef QTCHATER_LOCALE_DIR
+#ifdef KCHATER_LOCALE_DIR
     // Prefer catalogs next to the executable (e.g. an installed bin/locale dir),
     // otherwise fall back to the build tree used during development.
     const QString executableLocaleDir = QCoreApplication::applicationDirPath() + QStringLiteral("/locale");
     if (QDir(executableLocaleDir).exists()) {
-        KLocalizedString::addDomainLocaleDir("qtchater", executableLocaleDir);
+        KLocalizedString::addDomainLocaleDir("kchater", executableLocaleDir);
     } else {
-        KLocalizedString::addDomainLocaleDir("qtchater", QStringLiteral(QTCHATER_LOCALE_DIR));
+        KLocalizedString::addDomainLocaleDir("kchater", QStringLiteral(KCHATER_LOCALE_DIR));
     }
 #endif
     // Select the saved language before the first translatable string is created,
@@ -77,14 +77,15 @@ int main(int argc, char *argv[])
     TranslationHelper::instance();
 
     KAboutData aboutData(
-        QStringLiteral("qtchater"),
-        i18nc("@title", "QtChater"),
-        QStringLiteral(QTCHATER_VERSION_STRING),
+        QStringLiteral("kchater"),
+        i18nc("@title", "KChater"),
+        QStringLiteral(KCHATER_VERSION_STRING),
         i18n("A simple AI chat client for OpenAI-compatible providers"),
         KAboutLicense::GPL_V3,
-        i18n("© 2024–2026 Denys Madureira\n© 2026 VekarisWesion (QtChater modifications)"));
-    aboutData.setLicenseText(i18n("QtChater is distributed under the GNU General Public License, version 3 or later (GPL-3.0-or-later). Individual source files carry an LGPL-2.1-or-later notice."));
-    aboutData.setBugAddress("https://github.com/VekarisWesion/QtChater/issues");
+        i18n("© 2024–2026 Denys Madureira\n© 2026 VekarisWesion (KChater modifications)"));
+    aboutData.setLicenseText(i18n("KChater is distributed under the GNU General Public License, version 3 or later (GPL-3.0-or-later). Individual source files carry an LGPL-2.1-or-later notice."));
+    aboutData.setOtherText(i18n("KChater is an independent project. It is not affiliated with, endorsed by, or sponsored by KDE e.V. \"KDE\" and \"Plasma\" are trademarks of KDE e.V., used here only to describe what the application is built for. Qt is a trademark of The Qt Company Ltd."));
+    aboutData.setBugAddress("https://github.com/VekarisWesion/KChater/issues");
     aboutData.setOrganizationDomain("vekaris.cn");
     aboutData.addAuthor(
         i18nc("@info:credit", "Denys Madureira"),
@@ -93,13 +94,13 @@ int main(int argc, char *argv[])
         QStringLiteral("https://denysmadureira.dev"));
     aboutData.addAuthor(
         i18nc("@info:credit", "VekarisWesion"),
-        i18nc("@info:credit", "QtChater fork and maintenance"),
+        i18nc("@info:credit", "KChater fork and maintenance"),
         QStringLiteral("vekaris@zohomail.com"),
         QStringLiteral("https://vekaris.cn"));
     aboutData.setTranslator(
         i18nc("NAME OF TRANSLATORS", "Your names"),
         i18nc("EMAIL OF TRANSLATORS", "Your emails"));
-    aboutData.setDesktopFileName(QStringLiteral("cn.vekaris.qtchater"));
+    aboutData.setDesktopFileName(QStringLiteral("cn.vekaris.kchater"));
     KAboutData::setApplicationData(aboutData);
 
     if (qEnvironmentVariableIsEmpty("QT_QUICK_CONTROLS_STYLE")) {
@@ -110,13 +111,13 @@ int main(int argc, char *argv[])
     KLocalization::setupLocalizedContext(&engine);
     TranslationHelper::instance()->setEngine(&engine);
     engine.rootContext()->setContextProperty(QStringLiteral("experimentalFeaturesEnabled"),
-        !qEnvironmentVariableIsEmpty("QTCHATER_ENABLE_EXPERIMENTAL_FEATURES"));
+        !qEnvironmentVariableIsEmpty("KCHATER_ENABLE_EXPERIMENTAL_FEATURES"));
 
     qWarning() << "About to register SessionStore";
     // Register SessionStore as singleton
-    qmlRegisterSingletonInstance("cn.vekaris.qtchater", 1, 0, "SessionStore", SessionStore::instance());
-    qmlRegisterSingletonInstance("cn.vekaris.qtchater", 1, 0, "FileHelper", FileHelper::instance());
-    qmlRegisterSingletonInstance("cn.vekaris.qtchater", 1, 0, "TranslationHelper", TranslationHelper::instance());
+    qmlRegisterSingletonInstance("cn.vekaris.kchater", 1, 0, "SessionStore", SessionStore::instance());
+    qmlRegisterSingletonInstance("cn.vekaris.kchater", 1, 0, "FileHelper", FileHelper::instance());
+    qmlRegisterSingletonInstance("cn.vekaris.kchater", 1, 0, "TranslationHelper", TranslationHelper::instance());
     qWarning() << "SessionStore registered";
 
     QObject::connect(&engine, &QQmlApplicationEngine::warnings, [](const QList<QQmlError> &warnings) {
@@ -149,7 +150,7 @@ int main(int argc, char *argv[])
             hotReload->setWindow(window);
         }
     } else {
-        engine.loadFromModule("cn.vekaris.qtchater", "Main");
+        engine.loadFromModule("cn.vekaris.kchater", "Main");
 
         qWarning() << "Root objects:" << engine.rootObjects().size();
 

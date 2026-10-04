@@ -1,7 +1,7 @@
 <div align="center">
-  <img src="resources/icons/cn.vekaris.qtchater.svg" width="128" height="128" alt="QtChater icon"/>
+  <img src="resources/icons/cn.vekaris.kchater.svg" width="128" height="128" alt="KChater icon"/>
 
-  # QtChater
+  # KChater
 
   **A native AI chat client for the KDE Plasma desktop**
 
@@ -14,13 +14,19 @@
 
 ## About
 
-QtChater is a native KDE Plasma application for chatting with AI models. Built with Qt6/QML and Kirigami, it integrates seamlessly into the KDE desktop with a native look and feel and Plasma-style dialogs.
+KChater is a native KDE Plasma application for chatting with AI models. Built with Qt6/QML and Kirigami, it integrates seamlessly into the KDE desktop with a native look and feel and Plasma-style dialogs.
+
+> **Not affiliated with KDE.** KChater is an independent project. It is not
+> affiliated with, endorsed by, or sponsored by KDE e.V. The names "KDE" and
+> "Plasma" are trademarks of KDE e.V. and are used here only to describe what
+> the application is built for. Qt is a trademark of The Qt Company Ltd.
 
 ### How it is pronounced
 
-"Chater" is not a misspelling of "chatter". The `a…e` in it is a long *a*,
-pronounced /eɪ/ as in *later*, so the name reads
-**/ˌkjuːtˈtʃeɪtər/** — "cute-CHAY-ter", not "chatter".
+The leading K stands for KDE and is read as the letter K. "Chater" is not a
+misspelling of "chatter": its `a…e` is a long *a*, pronounced /eɪ/ as in
+*later*. The name therefore reads **/ˌkeɪˈtʃeɪtər/** — "KAY-CHAY-ter", not
+"chatter".
 
 ## Features
 
@@ -58,11 +64,11 @@ pronounced /eɪ/ as in *later*, so the name reads
 ### Desktop Integration
 
 - **Language selection** — English and Simplified Chinese, switchable at runtime from the settings
-- **System-wide install** — The `qtchater` command, the desktop entry and the icon are installed for you
+- **System-wide install** — The `kchater` command, the desktop entry and the icon are installed for you
 
 ## Building from Source
 
-QtChater is developed and tested on **Fedora** with KDE Plasma. The instructions
+KChater is developed and tested on **Fedora** with KDE Plasma. The instructions
 below are for Fedora; see [Other distributions](#other-distributions) if you use
 something else.
 
@@ -81,8 +87,8 @@ pulled in by your Plasma installation.
 ### 2. Clone and build
 
 ```bash
-git clone https://github.com/VekarisWesion/QtChater.git
-cd QtChater
+git clone https://github.com/VekarisWesion/KChater.git
+cd KChater
 
 cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
 cmake --build build
@@ -91,12 +97,12 @@ cmake --build build
 ### 3. Run it
 
 ```bash
-./build/bin/qtchater
+./build/bin/kchater
 ```
 
 ### 4. Install it (optional)
 
-Installing puts `qtchater` on your `PATH` and adds the desktop entry, so you can
+Installing puts `kchater` on your `PATH` and adds the desktop entry, so you can
 start it from the application menu.
 
 User-local install, no root needed:
@@ -107,7 +113,7 @@ cmake --build build
 cmake --install build
 ```
 
-The binary then is `~/.local/bin/qtchater`.
+The binary then is `~/.local/bin/kchater`.
 
 System-wide install:
 
@@ -131,7 +137,7 @@ cpack -G RPM    # Fedora / openSUSE, needs rpm-build
 cpack -G DEB    # Debian / Ubuntu, needs dpkg-dev
 ```
 
-Both packages install `/usr/bin/qtchater`, the desktop entry, the icon and the
+Both packages install `/usr/bin/kchater`, the desktop entry, the icon and the
 translations.
 
 ### Other distributions
@@ -153,19 +159,19 @@ and everything else is installed from this repository.
 |------|------------|
 | `src/` | C++ sources — `main.cpp`, the session store, file helpers, hot reload, the translation helper |
 | `src/qml/` | The entire interface: `Main.qml`, `pages/`, `components/`, `settings/` and the JavaScript in `logic/` |
-| `po/` | Translations — `zh_CN.po`, the generated `qtchater.pot` template and `Messages.sh` to regenerate it |
-| `resources/icons/cn.vekaris.qtchater.svg` | The application icon, used for the window, the taskbar and the menu entry |
-| `cn.vekaris.qtchater.desktop` | Desktop entry template, see below |
+| `po/` | Translations — `zh_CN.po`, the generated `kchater.pot` template and `Messages.sh` to regenerate it |
+| `resources/icons/cn.vekaris.kchater.svg` | The application icon, used for the window, the taskbar and the menu entry |
+| `cn.vekaris.kchater.desktop` | Desktop entry template, see below |
 | `CMakeLists.txt`, `src/CMakeLists.txt` | The build system, including the optional `cpack` packaging |
 | `LICENSE` | GPL-3.0 |
 
 The icon file name, the `Icon=` value in the desktop entry and the
 `QIcon::fromTheme()` call in `src/main.cpp` must stay in sync — they are all the
-same string, `cn.vekaris.qtchater`.
+same string, `cn.vekaris.kchater`.
 
 ### The desktop entry is a template
 
-`cn.vekaris.qtchater.desktop` is a working entry, but treat it as a template
+`cn.vekaris.kchater.desktop` is a working entry, but treat it as a template
 rather than something that has to stay exactly as it is. `cmake --install`
 installs it to `/usr/share/applications/` next to the icon in
 `/usr/share/icons/hicolor/scalable/apps/`, and that pair is what makes the app
@@ -176,28 +182,28 @@ If you rename the application, or build it by hand, copy the file to
 
 | Key | Must match |
 |-----|------------|
-| `Exec` | the installed executable name, `qtchater` |
-| `Icon` | the icon file name without the `.svg` suffix, `cn.vekaris.qtchater` |
-| `Name` | the name shown in the menu, `QtChater` |
+| `Exec` | the installed executable name, `kchater` |
+| `Icon` | the icon file name without the `.svg` suffix, `cn.vekaris.kchater` |
+| `Name` | the name shown in the menu, `KChater` |
 
 Then run `update-desktop-database ~/.local/share/applications` once.
 
 ## Experimental Features
 
-QtChater includes experimental features that are disabled by default. These features are functional but may have rough edges, change between releases, or lack full polish.
+KChater includes experimental features that are disabled by default. These features are functional but may have rough edges, change between releases, or lack full polish.
 
 ### Enabling Experimental Features
 
 Set the environment variable before launching:
 
 ```bash
-QTCHATER_ENABLE_EXPERIMENTAL_FEATURES=1 qtchater
+KCHATER_ENABLE_EXPERIMENTAL_FEATURES=1 kchater
 ```
 
 Or for development builds:
 
 ```bash
-QTCHATER_ENABLE_EXPERIMENTAL_FEATURES=1 ./build/bin/qtchater
+KCHATER_ENABLE_EXPERIMENTAL_FEATURES=1 ./build/bin/kchater
 ```
 
 Once enabled, new provider options appear in **Settings → General**.
@@ -207,12 +213,12 @@ Once enabled, new provider options appear in **Settings → General**.
 | Provider | Description |
 |----------|-------------|
 | **OpenClaw** | Connect to OpenClaw agent instances. Supports multiple instances with URL/token configuration and connection testing. Requires the OpenAI-compatible Chat Completions endpoint enabled in OpenClaw. |
-| **OpenCode** | Manages an OpenCode server process directly from QtChater. Configure the binary path, auto-detect, start/stop/restart, set host/port, and view server logs. Supports auto-start on launch and auto-restart on crash (up to 3 attempts). |
+| **OpenCode** | Manages an OpenCode server process directly from KChater. Configure the binary path, auto-detect, start/stop/restart, set host/port, and view server logs. Supports auto-start on launch and auto-restart on crash (up to 3 attempts). |
 | **Pi** | Connects to a Pi coding agent via RPC mode (stdin/stdout JSONL protocol). Configure the binary path, auto-detect, start/stop, and view logs. Supports auto-start when Pi is the active provider. |
 
 ## License
 
-QtChater is distributed under the **GNU General Public License, version 3 or
+KChater is distributed under the **GNU General Public License, version 3 or
 later** (GPL-3.0-or-later) — see [LICENSE](LICENSE).
 
 Individual files carry their own `SPDX-License-Identifier`. Most of them are
@@ -221,7 +227,7 @@ Individual files carry their own `SPDX-License-Identifier`. Most of them are
 
 ### Modifications
 
-QtChater is a modified version of [ChatQT](https://github.com/KodeRoots/ChatQT)
+KChater is a modified version of [ChatQT](https://github.com/KodeRoots/ChatQT)
 by Denys Madureira, and it keeps every upstream copyright notice. The original
 git history is preserved in this repository.
 

@@ -6,7 +6,7 @@
 
 import QtQuick
 import QtCore
-import cn.vekaris.qtchater
+import cn.vekaris.kchater
 import "HumanizerSoul.js" as HumanizerSoul
 
 QtObject {
@@ -76,7 +76,7 @@ QtObject {
             }
             return openaiCompatibleModel || "OpenAI"
         }
-        return "QtChater"
+        return "KChater"
     }
 
     function generateUuid() {

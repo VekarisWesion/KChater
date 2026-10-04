@@ -1,7 +1,7 @@
 <div align="center">
-  <img src="../resources/icons/cn.vekaris.qtchater.svg" width="128" height="128" alt="QtChater 图标"/>
+  <img src="../resources/icons/cn.vekaris.kchater.svg" width="128" height="128" alt="KChater 图标"/>
 
-  # QtChater
+  # KChater
 
   **为 KDE Plasma 桌面打造的原生 AI 聊天客户端**
 
@@ -14,12 +14,17 @@
 
 ## 简介
 
-QtChater 是一个原生的 KDE Plasma 应用，用于和 AI 模型聊天。它基于 Qt6/QML 和 Kirigami 构建，拥有原生的外观与 Plasma 风格的对话框，可以无缝融入 KDE 桌面。
+KChater 是一个原生的 KDE Plasma 应用，用于和 AI 模型聊天。它基于 Qt6/QML 和 Kirigami 构建，拥有原生的外观与 Plasma 风格的对话框，可以无缝融入 KDE 桌面。
+
+> **与 KDE 无关联。** KChater 是一个独立项目，与 KDE e.V. 没有隶属、背书或赞助关系。
+> 「KDE」与「Plasma」是 KDE e.V. 的商标，此处仅用于说明本程序为哪个桌面环境而做。
+> Qt 是 The Qt Company Ltd. 的商标。
 
 ### 读音说明
 
-"Chater" 并不是 "chatter" 的拼写错误。这里的 `a…e` 发长元音，读 /eɪ/，和 *later* 押韵，所以整个名字读作
-**/ˌkjuːtˈtʃeɪtər/**，近似「cute-CHAY-ter」，而不是「chatter」。
+开头的 K 取自 KDE，读作字母 K 的音。后面的 "Chater" 并不是 "chatter" 的拼写错误：
+这里的 `a…e` 发长元音 /eɪ/，和 *later* 押韵。所以整个名字读作
+**/ˌkeɪˈtʃeɪtər/**，近似「KAY-CHAY-ter」，而不是「chatter」。
 
 ## 功能
 
@@ -57,11 +62,11 @@ QtChater 是一个原生的 KDE Plasma 应用，用于和 AI 模型聊天。它�
 ### 桌面集成
 
 - **语言切换** — 支持英文与简体中文，可在设置中即时切换
-- **全局安装** — 自动安装 `qtchater` 命令、桌面入口与图标
+- **全局安装** — 自动安装 `kchater` 命令、桌面入口与图标
 
 ## 从源码构建
 
-QtChater 在 **Fedora** + KDE Plasma 上开发和测试。下面是 Fedora 的步骤；其他发行版请看 [其他发行版](#其他发行版)。
+KChater 在 **Fedora** + KDE Plasma 上开发和测试。下面是 Fedora 的步骤；其他发行版请看 [其他发行版](#其他发行版)。
 
 ### 1. 安装构建依赖
 
@@ -77,8 +82,8 @@ sudo dnf install cmake ninja-build gcc-c++ extra-cmake-modules gettext \
 ### 2. 拉取源码并构建
 
 ```bash
-git clone https://github.com/VekarisWesion/QtChater.git
-cd QtChater
+git clone https://github.com/VekarisWesion/KChater.git
+cd KChater
 
 cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
 cmake --build build
@@ -87,12 +92,12 @@ cmake --build build
 ### 3. 运行
 
 ```bash
-./build/bin/qtchater
+./build/bin/kchater
 ```
 
 ### 4. 安装（可选）
 
-安装后 `qtchater` 会进入 `PATH`，同时安装桌面入口，可以直接从应用菜单启动。
+安装后 `kchater` 会进入 `PATH`，同时安装桌面入口，可以直接从应用菜单启动。
 
 安装到用户目录（无需 root）：
 
@@ -102,7 +107,7 @@ cmake --build build
 cmake --install build
 ```
 
-可执行文件位于 `~/.local/bin/qtchater`。
+可执行文件位于 `~/.local/bin/kchater`。
 
 全局安装：
 
@@ -125,7 +130,7 @@ cpack -G RPM    # Fedora / openSUSE，需要 rpm-build
 cpack -G DEB    # Debian / Ubuntu，需要 dpkg-dev
 ```
 
-两种包都会安装 `/usr/bin/qtchater`、桌面入口、图标以及翻译文件。
+两种包都会安装 `/usr/bin/kchater`、桌面入口、图标以及翻译文件。
 
 ### 其他发行版
 
@@ -141,44 +146,44 @@ cpack -G DEB    # Debian / Ubuntu，需要 dpkg-dev
 |------|------|
 | `src/` | C++ 源码 —— `main.cpp`、会话存储、文件助手、热重载、翻译辅助 |
 | `src/qml/` | 全部界面：`Main.qml`、`pages/`、`components/`、`settings/`，以及 `logic/` 下的 JavaScript |
-| `po/` | 翻译 —— `zh_CN.po`、生成的 `qtchater.pot` 模板，以及用于重新生成的 `Messages.sh` |
-| `resources/icons/cn.vekaris.qtchater.svg` | 应用图标，窗口、任务栏和菜单项都用它 |
-| `cn.vekaris.qtchater.desktop` | 桌面入口模板，见下 |
+| `po/` | 翻译 —— `zh_CN.po`、生成的 `kchater.pot` 模板，以及用于重新生成的 `Messages.sh` |
+| `resources/icons/cn.vekaris.kchater.svg` | 应用图标，窗口、任务栏和菜单项都用它 |
+| `cn.vekaris.kchater.desktop` | 桌面入口模板，见下 |
 | `CMakeLists.txt`、`src/CMakeLists.txt` | 构建系统，包含可选的 `cpack` 打包 |
 | `LICENSE` | GPL-3.0 |
 
-图标文件名、桌面入口里的 `Icon=`，以及 `src/main.cpp` 里的 `QIcon::fromTheme()` 必须保持一致——它们都是同一个字符串 `cn.vekaris.qtchater`。
+图标文件名、桌面入口里的 `Icon=`，以及 `src/main.cpp` 里的 `QIcon::fromTheme()` 必须保持一致——它们都是同一个字符串 `cn.vekaris.kchater`。
 
 ### 桌面入口是模板
 
-`cn.vekaris.qtchater.desktop` 是一个可用的桌面入口，但请把它当模板看，而不是必须原样保留的东西。`cmake --install` 会把它装到 `/usr/share/applications/`，图标装到 `/usr/share/icons/hicolor/scalable/apps/`，这一对文件才是应用出现在菜单里的原因。
+`cn.vekaris.kchater.desktop` 是一个可用的桌面入口，但请把它当模板看，而不是必须原样保留的东西。`cmake --install` 会把它装到 `/usr/share/applications/`，图标装到 `/usr/share/icons/hicolor/scalable/apps/`，这一对文件才是应用出现在菜单里的原因。
 
 如果你改了应用名，或者想手动构建，把该文件复制到 `~/.local/share/applications/`，并改好这几个键：
 
 | 键 | 需要匹配 |
 |-----|---------|
-| `Exec` | 安装后的可执行文件名，`qtchater` |
-| `Icon` | 去掉 `.svg` 后缀的图标文件名，`cn.vekaris.qtchater` |
-| `Name` | 菜单里显示的名字，`QtChater` |
+| `Exec` | 安装后的可执行文件名，`kchater` |
+| `Icon` | 去掉 `.svg` 后缀的图标文件名，`cn.vekaris.kchater` |
+| `Name` | 菜单里显示的名字，`KChater` |
 
 然后执行一次 `update-desktop-database ~/.local/share/applications`。
 
 ## 实验性功能
 
-QtChater 包含一些默认关闭的实验性功能。它们可用，但可能不够完善、会随版本变化，或缺少打磨。
+KChater 包含一些默认关闭的实验性功能。它们可用，但可能不够完善、会随版本变化，或缺少打磨。
 
 ### 启用实验性功能
 
 启动前设置环境变量：
 
 ```bash
-QTCHATER_ENABLE_EXPERIMENTAL_FEATURES=1 qtchater
+KCHATER_ENABLE_EXPERIMENTAL_FEATURES=1 kchater
 ```
 
 开发构建：
 
 ```bash
-QTCHATER_ENABLE_EXPERIMENTAL_FEATURES=1 ./build/bin/qtchater
+KCHATER_ENABLE_EXPERIMENTAL_FEATURES=1 ./build/bin/kchater
 ```
 
 启用后，**设置 → 常规** 中会出现新的服务商选项。
@@ -188,12 +193,12 @@ QTCHATER_ENABLE_EXPERIMENTAL_FEATURES=1 ./build/bin/qtchater
 | 服务商 | 说明 |
 |----------|-------------|
 | **OpenClaw** | 连接 OpenClaw agent 实例，支持多实例的 URL/令牌配置与连接测试。需要在 OpenClaw 中启用兼容 OpenAI 的 Chat Completions 端点。 |
-| **OpenCode** | 由 QtChater 直接管理 OpenCode 服务进程。可配置二进制路径、自动探测、启动/停止/重启、设置主机与端口，并查看服务日志。支持启动时自动启动与崩溃后自动重启（最多 3 次）。 |
+| **OpenCode** | 由 KChater 直接管理 OpenCode 服务进程。可配置二进制路径、自动探测、启动/停止/重启、设置主机与端口，并查看服务日志。支持启动时自动启动与崩溃后自动重启（最多 3 次）。 |
 | **Pi** | 通过 RPC 模式（stdin/stdout JSONL 协议）连接 Pi 编码 agent。可配置二进制路径、自动探测、启动/停止并查看日志。当 Pi 为当前服务商时支持自动启动。 |
 
 ## 许可证
 
-QtChater 以 **GNU 通用公共许可证第 3 版或更高版本**（GPL-3.0-or-later）分发 ——
+KChater 以 **GNU 通用公共许可证第 3 版或更高版本**（GPL-3.0-or-later）分发 ——
 详见 [LICENSE](../LICENSE)。
 
 各个文件带有自己的 `SPDX-License-Identifier`，其中大多数是
@@ -202,7 +207,7 @@ QtChater 以 **GNU 通用公共许可证第 3 版或更高版本**（GPL-3.0-or-
 
 ### 修改说明
 
-QtChater 是 Denys Madureira 的 [ChatQT](https://github.com/KodeRoots/ChatQT)
+KChater 是 Denys Madureira 的 [ChatQT](https://github.com/KodeRoots/ChatQT)
 的修改版本，保留了上游全部版权声明，仓库中也完整保留了上游的 git 历史。
 
 2026 年所做的修改：重命名应用及其应用 ID、重新绘制图标、重写简体中文翻译、

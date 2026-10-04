@@ -3,19 +3,19 @@
 # SPDX-FileContributor: VekarisWesion <vekaris@zohomail.com>
 # SPDX-License-Identifier: GPL-3.0-or-later
 #
-# Modifications for QtChater (rename, translations) made in 2026.
+# Modifications for KChater (rename, translations) made in 2026.
 
 set(QT_QML_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/src)
 
-add_executable(qtchater)
+add_executable(kchater)
 
-ecm_add_qml_module(qtchater
-    URI cn.vekaris.qtchater
+ecm_add_qml_module(kchater
+    URI cn.vekaris.kchater
 )
 
 qt_policy(SET QTP0001 NEW)
 
-target_sources(qtchater
+target_sources(kchater
     PRIVATE
     main.cpp
     sessionstore.cpp
@@ -24,7 +24,7 @@ target_sources(qtchater
     translationhelper.cpp
 )
 
-ecm_target_qml_sources(qtchater
+ecm_target_qml_sources(kchater
     SOURCES
     qml/Main.qml
     qml/pages/ChatPage.qml
@@ -48,7 +48,7 @@ ecm_target_qml_sources(qtchater
     qml/logic/McpClient.js
 )
 
-target_link_libraries(qtchater PRIVATE
+target_link_libraries(kchater PRIVATE
     Qt6::Core
     Qt6::Quick
     Qt6::Qml
@@ -67,12 +67,12 @@ target_link_libraries(qtchater PRIVATE
 # Fedora's kf6-ki18n-devel ships libKF6I18nQml.so and the KLocalizedQmlContext
 # header without a CMake package config, so link the library directly.
 find_library(KF6I18NQML_LIBRARY NAMES KF6I18nQml REQUIRED)
-target_link_libraries(qtchater PRIVATE ${KF6I18NQML_LIBRARY})
+target_link_libraries(kchater PRIVATE ${KF6I18NQML_LIBRARY})
 
-target_include_directories(qtchater PRIVATE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_BINARY_DIR})
+target_include_directories(kchater PRIVATE ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_BINARY_DIR})
 
-target_compile_definitions(qtchater PRIVATE
-    QTCHATER_LOCALE_DIR="${QTCHATER_LOCALE_BUILD_DIR}"
+target_compile_definitions(kchater PRIVATE
+    KCHATER_LOCALE_DIR="${KCHATER_LOCALE_BUILD_DIR}"
 )
 
-install(TARGETS qtchater ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS kchater ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

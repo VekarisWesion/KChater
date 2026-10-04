@@ -7,9 +7,9 @@
 # you rename the application.
 
 [Desktop Entry]
-Name=QtChater
-Exec=qtchater
-Icon=cn.vekaris.qtchater
+Name=KChater
+Exec=kchater
+Icon=cn.vekaris.kchater
 Type=Application
 Terminal=false
 Categories=Network;Chat;KDE;

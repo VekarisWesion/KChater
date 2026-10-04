@@ -105,7 +105,7 @@ function initializeServer(serverUrl, headers, onSuccess, onError) {
             sampling: {}
         },
         clientInfo: {
-            name: "QtChater",
+            name: "KChater",
             version: "1.0.0"
         }
     });

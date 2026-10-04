@@ -1,14 +1,14 @@
 # SPDX-FileCopyrightText: 2024-2026 Denys Madureira
 # SPDX-FileCopyrightText: 2026 VekarisWesion <vekaris@zohomail.com>
 # SPDX-License-Identifier: GPL-3.0-or-later
-# This file is distributed under the same license as the qtchater package.
+# This file is distributed under the same license as the kchater package.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: qtchater\n"
-"Report-Msgid-Bugs-To: https://github.com/VekarisWesion/QtChater/issues\n"
-"POT-Creation-Date: 2026-10-04 15:04+0800\n"
+"Project-Id-Version: kchater\n"
+"Report-Msgid-Bugs-To: https://github.com/VekarisWesion/KChater/issues\n"
+"POT-Creation-Date: 2026-10-04 15:07+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,6 +29,54 @@ msgstr ""
 msgid "Copy"
 msgstr ""
 
+#: src/qml/components/InstanceCard.qml:39
+msgctxt "@info"
+msgid "Unnamed Instance"
+msgstr ""
+
+#: src/qml/components/InstanceCard.qml:47 src/qml/components/McpCard.qml:81
+#: src/qml/components/ProviderCard.qml:49
+msgctxt "@action:button"
+msgid "Edit"
+msgstr ""
+
+#: src/qml/components/InstanceCard.qml:59 src/qml/components/McpCard.qml:93
+#: src/qml/components/ProviderCard.qml:61
+msgctxt "@action:button"
+msgid "Remove"
+msgstr ""
+
+#: src/qml/components/InstanceCard.qml:84 src/qml/components/McpCard.qml:151
+#: src/qml/components/ProviderCard.qml:87
+msgctxt "@label"
+msgid "URL:"
+msgstr ""
+
+#: src/qml/components/InstanceCard.qml:90 src/qml/components/McpCard.qml:157
+#: src/qml/components/McpCard.qml:178 src/qml/components/ProviderCard.qml:93
+#: src/qml/components/ProviderCard.qml:112
+msgctxt "@info"
+msgid "Not set"
+msgstr ""
+
+#: src/qml/components/InstanceCard.qml:103 src/qml/components/McpCard.qml:170
+#: src/qml/components/ProviderCard.qml:125
+msgctxt "@label"
+msgid "Token:"
+msgstr ""
+
+#: src/qml/components/InstanceCard.qml:110
+#: src/qml/components/ProviderCard.qml:132
+msgctxt "@info"
+msgid "Configured — API key is saved"
+msgstr ""
+
+#: src/qml/components/InstanceCard.qml:111
+#: src/qml/components/ProviderCard.qml:133
+msgctxt "@info"
+msgid "Missing — no API key configured"
+msgstr ""
+
 #: src/qml/components/McpCard.qml:43
 msgctxt "@info"
 msgid "Unnamed MCP Server"
@@ -42,18 +90,6 @@ msgstr ""
 #: src/qml/components/McpCard.qml:69
 msgctxt "@action:button"
 msgid "Connect"
-msgstr ""
-
-#: src/qml/components/McpCard.qml:81 src/qml/components/InstanceCard.qml:47
-#: src/qml/components/ProviderCard.qml:49
-msgctxt "@action:button"
-msgid "Edit"
-msgstr ""
-
-#: src/qml/components/McpCard.qml:93 src/qml/components/InstanceCard.qml:59
-#: src/qml/components/ProviderCard.qml:61
-msgctxt "@action:button"
-msgid "Remove"
 msgstr ""
 
 #: src/qml/components/McpCard.qml:118
@@ -81,26 +117,6 @@ msgctxt "@info"
 msgid "Disconnected"
 msgstr ""
 
-#: src/qml/components/McpCard.qml:151 src/qml/components/InstanceCard.qml:84
-#: src/qml/components/ProviderCard.qml:87
-msgctxt "@label"
-msgid "URL:"
-msgstr ""
-
-#: src/qml/components/McpCard.qml:157 src/qml/components/McpCard.qml:178
-#: src/qml/components/InstanceCard.qml:90
-#: src/qml/components/ProviderCard.qml:93
-#: src/qml/components/ProviderCard.qml:112
-msgctxt "@info"
-msgid "Not set"
-msgstr ""
-
-#: src/qml/components/McpCard.qml:170 src/qml/components/InstanceCard.qml:103
-#: src/qml/components/ProviderCard.qml:125
-msgctxt "@label"
-msgid "Token:"
-msgstr ""
-
 #: src/qml/components/McpCard.qml:177
 msgctxt "@info"
 msgid "Configured"
@@ -114,38 +130,6 @@ msgstr ""
 #: src/qml/components/McpCard.qml:198
 msgctxt "@info"
 msgid "%1 tool(s) available"
-msgstr ""
-
-#: src/qml/components/SessionCard.qml:48
-msgctxt "@info"
-msgid "New Chat"
-msgstr ""
-
-#: src/qml/components/SessionCard.qml:67
-msgctxt "@action:button"
-msgid "Delete"
-msgstr ""
-
-#: src/qml/components/SessionCard.qml:86
-msgctxt "@info"
-msgid "Unknown provider"
-msgstr ""
-
-#: src/qml/components/InstanceCard.qml:39
-msgctxt "@info"
-msgid "Unnamed Instance"
-msgstr ""
-
-#: src/qml/components/InstanceCard.qml:110
-#: src/qml/components/ProviderCard.qml:132
-msgctxt "@info"
-msgid "Configured — API key is saved"
-msgstr ""
-
-#: src/qml/components/InstanceCard.qml:111
-#: src/qml/components/ProviderCard.qml:133
-msgctxt "@info"
-msgid "Missing — no API key configured"
 msgstr ""
 
 #: src/qml/components/MessageInput.qml:104
@@ -200,6 +184,21 @@ msgstr ""
 #: src/qml/components/ProviderCard.qml:106
 msgctxt "@label"
 msgid "Model:"
+msgstr ""
+
+#: src/qml/components/SessionCard.qml:48
+msgctxt "@info"
+msgid "New Chat"
+msgstr ""
+
+#: src/qml/components/SessionCard.qml:67
+msgctxt "@action:button"
+msgid "Delete"
+msgstr ""
+
+#: src/qml/components/SessionCard.qml:86
+msgctxt "@info"
+msgid "Unknown provider"
 msgstr ""
 
 #: src/qml/components/SessionSidebar.qml:34
@@ -348,122 +347,6 @@ msgstr ""
 
 #: src/qml/pages/ChatPage.qml:1320
 msgid "Refresh models list"
-msgstr ""
-
-#: src/qml/settings/SettingsMemory.qml:15
-#: src/qml/settings/SettingsMemory.qml:27
-msgctxt "@title"
-msgid "Memory"
-msgstr ""
-
-#: src/qml/settings/SettingsMemory.qml:35
-msgctxt "@info"
-msgid ""
-"The AI can save important information here to remember across conversations. "
-"You can also edit this manually."
-msgstr ""
-
-#: src/qml/settings/SettingsMemory.qml:56
-msgctxt "@info:placeholder"
-msgid ""
-"User prefers Portuguese.\n"
-"Works with KDE/Qt.\n"
-"Likes concise answers."
-msgstr ""
-
-#: src/qml/settings/SettingsPage.qml:16
-msgctxt "@title"
-msgid "Settings"
-msgstr ""
-
-#: src/qml/settings/SettingsPage.qml:83
-msgctxt "@action:button"
-msgid "General"
-msgstr ""
-
-#: src/qml/settings/SettingsPage.qml:84
-msgctxt "@info:whatsthis"
-msgid "Select the active AI provider"
-msgstr ""
-
-#: src/qml/settings/SettingsPage.qml:99
-msgctxt "@action:button"
-msgid "OpenClaw"
-msgstr ""
-
-#: src/qml/settings/SettingsPage.qml:100
-msgctxt "@info:whatsthis"
-msgid "Configure OpenClaw URL and token"
-msgstr ""
-
-#: src/qml/settings/SettingsPage.qml:115
-msgctxt "@action:button"
-msgid "OpenAI Compatible"
-msgstr ""
-
-#: src/qml/settings/SettingsPage.qml:116
-msgctxt "@info:whatsthis"
-msgid "Configure OpenAI-compatible API settings"
-msgstr ""
-
-#: src/qml/settings/SettingsPage.qml:130
-msgctxt "@action:button"
-msgid "MCP Servers"
-msgstr ""
-
-#: src/qml/settings/SettingsPage.qml:131
-msgctxt "@info:whatsthis"
-msgid "Configure remote MCP servers"
-msgstr ""
-
-#: src/qml/settings/SettingsPage.qml:145
-msgctxt "@action:button"
-msgid "Soul"
-msgstr ""
-
-#: src/qml/settings/SettingsPage.qml:146
-msgctxt "@info:whatsthis"
-msgid "Configure the AI personality and behavior"
-msgstr ""
-
-#: src/qml/settings/SettingsPage.qml:160
-msgctxt "@action:button"
-msgid "Memory"
-msgstr ""
-
-#: src/qml/settings/SettingsPage.qml:161
-msgctxt "@info:whatsthis"
-msgid "View and edit what the AI remembers across conversations"
-msgstr ""
-
-#: src/qml/settings/SettingsSoul.qml:15 src/qml/settings/SettingsSoul.qml:27
-msgctxt "@title"
-msgid "Soul"
-msgstr ""
-
-#: src/qml/settings/SettingsSoul.qml:35
-msgctxt "@info"
-msgid ""
-"Define the AI's personality, tone, and behavior rules. This content is sent "
-"as the system message with every conversation."
-msgstr ""
-
-#: src/qml/settings/SettingsSoul.qml:47
-msgctxt "@info"
-msgid ""
-"Humanizer is enabled. Instructions for more human-like responses will be "
-"appended to your Soul content when sending messages."
-msgstr ""
-
-#: src/qml/settings/SettingsSoul.qml:66
-msgctxt "@info:placeholder"
-msgid ""
-"You are a helpful, concise assistant.\n"
-"\n"
-"Rules:\n"
-"- Be direct and clear\n"
-"- Use simple language\n"
-"- Ask for clarification when unsure"
 msgstr ""
 
 #: src/qml/settings/SettingsGeneral.qml:17
@@ -625,6 +508,27 @@ msgstr ""
 #: src/qml/settings/SettingsMCP.qml:372
 msgctxt "@label:textbox"
 msgid "Custom Headers (JSON, optional):"
+msgstr ""
+
+#: src/qml/settings/SettingsMemory.qml:15
+#: src/qml/settings/SettingsMemory.qml:27
+msgctxt "@title"
+msgid "Memory"
+msgstr ""
+
+#: src/qml/settings/SettingsMemory.qml:35
+msgctxt "@info"
+msgid ""
+"The AI can save important information here to remember across conversations. "
+"You can also edit this manually."
+msgstr ""
+
+#: src/qml/settings/SettingsMemory.qml:56
+msgctxt "@info:placeholder"
+msgid ""
+"User prefers Portuguese.\n"
+"Works with KDE/Qt.\n"
+"Likes concise answers."
 msgstr ""
 
 #: src/qml/settings/SettingsOpenAICompatible.qml:17
@@ -791,7 +695,7 @@ msgstr ""
 #: src/qml/settings/SettingsOpenClaw.qml:126
 msgctxt "@info"
 msgid ""
-"To use OpenClaw with QtChater, you must enable the OpenAI-compatible Chat "
+"To use OpenClaw with KChater, you must enable the OpenAI-compatible Chat "
 "Completions endpoint in OpenClaw.\n"
 "The easiest way to do this is asking OpenClaw to do so."
 msgstr ""
@@ -854,8 +758,103 @@ msgctxt "@info"
 msgid "Please enter a token before testing."
 msgstr ""
 
+#: src/qml/settings/SettingsPage.qml:16
+msgctxt "@title"
+msgid "Settings"
+msgstr ""
+
+#: src/qml/settings/SettingsPage.qml:83
+msgctxt "@action:button"
+msgid "General"
+msgstr ""
+
+#: src/qml/settings/SettingsPage.qml:84
+msgctxt "@info:whatsthis"
+msgid "Select the active AI provider"
+msgstr ""
+
+#: src/qml/settings/SettingsPage.qml:99
+msgctxt "@action:button"
+msgid "OpenClaw"
+msgstr ""
+
+#: src/qml/settings/SettingsPage.qml:100
+msgctxt "@info:whatsthis"
+msgid "Configure OpenClaw URL and token"
+msgstr ""
+
+#: src/qml/settings/SettingsPage.qml:115
+msgctxt "@action:button"
+msgid "OpenAI Compatible"
+msgstr ""
+
+#: src/qml/settings/SettingsPage.qml:116
+msgctxt "@info:whatsthis"
+msgid "Configure OpenAI-compatible API settings"
+msgstr ""
+
+#: src/qml/settings/SettingsPage.qml:130
+msgctxt "@action:button"
+msgid "MCP Servers"
+msgstr ""
+
+#: src/qml/settings/SettingsPage.qml:131
+msgctxt "@info:whatsthis"
+msgid "Configure remote MCP servers"
+msgstr ""
+
+#: src/qml/settings/SettingsPage.qml:145
+msgctxt "@action:button"
+msgid "Soul"
+msgstr ""
+
+#: src/qml/settings/SettingsPage.qml:146
+msgctxt "@info:whatsthis"
+msgid "Configure the AI personality and behavior"
+msgstr ""
+
+#: src/qml/settings/SettingsPage.qml:160
+msgctxt "@action:button"
+msgid "Memory"
+msgstr ""
+
+#: src/qml/settings/SettingsPage.qml:161
+msgctxt "@info:whatsthis"
+msgid "View and edit what the AI remembers across conversations"
+msgstr ""
+
+#: src/qml/settings/SettingsSoul.qml:15 src/qml/settings/SettingsSoul.qml:27
+msgctxt "@title"
+msgid "Soul"
+msgstr ""
+
+#: src/qml/settings/SettingsSoul.qml:35
+msgctxt "@info"
+msgid ""
+"Define the AI's personality, tone, and behavior rules. This content is sent "
+"as the system message with every conversation."
+msgstr ""
+
+#: src/qml/settings/SettingsSoul.qml:47
+msgctxt "@info"
+msgid ""
+"Humanizer is enabled. Instructions for more human-like responses will be "
+"appended to your Soul content when sending messages."
+msgstr ""
+
+#: src/qml/settings/SettingsSoul.qml:66
+msgctxt "@info:placeholder"
+msgid ""
+"You are a helpful, concise assistant.\n"
+"\n"
+"Rules:\n"
+"- Be direct and clear\n"
+"- Use simple language\n"
+"- Ask for clarification when unsure"
+msgstr ""
+
 #: src/qml/Main.qml:24
-msgid "QtChater"
+msgid "KChater"
 msgstr ""
 
 #: src/qml/Main.qml:30
@@ -869,7 +868,7 @@ msgstr ""
 
 #: src/main.cpp:81
 msgctxt "@title"
-msgid "QtChater"
+msgid "KChater"
 msgstr ""
 
 #: src/main.cpp:83
@@ -879,42 +878,50 @@ msgstr ""
 #: src/main.cpp:85
 msgid ""
 "© 2024–2026 Denys Madureira\n"
-"© 2026 VekarisWesion (QtChater modifications)"
+"© 2026 VekarisWesion (KChater modifications)"
 msgstr ""
 
 #: src/main.cpp:86
 msgid ""
-"QtChater is distributed under the GNU General Public License, version 3 or "
+"KChater is distributed under the GNU General Public License, version 3 or "
 "later (GPL-3.0-or-later). Individual source files carry an LGPL-2.1-or-later "
 "notice."
 msgstr ""
 
-#: src/main.cpp:90
-msgctxt "@info:credit"
-msgid "Denys Madureira"
+#: src/main.cpp:87
+msgid ""
+"KChater is an independent project. It is not affiliated with, endorsed by, "
+"or sponsored by KDE e.V. \"KDE\" and \"Plasma\" are trademarks of KDE e.V., "
+"used here only to describe what the application is built for. Qt is a "
+"trademark of The Qt Company Ltd."
 msgstr ""
 
 #: src/main.cpp:91
 msgctxt "@info:credit"
-msgid "Author"
+msgid "Denys Madureira"
 msgstr ""
 
-#: src/main.cpp:95
+#: src/main.cpp:92
 msgctxt "@info:credit"
-msgid "VekarisWesion"
+msgid "Author"
 msgstr ""
 
 #: src/main.cpp:96
 msgctxt "@info:credit"
-msgid "QtChater fork and maintenance"
+msgid "VekarisWesion"
 msgstr ""
 
-#: src/main.cpp:100
+#: src/main.cpp:97
+msgctxt "@info:credit"
+msgid "KChater fork and maintenance"
+msgstr ""
+
+#: src/main.cpp:101
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 
-#: src/main.cpp:101
+#: src/main.cpp:102
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""

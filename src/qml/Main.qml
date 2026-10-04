@@ -9,7 +9,7 @@ import QtQuick.Controls as Controls
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 import org.kde.coreaddons
-import cn.vekaris.qtchater
+import cn.vekaris.kchater
 
 Kirigami.ApplicationWindow {
     id: root
@@ -21,7 +21,7 @@ Kirigami.ApplicationWindow {
     minimumHeight: Kirigami.Units.gridUnit * 40
 
     globalDrawer: Kirigami.GlobalDrawer {
-        title: i18n("QtChater")
+        title: i18n("KChater")
         titleIcon: "dialog-messages"
         isMenu: true
 
@@ -46,7 +46,7 @@ Kirigami.ApplicationWindow {
         id: aboutPage
         Kirigami.AboutPage {
             aboutData: AboutData
-            getInvolvedUrl: "https://github.com/VekarisWesion/QtChater"
+            getInvolvedUrl: "https://github.com/VekarisWesion/KChater"
         }
     }
 

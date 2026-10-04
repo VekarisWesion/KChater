@@ -1,13 +1,13 @@
 # SPDX-FileCopyrightText: 2026 VekarisWesion <vekaris@zohomail.com>
 # SPDX-License-Identifier: GPL-3.0-or-later
 #
-# Simplified Chinese translation for QtChater.
-# This file is distributed under the same license as the qtchater package.
+# Simplified Chinese translation for KChater.
+# This file is distributed under the same license as the kchater package.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: qtchater\n"
-"Report-Msgid-Bugs-To: https://github.com/VekarisWesion/QtChater/issues\n"
+"Project-Id-Version: kchater\n"
+"Report-Msgid-Bugs-To: https://github.com/VekarisWesion/KChater/issues\n"
 "POT-Creation-Date: 2026-10-04 10:00+0800\n"
 "PO-Revision-Date: 2026-10-04 10:00+0800\n"
 "Last-Translator: Vekaris <vekaris@zohomail.com>\n"
@@ -115,11 +115,11 @@ msgstr "新建实例"
 
 msgctxt "@info"
 msgid ""
-"To use OpenClaw with QtChater, you must enable the OpenAI-compatible Chat "
+"To use OpenClaw with KChater, you must enable the OpenAI-compatible Chat "
 "Completions endpoint in OpenClaw.\n"
 "The easiest way to do this is asking OpenClaw to do so."
 msgstr ""
-"要在 QtChater 中使用 OpenClaw，需要先在 OpenClaw 里启用兼容 OpenAI 的 Chat "
+"要在 KChater 中使用 OpenClaw，需要先在 OpenClaw 里启用兼容 OpenAI 的 Chat "
 "Completions 端点。\n"
 "最简单的办法是直接让 OpenClaw 自己去启用。"
 
@@ -697,8 +697,8 @@ msgid "Copy"
 msgstr "复制"
 
 #: src/qml/Main.qml
-msgid "QtChater"
-msgstr "QtChater"
+msgid "KChater"
+msgstr "KChater"
 
 msgid "Disable auto scroll"
 msgstr "禁用自动滚动"
@@ -709,26 +709,36 @@ msgstr "关于"
 
 #: src/main.cpp
 msgctxt "@title"
-msgid "QtChater"
-msgstr "QtChater"
+msgid "KChater"
+msgstr "KChater"
 
 msgid "A simple AI chat client for OpenAI-compatible providers"
 msgstr "一个简单、面向 OpenAI 兼容服务商的 AI 聊天客户端"
 
 msgid ""
 "© 2024–2026 Denys Madureira\n"
-"© 2026 VekarisWesion (QtChater modifications)"
+"© 2026 VekarisWesion (KChater modifications)"
 msgstr ""
 "© 2024–2026 Denys Madureira\n"
-"© 2026 VekarisWesion（QtChater 的修改）"
+"© 2026 VekarisWesion（KChater 的修改）"
 
 msgid ""
-"QtChater is distributed under the GNU General Public License, version 3 or "
+"KChater is distributed under the GNU General Public License, version 3 or "
 "later (GPL-3.0-or-later). Individual source files carry an LGPL-2.1-or-later "
 "notice."
 msgstr ""
-"QtChater 以 GNU 通用公共许可证第 3 版或更高版本（GPL-3.0-or-later）分发。"
+"KChater 以 GNU 通用公共许可证第 3 版或更高版本（GPL-3.0-or-later）分发。"
 "个别源文件标注为 LGPL-2.1-or-later。"
+
+msgid ""
+"KChater is an independent project. It is not affiliated with, endorsed by, "
+"or sponsored by KDE e.V. \"KDE\" and \"Plasma\" are trademarks of KDE e.V., "
+"used here only to describe what the application is built for. Qt is a "
+"trademark of The Qt Company Ltd."
+msgstr ""
+"KChater 是独立项目，与 KDE e.V. 没有隶属、背书或赞助关系。"
+"「KDE」与「Plasma」是 KDE e.V. 的商标，此处仅用于说明本程序为哪个桌面环境而做。"
+"Qt 是 The Qt Company Ltd. 的商标。"
 
 msgctxt "@info:credit"
 msgid "Denys Madureira"
@@ -743,8 +753,8 @@ msgid "VekarisWesion"
 msgstr "VekarisWesion"
 
 msgctxt "@info:credit"
-msgid "QtChater fork and maintenance"
-msgstr "QtChater 分支与维护"
+msgid "KChater fork and maintenance"
+msgstr "KChater 分支与维护"
 
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"

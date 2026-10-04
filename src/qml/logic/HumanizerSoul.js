@@ -3,7 +3,7 @@
     SPDX-FileCopyrightText: 2026 VekarisWesion <vekaris@zohomail.com>
     SPDX-License-Identifier: LGPL-2.1-or-later
 
-    Note: the guidelines below were written from scratch for QtChater. An
+    Note: the guidelines below were written from scratch for KChater. An
     earlier version of this file paraphrased an externally licensed source and
     was replaced for that reason.
 */

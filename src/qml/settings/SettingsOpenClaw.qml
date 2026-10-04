@@ -9,7 +9,7 @@ import QtQuick.Controls as QQC2
 import QtQuick.Layouts
 
 import org.kde.kirigami as Kirigami
-import cn.vekaris.qtchater
+import cn.vekaris.kchater
 
 Kirigami.ScrollablePage {
     id: root
@@ -123,7 +123,7 @@ Kirigami.ScrollablePage {
             type: Kirigami.MessageType.Warning
             visible: true
             showCloseButton: true
-            text: i18nc("@info", "To use OpenClaw with QtChater, you must enable the OpenAI-compatible Chat Completions endpoint in OpenClaw.\nThe easiest way to do this is asking OpenClaw to do so.")
+            text: i18nc("@info", "To use OpenClaw with KChater, you must enable the OpenAI-compatible Chat Completions endpoint in OpenClaw.\nThe easiest way to do this is asking OpenClaw to do so.")
         }
 
         QQC2.Label {

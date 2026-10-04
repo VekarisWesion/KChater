@@ -62,9 +62,9 @@ bool SessionStore::initDatabase()
         dir.mkpath(QStringLiteral("."));
     }
 
-    m_dbPath = dataDir + QStringLiteral("/qtchater.db");
+    m_dbPath = dataDir + QStringLiteral("/kchater.db");
 
-    m_db = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"), QStringLiteral("qtchater_sessions"));
+    m_db = QSqlDatabase::addDatabase(QStringLiteral("QSQLITE"), QStringLiteral("kchater_sessions"));
     m_db.setDatabaseName(m_dbPath);
 
     if (!m_db.open()) {
