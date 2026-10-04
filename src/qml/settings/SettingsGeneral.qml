@@ -21,9 +21,6 @@ Kirigami.ScrollablePage {
 
     Kirigami.FormLayout {
         anchors.fill: parent
-        // Keep the same two-column structure in every language instead of
-        // letting the longer English labels flip the form into single-column mode.
-        wideMode: true
 
         QQC2.ComboBox {
             id: languageComboBox
@@ -103,6 +100,9 @@ Kirigami.ScrollablePage {
             font: Kirigami.Theme.smallFont
             color: Kirigami.Theme.disabledTextColor
             wrapMode: Text.WordWrap
+            // Keep the wrapped prose from inflating the form width; without this
+            // the longer English sentences push the whole form outside the dialog.
+            Layout.preferredWidth: Kirigami.Units.gridUnit * 20
             Layout.fillWidth: true
         }
 
@@ -116,6 +116,7 @@ Kirigami.ScrollablePage {
             font: Kirigami.Theme.smallFont
             color: Kirigami.Theme.disabledTextColor
             wrapMode: Text.WordWrap
+            Layout.preferredWidth: Kirigami.Units.gridUnit * 20
             Layout.fillWidth: true
         }
 
@@ -124,6 +125,7 @@ Kirigami.ScrollablePage {
             font: Kirigami.Theme.smallFont
             color: Kirigami.Theme.disabledTextColor
             wrapMode: Text.WordWrap
+            Layout.preferredWidth: Kirigami.Units.gridUnit * 20
             Layout.fillWidth: true
         }
     }
