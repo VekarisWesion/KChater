@@ -50,8 +50,7 @@ qtchater is a native KDE Plasma application for chatting with AI models. Built w
 ### Desktop Integration
 
 - **Language selection** — English and Simplified Chinese, switchable at runtime from the settings
-- **System-wide install** — The desktop entry, icon and AppStream metadata are installed for you
-- **Flatpak support** — A Flatpak manifest is available with proper sandboxing utilities
+- **System-wide install** — The `qtchater` command, the desktop entry and the icon are installed for you
 
 ## Building from Source
 
@@ -124,8 +123,8 @@ cpack -G RPM    # Fedora / openSUSE, needs rpm-build
 cpack -G DEB    # Debian / Ubuntu, needs dpkg-dev
 ```
 
-Both packages install `/usr/bin/qtchater`, the desktop entry, the icon, the
-AppStream metadata and the translations.
+Both packages install `/usr/bin/qtchater`, the desktop entry, the icon and the
+translations.
 
 ### Other distributions
 

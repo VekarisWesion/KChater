@@ -73,7 +73,6 @@ add_subdirectory(src)
 
 install(FILES resources/icons/cn.vekaris.qtchater.svg DESTINATION ${KDE_INSTALL_ICONDIR}/hicolor/scalable/apps)
 install(FILES cn.vekaris.qtchater.desktop DESTINATION ${KDE_INSTALL_APPDIR})
-install(FILES cn.vekaris.qtchater.metainfo.xml DESTINATION ${KDE_INSTALL_METAINFODIR})
 
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
 
