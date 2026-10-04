@@ -16,6 +16,11 @@
 
 QtChater 是一个原生的 KDE Plasma 应用，用于和 AI 模型聊天。它基于 Qt6/QML 和 Kirigami 构建，拥有原生的外观与 Plasma 风格的对话框，可以无缝融入 KDE 桌面。
 
+### 读音说明
+
+"Chater" 并不是 "chatter" 的拼写错误。这里的 `a…e` 发长元音，读 /eɪ/，和 *later* 押韵，所以整个名字读作
+**/ˌkjuːtˈtʃeɪtər/**，近似「cute-CHAY-ter」，而不是「chatter」。
+
 ## 功能
 
 ### 服务商
