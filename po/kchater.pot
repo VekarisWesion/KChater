@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kchater\n"
 "Report-Msgid-Bugs-To: https://github.com/VekarisWesion/KChater/issues\n"
-"POT-Creation-Date: 2026-10-04 15:10+0800\n"
+"POT-Creation-Date: 2026-10-04 16:17+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -479,8 +479,8 @@ msgid "Add MCP Server"
 msgstr ""
 
 #: src/qml/settings/SettingsMCP.qml:335
-#: src/qml/settings/SettingsOpenAICompatible.qml:308
-#: src/qml/settings/SettingsOpenClaw.qml:305
+#: src/qml/settings/SettingsOpenAICompatible.qml:305
+#: src/qml/settings/SettingsOpenClaw.qml:302
 msgctxt "@label:textbox"
 msgid "Display Name:"
 msgstr ""
@@ -536,147 +536,147 @@ msgctxt "@title"
 msgid "OpenAI Compatible"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:80
-#: src/qml/settings/SettingsOpenAICompatible.qml:183
+#: src/qml/settings/SettingsOpenAICompatible.qml:77
+#: src/qml/settings/SettingsOpenAICompatible.qml:180
 msgctxt "@info"
 msgid "New Provider"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:123
+#: src/qml/settings/SettingsOpenAICompatible.qml:120
 msgctxt "@info"
 msgid ""
 "Configure multiple OpenAI-compatible API providers (OpenAI, DeepSeek, Groq, "
 "etc.). Add, edit, or remove providers using the buttons below."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:133
+#: src/qml/settings/SettingsOpenAICompatible.qml:130
 msgctxt "@title:group"
 msgid "Providers"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:161
+#: src/qml/settings/SettingsOpenAICompatible.qml:158
 msgctxt "@action:button"
 msgid "Add Provider"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:175
-#: src/qml/settings/SettingsOpenAICompatible.qml:198
+#: src/qml/settings/SettingsOpenAICompatible.qml:172
+#: src/qml/settings/SettingsOpenAICompatible.qml:195
 msgctxt "@title:window"
 msgid "Edit Provider"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:187
+#: src/qml/settings/SettingsOpenAICompatible.qml:184
 msgctxt "@title:window"
 msgid "Add Provider"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:316
+#: src/qml/settings/SettingsOpenAICompatible.qml:313
 msgctxt "@info:placeholder"
 msgid "e.g., DeepSeek, Groq, OpenAI"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:320
+#: src/qml/settings/SettingsOpenAICompatible.qml:317
 msgctxt "@label:textbox"
 msgid "API URL:"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:333
+#: src/qml/settings/SettingsOpenAICompatible.qml:330
 msgctxt "@label:textbox"
 msgid "API Token:"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:341
+#: src/qml/settings/SettingsOpenAICompatible.qml:338
 msgctxt "@info:placeholder"
 msgid "Enter your API token"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:347
+#: src/qml/settings/SettingsOpenAICompatible.qml:344
 msgctxt "@label:textbox"
 msgid "Model:"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:372
-#: src/qml/settings/SettingsOpenClaw.qml:356
+#: src/qml/settings/SettingsOpenAICompatible.qml:369
+#: src/qml/settings/SettingsOpenClaw.qml:353
 msgctxt "@info"
 msgid "Connection has not been tested."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:373
-#: src/qml/settings/SettingsOpenClaw.qml:357
+#: src/qml/settings/SettingsOpenAICompatible.qml:370
+#: src/qml/settings/SettingsOpenClaw.qml:354
 msgctxt "@info"
 msgid "Testing connection…"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:375
+#: src/qml/settings/SettingsOpenAICompatible.qml:372
 msgctxt "@info"
 msgid "Connection successful. %1 model(s) available."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:376
-#: src/qml/settings/SettingsOpenClaw.qml:358
+#: src/qml/settings/SettingsOpenAICompatible.qml:373
+#: src/qml/settings/SettingsOpenClaw.qml:355
 msgctxt "@info"
 msgid "Connection successful!"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:375
+#: src/qml/settings/SettingsOpenClaw.qml:356
+msgctxt "@info"
+msgid "Connection timed out after 10 seconds."
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:376
+#: src/qml/settings/SettingsOpenClaw.qml:357
+msgctxt "@info"
+msgid "Could not reach the server. Check the URL and network connection."
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:377
+#: src/qml/settings/SettingsOpenClaw.qml:358
+msgctxt "@info"
+msgid "Authentication failed. Check your API token."
 msgstr ""
 
 #: src/qml/settings/SettingsOpenAICompatible.qml:378
 #: src/qml/settings/SettingsOpenClaw.qml:359
 msgctxt "@info"
-msgid "Connection timed out after 10 seconds."
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:379
-#: src/qml/settings/SettingsOpenClaw.qml:360
-msgctxt "@info"
-msgid "Could not reach the server. Check the URL and network connection."
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:380
-#: src/qml/settings/SettingsOpenClaw.qml:361
-msgctxt "@info"
-msgid "Authentication failed. Check your API token."
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:381
-#: src/qml/settings/SettingsOpenClaw.qml:362
-msgctxt "@info"
 msgid "Server not found at this URL. Check the API URL."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:382
+#: src/qml/settings/SettingsOpenAICompatible.qml:379
 msgctxt "@info"
 msgid "Please enter an API URL before testing."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:383
+#: src/qml/settings/SettingsOpenAICompatible.qml:380
 msgctxt "@info"
 msgid "Please enter an API token before testing."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:384
+#: src/qml/settings/SettingsOpenAICompatible.qml:381
 msgctxt "@info"
 msgid "Please enter a model name before testing."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:385
-#: src/qml/settings/SettingsOpenClaw.qml:365
+#: src/qml/settings/SettingsOpenAICompatible.qml:382
+#: src/qml/settings/SettingsOpenClaw.qml:362
 msgctxt "@info"
 msgid "URL must start with http:// or https://."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:386
-#: src/qml/settings/SettingsOpenClaw.qml:366
+#: src/qml/settings/SettingsOpenAICompatible.qml:383
+#: src/qml/settings/SettingsOpenClaw.qml:363
 msgctxt "@info"
 msgid "Server returned error %1: %2"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:387
-#: src/qml/settings/SettingsOpenClaw.qml:367
+#: src/qml/settings/SettingsOpenAICompatible.qml:384
+#: src/qml/settings/SettingsOpenClaw.qml:364
 msgctxt "@info"
 msgid "Unknown connection error."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:391
-#: src/qml/settings/SettingsOpenClaw.qml:371
+#: src/qml/settings/SettingsOpenAICompatible.qml:388
+#: src/qml/settings/SettingsOpenClaw.qml:368
 msgctxt "@action:button"
 msgid "Test Now"
 msgstr ""
@@ -686,13 +686,13 @@ msgctxt "@title"
 msgid "OpenClaw"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenClaw.qml:79
-#: src/qml/settings/SettingsOpenClaw.qml:189
+#: src/qml/settings/SettingsOpenClaw.qml:76
+#: src/qml/settings/SettingsOpenClaw.qml:186
 msgctxt "@info"
 msgid "New Instance"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenClaw.qml:126
+#: src/qml/settings/SettingsOpenClaw.qml:123
 msgctxt "@info"
 msgid ""
 "To use OpenClaw with KChater, you must enable the OpenAI-compatible Chat "
@@ -700,60 +700,60 @@ msgid ""
 "The easiest way to do this is asking OpenClaw to do so."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenClaw.qml:130
+#: src/qml/settings/SettingsOpenClaw.qml:127
 msgctxt "@info"
 msgid ""
 "Configure multiple OpenClaw instances. Add, edit, or remove instances using "
 "the buttons below."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenClaw.qml:140
+#: src/qml/settings/SettingsOpenClaw.qml:137
 msgctxt "@title:group"
 msgid "Instances"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenClaw.qml:167
+#: src/qml/settings/SettingsOpenClaw.qml:164
 msgctxt "@action:button"
 msgid "Add Instance"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenClaw.qml:181
-#: src/qml/settings/SettingsOpenClaw.qml:202
+#: src/qml/settings/SettingsOpenClaw.qml:178
+#: src/qml/settings/SettingsOpenClaw.qml:199
 msgctxt "@title:window"
 msgid "Edit Instance"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenClaw.qml:192
+#: src/qml/settings/SettingsOpenClaw.qml:189
 msgctxt "@title:window"
 msgid "Add Instance"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenClaw.qml:313
+#: src/qml/settings/SettingsOpenClaw.qml:310
 msgctxt "@info:placeholder"
 msgid "e.g., Local OpenClaw, Remote Server"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenClaw.qml:317
+#: src/qml/settings/SettingsOpenClaw.qml:314
 msgctxt "@label:textbox"
 msgid "URL:"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenClaw.qml:330
+#: src/qml/settings/SettingsOpenClaw.qml:327
 msgctxt "@label:textbox"
 msgid "Token:"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenClaw.qml:338
+#: src/qml/settings/SettingsOpenClaw.qml:335
 msgctxt "@info:placeholder"
 msgid "Enter your token"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenClaw.qml:363
+#: src/qml/settings/SettingsOpenClaw.qml:360
 msgctxt "@info"
 msgid "Please enter a URL before testing."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenClaw.qml:364
+#: src/qml/settings/SettingsOpenClaw.qml:361
 msgctxt "@info"
 msgid "Please enter a token before testing."
 msgstr ""
@@ -853,17 +853,45 @@ msgid ""
 "- Ask for clarification when unsure"
 msgstr ""
 
-#: src/qml/Main.qml:24
+#: src/qml/Main.qml:25
 msgid "KChater"
 msgstr ""
 
-#: src/qml/Main.qml:30
+#: src/qml/Main.qml:31
 msgid "Disable auto scroll"
 msgstr ""
 
-#: src/qml/Main.qml:37
+#: src/qml/Main.qml:38
 msgctxt "@action"
 msgid "About"
+msgstr ""
+
+#: src/qml/Main.qml:67
+msgid "A simple AI chat client for OpenAI-compatible providers"
+msgstr ""
+
+#: src/qml/Main.qml:68
+msgid ""
+"© 2024–2026 Denys Madureira\n"
+"© 2026 VekarisWesion (KChater modifications)"
+msgstr ""
+
+#: src/qml/Main.qml:69
+msgid ""
+"KChater is an independent project. It is not affiliated with, endorsed by, "
+"or sponsored by KDE e.V. \"KDE\" and \"Plasma\" are trademarks of KDE e.V., "
+"used here only to describe what the application is built for. Qt is a "
+"trademark of The Qt Company Ltd."
+msgstr ""
+
+#: src/qml/Main.qml:84
+msgctxt "@info:credit"
+msgid "ChatQT author"
+msgstr ""
+
+#: src/qml/Main.qml:90
+msgctxt "@info:credit"
+msgid "KChater fork author"
 msgstr ""
 
 #: src/sessionstore.cpp:449
@@ -892,52 +920,24 @@ msgid_plural "%1 days ago"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/main.cpp:82
+#: src/main.cpp:41
 msgctxt "@title"
 msgid "KChater"
 msgstr ""
 
-#: src/main.cpp:84
-msgid "A simple AI chat client for OpenAI-compatible providers"
-msgstr ""
-
-#: src/main.cpp:86
-msgid ""
-"© 2024–2026 Denys Madureira\n"
-"© 2026 VekarisWesion (KChater modifications)"
-msgstr ""
-
-#: src/main.cpp:87
+#: src/main.cpp:46
 msgid ""
 "KChater is distributed under the GNU General Public License, version 3 or "
 "later (GPL-3.0-or-later). Individual source files carry an LGPL-2.1-or-later "
 "notice."
 msgstr ""
 
-#: src/main.cpp:88
-msgid ""
-"KChater is an independent project. It is not affiliated with, endorsed by, "
-"or sponsored by KDE e.V. \"KDE\" and \"Plasma\" are trademarks of KDE e.V., "
-"used here only to describe what the application is built for. Qt is a "
-"trademark of The Qt Company Ltd."
-msgstr ""
-
-#: src/main.cpp:92
+#: src/main.cpp:51
 msgctxt "@info:credit"
 msgid "Denys Madureira"
 msgstr ""
 
-#: src/main.cpp:93
-msgctxt "@info:credit"
-msgid "ChatQT author"
-msgstr ""
-
-#: src/main.cpp:97
+#: src/main.cpp:56
 msgctxt "@info:credit"
 msgid "VekarisWesion"
-msgstr ""
-
-#: src/main.cpp:98
-msgctxt "@info:credit"
-msgid "KChater fork author"
 msgstr ""

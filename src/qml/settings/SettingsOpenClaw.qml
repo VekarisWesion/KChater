@@ -40,9 +40,7 @@ Kirigami.ScrollablePage {
         instancesModel.clear()
         try {
             var instances = JSON.parse(root.settings.openclawInstances || "[]")
-            console.log("Loaded instances:", instances.length)
             for (var i = 0; i < instances.length; i++) {
-                console.log("Instance", i, ":", JSON.stringify(instances[i]))
                 if (instances[i].enabled === undefined) {
                     instances[i].enabled = true
                 }
@@ -69,7 +67,6 @@ Kirigami.ScrollablePage {
             })
         }
         root.settings.openclawInstances = JSON.stringify(instances)
-        console.log("Saved instances:", root.settings.openclawInstances)
     }
 
     function addInstance(instance) {

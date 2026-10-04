@@ -273,7 +273,6 @@ QtObject {
                 }
                 openclawInstances = JSON.stringify([migratedInstance])
                 selectedOpenClawInstanceId = migratedInstance.id
-                console.log("Migrated existing OpenClaw settings to multi-instance format")
             }
         }
     }

@@ -81,13 +81,13 @@ Kirigami.ApplicationWindow {
             "authors": [
                 {
                     "name": "Denys Madureira",
-                    "task": i18n("ChatQT author"),
+                    "task": i18nc("@info:credit", "ChatQT author"),
                     "emailAddress": "denys@koderoots.org",
                     "webAddress": "https://denysmadureira.dev"
                 },
                 {
                     "name": "VekarisWesion",
-                    "task": i18n("KChater fork author"),
+                    "task": i18nc("@info:credit", "KChater fork author"),
                     "emailAddress": "vekaris@zohomail.com",
                     "webAddress": "https://vekaris.cn"
                 }

@@ -40,9 +40,7 @@ Kirigami.ScrollablePage {
         providersModel.clear()
         try {
             var providers = JSON.parse(root.settings.openaiCompatibleProviders || "[]")
-            console.log("Loaded providers:", providers.length)
             for (var i = 0; i < providers.length; i++) {
-                console.log("Provider", i, ":", JSON.stringify(providers[i]))
                 if (providers[i].enabled === undefined) {
                     providers[i].enabled = true
                 }
@@ -70,7 +68,6 @@ Kirigami.ScrollablePage {
             })
         }
         root.settings.openaiCompatibleProviders = JSON.stringify(providers)
-        console.log("Saved providers:", root.settings.openaiCompatibleProviders)
     }
 
     function addProvider(provider) {

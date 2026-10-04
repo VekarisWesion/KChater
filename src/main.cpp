@@ -126,12 +126,9 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty(QStringLiteral("experimentalFeaturesEnabled"),
         !qEnvironmentVariableIsEmpty("KCHATER_ENABLE_EXPERIMENTAL_FEATURES"));
 
-    qWarning() << "About to register SessionStore";
-    // Register SessionStore as singleton
     qmlRegisterSingletonInstance("cn.vekaris.kchater", 1, 0, "SessionStore", SessionStore::instance());
     qmlRegisterSingletonInstance("cn.vekaris.kchater", 1, 0, "FileHelper", FileHelper::instance());
     qmlRegisterSingletonInstance("cn.vekaris.kchater", 1, 0, "TranslationHelper", TranslationHelper::instance());
-    qWarning() << "SessionStore registered";
 
     QObject::connect(&engine, &QQmlApplicationEngine::warnings, [](const QList<QQmlError> &warnings) {
         for (const QQmlError &warning : warnings) {
@@ -164,8 +161,6 @@ int main(int argc, char *argv[])
         }
     } else {
         engine.loadFromModule("cn.vekaris.kchater", "Main");
-
-        qWarning() << "Root objects:" << engine.rootObjects().size();
 
         if (engine.rootObjects().isEmpty()) {
             return -1;

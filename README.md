@@ -35,8 +35,6 @@ misspelling of "chatter": its `a…e` is a long *a*, pronounced /eɪ/ as in
 - **Ollama** — Connect to local models running via Ollama with automatic model discovery
 - **OpenAI Compatible** — Connect to any OpenAI-compatible API (OpenAI, DeepSeek, Groq, etc.) with multi-provider support and connection testing
 - **OpenClaw** — Connect to OpenClaw instances with multi-instance support (experimental)
-- **OpenCode** — Built-in OpenCode server management with start/stop/restart controls and auto-start (experimental)
-- **Pi** — Built-in Pi process management via RPC mode with auto-detect and auto-start (experimental)
 
 ### Chat
 
@@ -50,16 +48,8 @@ misspelling of "chatter": its `a…e` is a long *a*, pronounced /eɪ/ as in
 ### MCP (Model Context Protocol)
 
 - **Remote MCP servers** — Connect to Streamable HTTP MCP servers
-- **Local MCP servers** — Run stdio-based MCP servers as subprocesses (JSON-RPC)
-- **Built-in servers** — Pre-configured Bash MCP and Filesystem MCP servers
 - **Tool calling** — Automatic tool call detection, execution, and follow-up with configurable depth limit
 - **Server status** — Real-time connection status and available tool count
-
-### Skills and Agent
-
-- **Skill discovery** — Scan folders for `SKILL.md` files and inject them into chat context as system prompts
-- **Agent instructions** — Load an `AGENTS.md` or `CLAUDE.md` file to provide persistent AI instructions
-- **System prompt builder** — Automatically combines skills and agent instructions into a system message
 
 ### Desktop Integration
 
@@ -123,32 +113,17 @@ cmake --build build
 sudo cmake --install build
 ```
 
-### Building .deb / .rpm packages (optional)
+### Other distributions and packaging
 
-`cpack` produces distribution packages out of the same build. Use the generator
-that matches the machine you are building on:
+This repository is the application source and nothing else. It is developed and
+tested on Fedora, and it does not ship, build or document distribution
+packages — no `.rpm`, no `.deb`, no Flatpak.
 
-```bash
-cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
-cmake --build build
-cd build
-
-cpack -G RPM    # Fedora / openSUSE, needs rpm-build
-cpack -G DEB    # Debian / Ubuntu, needs dpkg-dev
-```
-
-Both packages install `/usr/bin/kchater`, the desktop entry, the icon and the
-translations.
-
-### Other distributions
-
-Only Fedora is covered here. On any other distribution, install the equivalent
-Qt 6 / KDE Frameworks 6 / Kirigami Addons / Extra CMake Modules development
-packages from your own repositories — the rest of the build is identical.
-
-If you are not sure which packages those are, ask an AI assistant to translate
-the Fedora package list above for your distribution; that is a perfect question
-for it.
+If you want any of that, it is a packaging question rather than a KChater
+question. Install the equivalent Qt 6 / KDE Frameworks 6 / Kirigami Addons /
+Extra CMake Modules development packages for your distribution, and ask an AI
+assistant to walk you through turning the build into a package. That is a
+perfect question for one.
 
 ## Repository Layout
 
@@ -162,7 +137,7 @@ and everything else is installed from this repository.
 | `po/` | Translations — `zh_CN.po`, the generated `kchater.pot` template and `Messages.sh` to regenerate it |
 | `resources/icons/cn.vekaris.kchater.svg` | The application icon, used for the window, the taskbar and the menu entry |
 | `cn.vekaris.kchater.desktop` | Desktop entry template, see below |
-| `CMakeLists.txt`, `src/CMakeLists.txt` | The build system, including the optional `cpack` packaging |
+| `CMakeLists.txt`, `src/CMakeLists.txt` | The build system |
 | `LICENSE` | GPL-3.0 |
 
 The icon file name, the `Icon=` value in the desktop entry and the
@@ -213,8 +188,6 @@ Once enabled, new provider options appear in **Settings → General**.
 | Provider | Description |
 |----------|-------------|
 | **OpenClaw** | Connect to OpenClaw agent instances. Supports multiple instances with URL/token configuration and connection testing. Requires the OpenAI-compatible Chat Completions endpoint enabled in OpenClaw. |
-| **OpenCode** | Manages an OpenCode server process directly from KChater. Configure the binary path, auto-detect, start/stop/restart, set host/port, and view server logs. Supports auto-start on launch and auto-restart on crash (up to 3 attempts). |
-| **Pi** | Connects to a Pi coding agent via RPC mode (stdin/stdout JSONL protocol). Configure the binary path, auto-detect, start/stop, and view logs. Supports auto-start when Pi is the active provider. |
 
 ## License
 
@@ -234,8 +207,8 @@ git history is preserved in this repository.
 Changes made in 2026: renamed the application and its application ID, drew a
 new icon, rewrote the Simplified Chinese translation, added the runtime
 language switcher, removed the system tray, the Flatpak manifest and the
-AppStream metadata, added CPack packaging, and replaced the built-in humanizer
-text. Files that were changed carry an `SPDX-FileContributor` tag.
+AppStream metadata, and replaced the built-in humanizer text. Files that were
+changed carry an `SPDX-FileContributor` tag.
 
 ### Third-party content
 
