@@ -136,6 +136,44 @@ If you are not sure which packages those are, ask an AI assistant to translate
 the Fedora package list above for your distribution; that is a perfect question
 for it.
 
+## Repository Layout
+
+Nothing is downloaded while building: the interface is compiled into the binary
+and everything else is installed from this repository.
+
+| Path | What it is |
+|------|------------|
+| `src/` | C++ sources — `main.cpp`, the session store, file helpers, hot reload, the translation helper |
+| `src/qml/` | The entire interface: `Main.qml`, `pages/`, `components/`, `settings/` and the JavaScript in `logic/` |
+| `po/` | Translations — `zh_CN.po`, the generated `qtchater.pot` template and `Messages.sh` to regenerate it |
+| `resources/icons/cn.vekaris.qtchater.svg` | The application icon, used for the window, the taskbar and the menu entry |
+| `cn.vekaris.qtchater.desktop` | Desktop entry template, see below |
+| `CMakeLists.txt`, `src/CMakeLists.txt` | The build system, including the optional `cpack` packaging |
+| `LICENSE` | GPL-3.0 |
+
+The icon file name, the `Icon=` value in the desktop entry and the
+`QIcon::fromTheme()` call in `src/main.cpp` must stay in sync — they are all the
+same string, `cn.vekaris.qtchater`.
+
+### The desktop entry is a template
+
+`cn.vekaris.qtchater.desktop` is a working entry, but treat it as a template
+rather than something that has to stay exactly as it is. `cmake --install`
+installs it to `/usr/share/applications/` next to the icon in
+`/usr/share/icons/hicolor/scalable/apps/`, and that pair is what makes the app
+show up in your application menu.
+
+If you rename the application, or build it by hand, copy the file to
+`~/.local/share/applications/` and adjust these keys:
+
+| Key | Must match |
+|-----|------------|
+| `Exec` | the installed executable name, `qtchater` |
+| `Icon` | the icon file name without the `.svg` suffix, `cn.vekaris.qtchater` |
+| `Name` | the name shown in the menu, `qtchater` |
+
+Then run `update-desktop-database ~/.local/share/applications` once.
+
 ## Experimental Features
 
 qtchater includes experimental features that are disabled by default. These features are functional but may have rough edges, change between releases, or lack full polish.

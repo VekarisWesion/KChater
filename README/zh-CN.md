@@ -126,6 +126,36 @@ cpack -G DEB    # Debian / Ubuntu，需要 dpkg-dev
 
 如果不确定对应哪些包，可以把上面 Fedora 的包名列表丢给 AI 助手，让它帮你换算成你的发行版——这类问题很适合问 AI。
 
+## 仓库结构
+
+构建过程不需要联网下载任何东西：界面已经编译进可执行文件，其余资源都从这个仓库安装。
+
+| 路径 | 说明 |
+|------|------|
+| `src/` | C++ 源码 —— `main.cpp`、会话存储、文件助手、热重载、翻译辅助 |
+| `src/qml/` | 全部界面：`Main.qml`、`pages/`、`components/`、`settings/`，以及 `logic/` 下的 JavaScript |
+| `po/` | 翻译 —— `zh_CN.po`、生成的 `qtchater.pot` 模板，以及用于重新生成的 `Messages.sh` |
+| `resources/icons/cn.vekaris.qtchater.svg` | 应用图标，窗口、任务栏和菜单项都用它 |
+| `cn.vekaris.qtchater.desktop` | 桌面入口模板，见下 |
+| `CMakeLists.txt`、`src/CMakeLists.txt` | 构建系统，包含可选的 `cpack` 打包 |
+| `LICENSE` | GPL-3.0 |
+
+图标文件名、桌面入口里的 `Icon=`，以及 `src/main.cpp` 里的 `QIcon::fromTheme()` 必须保持一致——它们都是同一个字符串 `cn.vekaris.qtchater`。
+
+### 桌面入口是模板
+
+`cn.vekaris.qtchater.desktop` 是一个可用的桌面入口，但请把它当模板看，而不是必须原样保留的东西。`cmake --install` 会把它装到 `/usr/share/applications/`，图标装到 `/usr/share/icons/hicolor/scalable/apps/`，这一对文件才是应用出现在菜单里的原因。
+
+如果你改了应用名，或者想手动构建，把该文件复制到 `~/.local/share/applications/`，并改好这几个键：
+
+| 键 | 需要匹配 |
+|-----|---------|
+| `Exec` | 安装后的可执行文件名，`qtchater` |
+| `Icon` | 去掉 `.svg` 后缀的图标文件名，`cn.vekaris.qtchater` |
+| `Name` | 菜单里显示的名字，`qtchater` |
+
+然后执行一次 `update-desktop-database ~/.local/share/applications`。
+
 ## 实验性功能
 
 qtchater 包含一些默认关闭的实验性功能。它们可用，但可能不够完善、会随版本变化，或缺少打磨。
