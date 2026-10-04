@@ -1,2 +1,10 @@
 build/
 bin/
+
+# Qt Creator / IDE user files
+.qtcreator/
+CMakeLists.txt.user
+CMakeLists.txt.user.*
+*.user
+*.user.*
+.vscode/
