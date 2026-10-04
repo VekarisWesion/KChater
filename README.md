@@ -1,6 +1,4 @@
 <div align="center">
-  <img src="resources/icons/cn.vekaris.qtchater.svg" width="128" height="128" alt="qtchater icon"/>
-
   # qtchater
 
   **A native AI chat client for the KDE Plasma desktop**
@@ -54,24 +52,6 @@ qtchater is a native KDE Plasma application for chatting with AI models. Built w
 - **Language selection** — English and Simplified Chinese, switchable at runtime from the settings
 - **System-wide install** — The desktop entry, icon and AppStream metadata are installed for you
 - **Flatpak support** — A Flatpak manifest is available with proper sandboxing utilities
-
-## Screenshots
-
-### Main Window
-
-![Main window showing a chat session with the session sidebar](screenshots/MainWindow.png)
-
-### Settings
-
-![Settings window](screenshots/SettingsWindow.png)
-
-### Settings — OpenAI Compatible
-
-![OpenAI Compatible settings with multi-provider management and connection testing](screenshots/SettingsOpenAICompatible.png)
-
-### MCP Servers
-
-![MCP servers settings with server management](screenshots/SettingsMCPs.png)
 
 ## Building from Source
 

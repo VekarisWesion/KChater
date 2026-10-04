@@ -44,21 +44,6 @@
     </p>
   </description>
 
-  <screenshots>
-    <screenshot type="default">
-      <image>https://kaftnndedwgveoywpzyl.supabase.co/storage/v1/object/public/flathub/qtchater/1.1.0/MainWindow.png</image>
-      <caption>qtchater main window</caption>
-    </screenshot>
-    <screenshot>
-      <image>https://kaftnndedwgveoywpzyl.supabase.co/storage/v1/object/public/flathub/qtchater/1.1.0/SettingsMCPs.png</image>
-      <caption>MCP servers settings</caption>
-    </screenshot>
-    <screenshot>
-      <image>https://kaftnndedwgveoywpzyl.supabase.co/storage/v1/object/public/flathub/qtchater/1.1.0/SettingsOpenAICompatible.png</image>
-      <caption>OpenAI Compatible settings</caption>
-    </screenshot>
-  </screenshots>
-
   <url type="homepage">https://github.com/VekarisWesion/QtChater</url>
   <url type="vcs-browser">https://github.com/VekarisWesion/QtChater</url>
   <url type="bugtracker">https://github.com/VekarisWesion/QtChater/issues</url>

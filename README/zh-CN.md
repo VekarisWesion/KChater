@@ -1,6 +1,4 @@
 <div align="center">
-  <img src="../resources/icons/cn.vekaris.qtchater.svg" width="128" height="128" alt="qtchater 图标"/>
-
   # qtchater
 
   **为 KDE Plasma 桌面打造的原生 AI 聊天客户端**
@@ -54,24 +52,6 @@ qtchater 是一个原生的 KDE Plasma 应用，用于和 AI 模型聊天。它�
 - **语言切换** — 支持英文与简体中文，可在设置中即时切换
 - **全局安装** — 自动安装桌面入口、图标与 AppStream 元数据
 - **Flatpak 支持** — 提供带沙箱权限配置的 Flatpak 清单
-
-## 截图
-
-### 主窗口
-
-![主窗口，显示会话侧边栏与聊天内容](../screenshots/MainWindow.png)
-
-### 设置
-
-![设置窗口](../screenshots/SettingsWindow.png)
-
-### 设置 — OpenAI 兼容
-
-![OpenAI 兼容设置，多服务商管理与连接测试](../screenshots/SettingsOpenAICompatible.png)
-
-### MCP 服务器
-
-![MCP 服务器设置](../screenshots/SettingsMCPs.png)
 
 ## 从源码构建
 
