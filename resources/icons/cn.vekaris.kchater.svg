@@ -3,25 +3,24 @@
   SPDX-FileCopyrightText: 2026 VekarisWesion <vekaris@zohomail.com>
   SPDX-License-Identifier: GPL-3.0-or-later
 
-  Original artwork drawn for KChater, using the Breeze blue palette.
+  Original artwork drawn for KChater, in the Breeze palette.
 -->
 <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
   <defs>
     <linearGradient id="kchater-tile" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#4cb8f0"/>
-      <stop offset="1" stop-color="#2a9fdc"/>
+      <stop offset="0" stop-color="#3b4148"/>
+      <stop offset="1" stop-color="#2a2e32"/>
     </linearGradient>
   </defs>
 
-  <!-- rounded tile with a subtle top gloss -->
   <rect width="256" height="256" rx="48" fill="url(#kchater-tile)"/>
-  <path fill="#ffffff" opacity="0.10" d="M0 48A48 48 0 0 1 48 0h160a48 48 0 0 1 48 48v72H0z"/>
+  <path fill="#ffffff" opacity="0.06" d="M0 48A48 48 0 0 1 48 0h160a48 48 0 0 1 48 48v66H0z"/>
 
-  <!-- speech bubble with a tail -->
-  <path fill="#ffffff" d="M74 68h108a26 26 0 0 1 26 26v52a26 26 0 0 1-26 26h-80l-40 36v-36h-14a26 26 0 0 1-26-26v-52a26 26 0 0 1 26-26z"/>
+  <!-- speech bubble: body and tail in one path -->
+  <path fill="#fcfcfc" d="M84 64h88a28 28 0 0 1 28 28v48a28 28 0 0 1-28 28h-54l-34 32v-32a28 28 0 0 1-28-28v-48a28 28 0 0 1 28-28z"/>
 
   <!-- message dots -->
-  <circle cx="88" cy="120" r="11" fill="#2a9fdc"/>
-  <circle cx="128" cy="120" r="11" fill="#2a9fdc"/>
-  <circle cx="168" cy="120" r="11" fill="#2a9fdc"/>
+  <circle cx="102" cy="116" r="10" fill="#3b4148"/>
+  <circle cx="128" cy="116" r="10" fill="#3b4148"/>
+  <circle cx="154" cy="116" r="10" fill="#3b4148"/>
 </svg>
