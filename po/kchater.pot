@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kchater\n"
 "Report-Msgid-Bugs-To: https://github.com/VekarisWesion/KChater/issues\n"
-"POT-Creation-Date: 2026-10-05 10:17+0800\n"
+"POT-Creation-Date: 2026-10-05 10:21+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/qml/components/ChatMessage.qml:31
+#: src/qml/components/ChatMessage.qml:41
 msgid "Error"
 msgstr ""
 
-#: src/qml/components/ChatMessage.qml:63
+#: src/qml/components/ChatMessage.qml:73
 msgid "Thinking..."
 msgstr ""
 
-#: src/qml/components/ChatMessage.qml:132
+#: src/qml/components/ChatMessage.qml:142
 msgid "Copy"
 msgstr ""
 
@@ -217,7 +217,7 @@ msgstr ""
 msgid "Thinking"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:34 src/qml/pages/ChatPage.qml:1029
+#: src/qml/pages/ChatPage.qml:34 src/qml/pages/ChatPage.qml:1051
 msgid "Settings"
 msgstr ""
 
@@ -285,67 +285,71 @@ msgstr ""
 msgid "Provider not configured."
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:424
+#: src/qml/pages/ChatPage.qml:353
+msgid "Unknown error."
+msgstr ""
+
+#: src/qml/pages/ChatPage.qml:446
 msgid "Calling tools: %1"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:490
+#: src/qml/pages/ChatPage.qml:512
 msgid "Calling %1…"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:501
+#: src/qml/pages/ChatPage.qml:523
 msgid "Memory saved"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:506
+#: src/qml/pages/ChatPage.qml:528
 msgid "save_memory: Memory saved"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:518
+#: src/qml/pages/ChatPage.qml:540
 msgid "Tool %1 is not an MCP tool"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:548
+#: src/qml/pages/ChatPage.qml:570
 msgid "MCP server not found for tool %1"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:568
+#: src/qml/pages/ChatPage.qml:590
 msgid "Error: %1"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:573
+#: src/qml/pages/ChatPage.qml:595
 msgid "%1: %2"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:578
+#: src/qml/pages/ChatPage.qml:600
 msgid "%1 result: %2"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:590
+#: src/qml/pages/ChatPage.qml:612
 msgid "Tool %1 failed: %2"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:770
+#: src/qml/pages/ChatPage.qml:792
 msgid "What can you tell me about the attached files?"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:774
+#: src/qml/pages/ChatPage.qml:796
 msgid "Attachments: %1"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:1190
+#: src/qml/pages/ChatPage.qml:1212
 msgid "Select AI provider"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:1216
+#: src/qml/pages/ChatPage.qml:1238
 msgid "I am waiting for your questions..."
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:1284
+#: src/qml/pages/ChatPage.qml:1306
 msgid "Refresh model list"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:1322
+#: src/qml/pages/ChatPage.qml:1344
 msgid "Refresh models list"
 msgstr ""
 

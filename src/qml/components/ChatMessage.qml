@@ -1,5 +1,6 @@
 /*
     SPDX-FileCopyrightText: 2024 Denys Madureira <denysmb@zoho.com>
+    SPDX-FileContributor: VekarisWesion <vekaris@zohomail.com>
     SPDX-License-Identifier: LGPL-2.1-or-later
 */
 
@@ -23,6 +24,15 @@ Kirigami.AbstractCard {
     Layout.fillWidth: true
 
     showClickFeedback: false
+
+    // Replaced so a failed request can be shown as a red bubble. The colours for
+    // a normal message mirror the plain card look.
+    background: Rectangle {
+        color: root.isErrorMessage ? Kirigami.Theme.negativeBackgroundColor : Kirigami.Theme.backgroundColor
+        radius: Kirigami.Units.cornerRadius
+        border.width: root.isErrorMessage ? 1 : 0
+        border.color: Kirigami.Theme.negativeTextColor
+    }
 
     contentItem: ColumnLayout {
         spacing: Kirigami.Units.smallSpacing

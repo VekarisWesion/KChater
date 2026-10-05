@@ -529,6 +529,9 @@ msgstr ""
 msgid "Provider not configured."
 msgstr "未配置服务商。"
 
+msgid "Unknown error."
+msgstr "未知错误。"
+
 msgid "Calling tools: %1"
 msgstr "正在调用工具：%1"
 

@@ -162,6 +162,7 @@ function requestOllama(modelsComboboxCurrentValue, promptArray, listModel, onStr
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (typeof onComplete === 'function') {
                 if (xhr.status !== 200 && !errorDetected && accumulatedText === '') {
+                    errorDetected = true;
                     accumulatedText = 'Ollama error: HTTP ' + xhr.status;
                     if (xhr.responseText) {
                         try {
@@ -179,7 +180,7 @@ function requestOllama(modelsComboboxCurrentValue, promptArray, listModel, onStr
                         finalToolCalls.push(toolCalls[tcKeys[k]]);
                     }
                 }
-                onComplete(oldLength, listModel, accumulatedText, finalToolCalls);
+                onComplete(oldLength, listModel, accumulatedText, finalToolCalls, errorDetected);
             }
         }
     };
@@ -308,6 +309,7 @@ function requestOpenAICompatible(baseUrl, token, model, promptArray, thinkingEna
     let processedLength = 0;
     let toolCalls = {};
     let hasToolCalls = false;
+    let requestFailed = false;
 
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.LOADING || xhr.readyState === XMLHttpRequest.DONE) {
@@ -331,6 +333,11 @@ function requestOpenAICompatible(baseUrl, token, model, promptArray, thinkingEna
 
                         try {
                             const parsed = JSON.parse(dataStr);
+                            if (parsed && parsed.error) {
+                                // Errors can also arrive inside a 200 stream.
+                                requestFailed = true;
+                                text += (parsed.error.message || parsed.error.code || 'HTTP error');
+                            }
                             const choices = parsed.choices;
                             if (choices && choices.length > 0) {
                                 const delta = choices[0].delta;
@@ -404,16 +411,19 @@ function requestOpenAICompatible(baseUrl, token, model, promptArray, thinkingEna
                 // Without this the caller only ever sees an empty message when the
                 // server answers with an error status (bad key, rate limit, an
                 // unsupported parameter, ...).
-                if (xhr.status !== 200 && text === '' && thinkingText === '') {
-                    text = 'HTTP ' + xhr.status;
-                    if (xhr.responseText) {
-                        try {
-                            const errObj = JSON.parse(xhr.responseText);
-                            if (errObj && errObj.error) {
-                                text = errObj.error.message || errObj.error.code || text;
+                if (xhr.status !== 200) {
+                    requestFailed = true;
+                    if (text === '' && thinkingText === '') {
+                        text = 'HTTP ' + xhr.status;
+                        if (xhr.responseText) {
+                            try {
+                                const errObj = JSON.parse(xhr.responseText);
+                                if (errObj && errObj.error) {
+                                    text = errObj.error.message || errObj.error.code || text;
+                                }
+                            } catch (e) {
+                                text = xhr.responseText.substring(0, 500);
                             }
-                        } catch (e) {
-                            text = xhr.responseText.substring(0, 500);
                         }
                     }
                 }
@@ -424,7 +434,7 @@ function requestOpenAICompatible(baseUrl, token, model, promptArray, thinkingEna
                         finalToolCalls.push(toolCalls[tcKeys[k]]);
                     }
                 }
-                onComplete(oldLength, listModel, text, finalToolCalls);
+                onComplete(oldLength, listModel, text, finalToolCalls, requestFailed);
             }
         }
     };

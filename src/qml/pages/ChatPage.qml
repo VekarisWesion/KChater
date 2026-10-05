@@ -334,25 +334,47 @@ Kirigami.Page {
         }
     }
 
-    function handleRequestComplete(oldLength, listModel, finalText, toolCalls, capturedSessionId) {
+    function handleRequestComplete(oldLength, listModel, finalText, toolCalls, capturedSessionId, failed) {
         if (activeXhr === null && mcpToolCallDepth === 0 && !capturedSessionId) return;
 
         var sessionId = capturedSessionId || currentSessionId
         var isActiveSession = sessionId === currentSessionId
 
-        var isOllamaError = currentProvider === "ollama" && finalText && (
+        // The API clients now report failures explicitly; these text checks stay
+        // for anything that slips through.
+        var looksLikeError = currentProvider === "ollama" && finalText && (
             finalText.indexOf("does not support") !== -1 ||
             finalText.indexOf("Ollama error") !== -1 ||
             finalText.startsWith("{\"error\"")
         )
+        var isError = failed === true || looksLikeError
 
-        if (isOllamaError) {
-            if (isActiveSession && listModel.count > oldLength) {
-                listModel.setProperty(oldLength, "isError", true);
-                listModel.setProperty(oldLength, "name", "Error");
-                listModel.setProperty(oldLength, "thinkingContent", "");
+        if (isError) {
+            var errorText = finalText || i18n("Unknown error.")
+            if (isActiveSession) {
+                if (listModel.count > oldLength) {
+                    listModel.setProperty(oldLength, "isError", true);
+                    listModel.setProperty(oldLength, "name", "Error");
+                    listModel.setProperty(oldLength, "content", errorText);
+                    listModel.setProperty(oldLength, "thinkingContent", "");
+                } else {
+                    // The request failed before a single chunk arrived, so there
+                    // is no bubble to turn red yet.
+                    listModel.append({
+                        "name": "Error",
+                        "content": errorText,
+                        "thinkingContent": "",
+                        "isError": true
+                    });
+                }
             }
             if (sessionId !== "") {
+                var stored = SessionStore.getLastMessage(sessionId)
+                if (stored.role !== "assistant") {
+                    SessionStore.addMessage(sessionId, "assistant", errorText, "")
+                } else if (stored.content !== errorText) {
+                    SessionStore.updateLastAssistantMessage(sessionId, errorText, "")
+                }
                 SessionStore.markLastAssistantAsError(sessionId);
             }
             if (isActiveSession) {
@@ -608,8 +630,8 @@ Kirigami.Page {
         var isActiveSession = sessionId === currentSessionId
 
         var streamingCb = isActiveSession ? handleStreaming : function() {}
-        var completeCb = function(ol, lm, finalText, toolCalls) {
-            handleRequestComplete(ol, lm, finalText, toolCalls, sessionId)
+        var completeCb = function(ol, lm, finalText, toolCalls, failed) {
+            handleRequestComplete(ol, lm, finalText, toolCalls, sessionId, failed)
         }
 
         if (currentProvider.startsWith("openai-compatible:")) {
@@ -846,8 +868,8 @@ Kirigami.Page {
                 streamingSaveTimer.start()
             }
         }
-        var completeCb = function(ol, lm, finalText, toolCalls) {
-            handleRequestComplete(ol, lm, finalText, toolCalls, capturedSessionId)
+        var completeCb = function(ol, lm, finalText, toolCalls, failed) {
+            handleRequestComplete(ol, lm, finalText, toolCalls, capturedSessionId, failed)
         }
 
         if (currentProvider === "ollama") {
