@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kchater\n"
 "Report-Msgid-Bugs-To: https://github.com/VekarisWesion/KChater/issues\n"
-"POT-Creation-Date: 2026-10-05 10:24+0800\n"
+"POT-Creation-Date: 2026-10-05 10:27+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -191,7 +191,7 @@ msgctxt "@info"
 msgid "New Chat"
 msgstr ""
 
-#: src/qml/components/SessionCard.qml:67 src/qml/pages/ChatPage.qml:38
+#: src/qml/components/SessionCard.qml:67
 msgctxt "@action:button"
 msgid "Delete"
 msgstr ""
@@ -213,64 +213,64 @@ msgstr ""
 msgid "Start a new conversation to see it listed in this sidebar."
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:30
+#: src/qml/pages/ChatPage.qml:31
 msgctxt "@title:window"
 msgid "Delete chat?"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:31
+#: src/qml/pages/ChatPage.qml:32
 msgid "This chat and all of its messages will be permanently deleted."
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:61
+#: src/qml/pages/ChatPage.qml:53
 msgid "Thinking"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:68 src/qml/pages/ChatPage.qml:1085
+#: src/qml/pages/ChatPage.qml:60 src/qml/pages/ChatPage.qml:1077
 msgid "Settings"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:73
+#: src/qml/pages/ChatPage.qml:65
 msgid "New chat"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:116
+#: src/qml/pages/ChatPage.qml:108
 msgid "Connecting to %1…"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:119
+#: src/qml/pages/ChatPage.qml:111
 msgid "Failed to connect to %1: no URL configured"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:144 src/qml/settings/SettingsMCP.qml:177
+#: src/qml/pages/ChatPage.qml:136 src/qml/settings/SettingsMCP.qml:177
 msgid "Connected to %1 — %2 tool(s) available"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:150
+#: src/qml/pages/ChatPage.qml:142
 msgid "Connected to %1 but failed to list tools"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:158 src/qml/settings/SettingsMCP.qml:200
+#: src/qml/pages/ChatPage.qml:150 src/qml/settings/SettingsMCP.qml:200
 msgid "Failed to connect to %1: %2"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:303
+#: src/qml/pages/ChatPage.qml:295
 msgid "Switched to %1"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:308
+#: src/qml/pages/ChatPage.qml:300
 msgid "enabled"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:308
+#: src/qml/pages/ChatPage.qml:300
 msgid "disabled"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:309
+#: src/qml/pages/ChatPage.qml:301
 msgid "Thinking %1"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:328
+#: src/qml/pages/ChatPage.qml:320
 msgid ""
 "No local model found.\n"
 "Please install some first.\n"
@@ -278,87 +278,87 @@ msgid ""
 "If you need help, check Ollama documentation."
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:330
+#: src/qml/pages/ChatPage.qml:322
 msgid ""
 "OpenClaw instance not configured.\n"
 "Please set URL and Token in settings."
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:332
+#: src/qml/pages/ChatPage.qml:324
 msgid ""
 "OpenAI Compatible provider not configured.\n"
 "Please configure it in settings."
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:334
+#: src/qml/pages/ChatPage.qml:326
 msgid "Provider not configured."
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:387
+#: src/qml/pages/ChatPage.qml:379
 msgid "Unknown error."
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:480
+#: src/qml/pages/ChatPage.qml:472
 msgid "Calling tools: %1"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:546
+#: src/qml/pages/ChatPage.qml:538
 msgid "Calling %1…"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:557
+#: src/qml/pages/ChatPage.qml:549
 msgid "Memory saved"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:562
+#: src/qml/pages/ChatPage.qml:554
 msgid "save_memory: Memory saved"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:574
+#: src/qml/pages/ChatPage.qml:566
 msgid "Tool %1 is not an MCP tool"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:604
+#: src/qml/pages/ChatPage.qml:596
 msgid "MCP server not found for tool %1"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:624
+#: src/qml/pages/ChatPage.qml:616
 msgid "Error: %1"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:629
+#: src/qml/pages/ChatPage.qml:621
 msgid "%1: %2"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:634
+#: src/qml/pages/ChatPage.qml:626
 msgid "%1 result: %2"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:646
+#: src/qml/pages/ChatPage.qml:638
 msgid "Tool %1 failed: %2"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:826
+#: src/qml/pages/ChatPage.qml:818
 msgid "What can you tell me about the attached files?"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:830
+#: src/qml/pages/ChatPage.qml:822
 msgid "Attachments: %1"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:1243
+#: src/qml/pages/ChatPage.qml:1235
 msgid "Select AI provider"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:1269
+#: src/qml/pages/ChatPage.qml:1261
 msgid "I am waiting for your questions..."
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:1337
+#: src/qml/pages/ChatPage.qml:1329
 msgid "Refresh model list"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:1375
+#: src/qml/pages/ChatPage.qml:1367
 msgid "Refresh models list"
 msgstr ""
 

@@ -7,6 +7,7 @@
 import QtQuick
 import QtQuick.Controls as Controls
 import QtQuick.Layouts
+import Qt.labs.platform as Labs
 import org.kde.kirigami as Kirigami
 import cn.vekaris.kchater
 import cn.vekaris.kchater
@@ -24,21 +25,12 @@ Kirigami.Page {
     // Deleting a chat cannot be undone, so ask first.
     property string sessionPendingDeletion: ""
 
-    Kirigami.PromptDialog {
+    Labs.MessageDialog {
         id: deleteSessionDialog
 
         title: i18nc("@title:window", "Delete chat?")
-        subtitle: i18n("This chat and all of its messages will be permanently deleted.")
-        dialogType: Kirigami.PromptDialog.Warning
-        standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
-
-        Component.onCompleted: {
-            var okButton = standardButton(Kirigami.Dialog.Ok);
-            if (okButton) {
-                okButton.text = i18nc("@action:button", "Delete");
-                okButton.icon.name = "edit-delete-symbolic";
-            }
-        }
+        text: i18n("This chat and all of its messages will be permanently deleted.")
+        buttons: Labs.MessageDialog.Ok | Labs.MessageDialog.Cancel
 
         onAccepted: {
             if (root.sessionPendingDeletion === "") {
