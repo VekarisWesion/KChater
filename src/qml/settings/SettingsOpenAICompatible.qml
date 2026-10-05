@@ -47,6 +47,12 @@ Kirigami.ScrollablePage {
                 if (!providers[i].id) {
                     providers[i].id = generateUuid()
                 }
+                if (!providers[i].reasoningStyle) {
+                    providers[i].reasoningStyle = "auto"
+                }
+                if (providers[i].reasoningCustom === undefined) {
+                    providers[i].reasoningCustom = ""
+                }
                 providersModel.append(providers[i])
             }
         } catch (e) {
@@ -64,6 +70,8 @@ Kirigami.ScrollablePage {
                 url: item.url,
                 token: item.token,
                 model: item.model,
+                reasoningStyle: item.reasoningStyle ? item.reasoningStyle : "auto",
+                reasoningCustom: item.reasoningCustom !== undefined ? item.reasoningCustom : "",
                 enabled: item.enabled !== undefined ? item.enabled : true
             })
         }
@@ -78,6 +86,8 @@ Kirigami.ScrollablePage {
                 url: "",
                 token: "",
                 model: "",
+                reasoningStyle: "auto",
+                reasoningCustom: "",
                 enabled: true
             }
         }
@@ -181,6 +191,8 @@ Kirigami.ScrollablePage {
                 urlField.text = ""
                 tokenField.text = ""
                 modelField.text = ""
+                reasoningStyleCombo.currentIndex = reasoningStyleCombo.indexOfValue("auto")
+                reasoningCustomField.text = ""
                 editSheet.title = i18nc("@title:window", "Add Provider")
                 editSheet.open()
             }
@@ -192,6 +204,8 @@ Kirigami.ScrollablePage {
                 urlField.text = provider.url
                 tokenField.text = provider.token
                 modelField.text = provider.model
+                reasoningStyleCombo.currentIndex = reasoningStyleCombo.indexOfValue(provider.reasoningStyle ? provider.reasoningStyle : "auto")
+                reasoningCustomField.text = provider.reasoningCustom !== undefined ? provider.reasoningCustom : ""
                 editSheet.title = i18nc("@title:window", "Edit Provider")
                 editSheet.open()
             }
@@ -289,7 +303,9 @@ Kirigami.ScrollablePage {
                     displayName: displayNameField.text,
                     url: urlField.text,
                     token: tokenField.text,
-                    model: modelField.text
+                    model: modelField.text,
+                    reasoningStyle: reasoningStyleCombo.currentValue,
+                    reasoningCustom: reasoningCustomField.text
                 }
                 if (editingIndex >= 0) {
                     root.updateProvider(editingIndex, provider)
@@ -351,6 +367,43 @@ Kirigami.ScrollablePage {
                     Layout.fillWidth: true
                     placeholderText: "gpt-4"
                     onTextChanged: editSheet.resetTestState()
+                }
+
+                QQC2.Label {
+                    text: i18nc("@label:listbox", "Thinking control:")
+                    font: Kirigami.Theme.smallFont
+                    color: Kirigami.Theme.disabledTextColor
+                }
+
+                QQC2.ComboBox {
+                    id: reasoningStyleCombo
+                    Layout.fillWidth: true
+                    textRole: "label"
+                    valueRole: "value"
+                    model: [
+                        { value: "auto", label: i18nc("@item:inlistbox", "Automatic (guess from the URL)") },
+                        { value: "deepseek", label: i18nc("@item:inlistbox", "DeepSeek (thinking.type)") },
+                        { value: "openai", label: i18nc("@item:inlistbox", "OpenAI (reasoning_effort)") },
+                        { value: "vllm", label: i18nc("@item:inlistbox", "vLLM / Qwen (chat_template_kwargs)") },
+                        { value: "none", label: i18nc("@item:inlistbox", "Send nothing") },
+                        { value: "custom", label: i18nc("@item:inlistbox", "Custom JSON") }
+                    ]
+                }
+
+                QQC2.Label {
+                    visible: reasoningStyleCombo.currentValue === "custom"
+                    text: i18nc("@label:textbox", "Custom JSON, with __THINKING__ standing for the toggle:")
+                    font: Kirigami.Theme.smallFont
+                    color: Kirigami.Theme.disabledTextColor
+                    wrapMode: Text.WordWrap
+                    Layout.fillWidth: true
+                }
+
+                QQC2.TextField {
+                    id: reasoningCustomField
+                    visible: reasoningStyleCombo.currentValue === "custom"
+                    Layout.fillWidth: true
+                    placeholderText: '{"chat_template_kwargs": {"enable_thinking": __THINKING__}}'
                 }
 
                 Kirigami.InlineMessage {

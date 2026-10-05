@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kchater\n"
 "Report-Msgid-Bugs-To: https://github.com/VekarisWesion/KChater/issues\n"
-"POT-Creation-Date: 2026-10-05 09:55+0800\n"
+"POT-Creation-Date: 2026-10-05 10:13+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -217,7 +217,7 @@ msgstr ""
 msgid "Thinking"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:34 src/qml/pages/ChatPage.qml:1027
+#: src/qml/pages/ChatPage.qml:34 src/qml/pages/ChatPage.qml:1029
 msgid "Settings"
 msgstr ""
 
@@ -325,27 +325,27 @@ msgstr ""
 msgid "Tool %1 failed: %2"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:768
+#: src/qml/pages/ChatPage.qml:770
 msgid "What can you tell me about the attached files?"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:772
+#: src/qml/pages/ChatPage.qml:774
 msgid "Attachments: %1"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:1188
+#: src/qml/pages/ChatPage.qml:1190
 msgid "Select AI provider"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:1214
+#: src/qml/pages/ChatPage.qml:1216
 msgid "I am waiting for your questions..."
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:1282
+#: src/qml/pages/ChatPage.qml:1284
 msgid "Refresh model list"
 msgstr ""
 
-#: src/qml/pages/ChatPage.qml:1320
+#: src/qml/pages/ChatPage.qml:1322
 msgid "Refresh models list"
 msgstr ""
 
@@ -479,7 +479,7 @@ msgid "Add MCP Server"
 msgstr ""
 
 #: src/qml/settings/SettingsMCP.qml:335
-#: src/qml/settings/SettingsOpenAICompatible.qml:305
+#: src/qml/settings/SettingsOpenAICompatible.qml:321
 #: src/qml/settings/SettingsOpenClaw.qml:302
 msgctxt "@label:textbox"
 msgid "Display Name:"
@@ -536,146 +536,186 @@ msgctxt "@title"
 msgid "OpenAI Compatible"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:77
-#: src/qml/settings/SettingsOpenAICompatible.qml:180
+#: src/qml/settings/SettingsOpenAICompatible.qml:85
+#: src/qml/settings/SettingsOpenAICompatible.qml:190
 msgctxt "@info"
 msgid "New Provider"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:120
+#: src/qml/settings/SettingsOpenAICompatible.qml:130
 msgctxt "@info"
 msgid ""
 "Configure multiple OpenAI-compatible API providers (OpenAI, DeepSeek, Groq, "
 "etc.). Add, edit, or remove providers using the buttons below."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:130
+#: src/qml/settings/SettingsOpenAICompatible.qml:140
 msgctxt "@title:group"
 msgid "Providers"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:158
+#: src/qml/settings/SettingsOpenAICompatible.qml:168
 msgctxt "@action:button"
 msgid "Add Provider"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:172
-#: src/qml/settings/SettingsOpenAICompatible.qml:195
+#: src/qml/settings/SettingsOpenAICompatible.qml:182
+#: src/qml/settings/SettingsOpenAICompatible.qml:209
 msgctxt "@title:window"
 msgid "Edit Provider"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:184
+#: src/qml/settings/SettingsOpenAICompatible.qml:196
 msgctxt "@title:window"
 msgid "Add Provider"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:313
+#: src/qml/settings/SettingsOpenAICompatible.qml:329
 msgctxt "@info:placeholder"
 msgid "e.g., DeepSeek, Groq, OpenAI"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:317
+#: src/qml/settings/SettingsOpenAICompatible.qml:333
 msgctxt "@label:textbox"
 msgid "API URL:"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:330
+#: src/qml/settings/SettingsOpenAICompatible.qml:346
 msgctxt "@label:textbox"
 msgid "API Token:"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:338
+#: src/qml/settings/SettingsOpenAICompatible.qml:354
 msgctxt "@info:placeholder"
 msgid "Enter your API token"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:344
+#: src/qml/settings/SettingsOpenAICompatible.qml:360
 msgctxt "@label:textbox"
 msgid "Model:"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:369
+#: src/qml/settings/SettingsOpenAICompatible.qml:373
+msgctxt "@label:listbox"
+msgid "Thinking control:"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:384
+msgctxt "@item:inlistbox"
+msgid "Automatic (guess from the URL)"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:385
+msgctxt "@item:inlistbox"
+msgid "DeepSeek (thinking.type)"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:386
+msgctxt "@item:inlistbox"
+msgid "OpenAI (reasoning_effort)"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:387
+msgctxt "@item:inlistbox"
+msgid "vLLM / Qwen (chat_template_kwargs)"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:388
+msgctxt "@item:inlistbox"
+msgid "Send nothing"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:389
+msgctxt "@item:inlistbox"
+msgid "Custom JSON"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:395
+msgctxt "@label:textbox"
+msgid "Custom JSON, with __THINKING__ standing for the toggle:"
+msgstr ""
+
+#: src/qml/settings/SettingsOpenAICompatible.qml:422
 #: src/qml/settings/SettingsOpenClaw.qml:353
 msgctxt "@info"
 msgid "Connection has not been tested."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:370
+#: src/qml/settings/SettingsOpenAICompatible.qml:423
 #: src/qml/settings/SettingsOpenClaw.qml:354
 msgctxt "@info"
 msgid "Testing connection…"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:372
+#: src/qml/settings/SettingsOpenAICompatible.qml:425
 msgctxt "@info"
 msgid "Connection successful. %1 model(s) available."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:373
+#: src/qml/settings/SettingsOpenAICompatible.qml:426
 #: src/qml/settings/SettingsOpenClaw.qml:355
 msgctxt "@info"
 msgid "Connection successful!"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:375
+#: src/qml/settings/SettingsOpenAICompatible.qml:428
 #: src/qml/settings/SettingsOpenClaw.qml:356
 msgctxt "@info"
 msgid "Connection timed out after 10 seconds."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:376
+#: src/qml/settings/SettingsOpenAICompatible.qml:429
 #: src/qml/settings/SettingsOpenClaw.qml:357
 msgctxt "@info"
 msgid "Could not reach the server. Check the URL and network connection."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:377
+#: src/qml/settings/SettingsOpenAICompatible.qml:430
 #: src/qml/settings/SettingsOpenClaw.qml:358
 msgctxt "@info"
 msgid "Authentication failed. Check your API token."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:378
+#: src/qml/settings/SettingsOpenAICompatible.qml:431
 #: src/qml/settings/SettingsOpenClaw.qml:359
 msgctxt "@info"
 msgid "Server not found at this URL. Check the API URL."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:379
+#: src/qml/settings/SettingsOpenAICompatible.qml:432
 msgctxt "@info"
 msgid "Please enter an API URL before testing."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:380
+#: src/qml/settings/SettingsOpenAICompatible.qml:433
 msgctxt "@info"
 msgid "Please enter an API token before testing."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:381
+#: src/qml/settings/SettingsOpenAICompatible.qml:434
 msgctxt "@info"
 msgid "Please enter a model name before testing."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:382
+#: src/qml/settings/SettingsOpenAICompatible.qml:435
 #: src/qml/settings/SettingsOpenClaw.qml:362
 msgctxt "@info"
 msgid "URL must start with http:// or https://."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:383
+#: src/qml/settings/SettingsOpenAICompatible.qml:436
 #: src/qml/settings/SettingsOpenClaw.qml:363
 msgctxt "@info"
 msgid "Server returned error %1: %2"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:384
+#: src/qml/settings/SettingsOpenAICompatible.qml:437
 #: src/qml/settings/SettingsOpenClaw.qml:364
 msgctxt "@info"
 msgid "Unknown connection error."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:388
+#: src/qml/settings/SettingsOpenAICompatible.qml:441
 #: src/qml/settings/SettingsOpenClaw.qml:368
 msgctxt "@action:button"
 msgid "Test Now"

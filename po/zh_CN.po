@@ -270,6 +270,39 @@ msgctxt "@label:textbox"
 msgid "Model:"
 msgstr "模型："
 
+#: src/qml/settings/SettingsOpenAICompatible.qml
+msgctxt "@label:listbox"
+msgid "Thinking control:"
+msgstr "思考控制："
+
+msgctxt "@item:inlistbox"
+msgid "Automatic (guess from the URL)"
+msgstr "自动（按 URL 判断）"
+
+msgctxt "@item:inlistbox"
+msgid "DeepSeek (thinking.type)"
+msgstr "DeepSeek（thinking.type）"
+
+msgctxt "@item:inlistbox"
+msgid "OpenAI (reasoning_effort)"
+msgstr "OpenAI（reasoning_effort）"
+
+msgctxt "@item:inlistbox"
+msgid "vLLM / Qwen (chat_template_kwargs)"
+msgstr "vLLM / Qwen（chat_template_kwargs）"
+
+msgctxt "@item:inlistbox"
+msgid "Send nothing"
+msgstr "不发送任何参数"
+
+msgctxt "@item:inlistbox"
+msgid "Custom JSON"
+msgstr "自定义 JSON"
+
+msgctxt "@label:textbox"
+msgid "Custom JSON, with __THINKING__ standing for the toggle:"
+msgstr "自定义 JSON，其中 __THINKING__ 代表开关状态："
+
 msgctxt "@info"
 msgid "Connection successful. %1 model(s) available."
 msgstr "连接成功。有 %1 个可用模型。"

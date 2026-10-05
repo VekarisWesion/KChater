@@ -627,7 +627,9 @@ Kirigami.Page {
                     listModel,
                     streamingCb,
                     completeCb,
-                    mcpFuncs.length > 0 ? mcpFuncs : undefined
+                    mcpFuncs.length > 0 ? mcpFuncs : undefined,
+                    provider.reasoningStyle,
+                    provider.reasoningCustom
                 )
             }
         } else if (currentProvider === "ollama") {

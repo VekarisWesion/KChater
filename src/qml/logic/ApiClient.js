@@ -188,7 +188,55 @@ function requestOllama(modelsComboboxCurrentValue, promptArray, listModel, onStr
     return xhr;
 }
 
-function requestOpenAICompatible(baseUrl, token, model, promptArray, thinkingEnabled, extraHeaders, includeV1, listModel, onStreaming, onComplete, mcpFunctions) {
+// Servers disagree on how reasoning is switched on and off, so the provider
+// picks a convention (see SettingsOpenAICompatible). "auto" guesses from the
+// base URL; "vllm" is the behaviour this client had before the setting existed.
+function resolveReasoningStyle(style, baseUrl) {
+    if (style && style.length > 0 && style !== "auto") {
+        return style;
+    }
+    const url = (baseUrl || "").toLowerCase();
+    if (url.indexOf("deepseek") !== -1) {
+        return "deepseek";
+    }
+    // Self-hosted servers (vLLM, LM Studio, llama.cpp, ...) understand the
+    // template flag. Anything else gets nothing at all: an unknown field can
+    // make a strict server reject the whole request, and the model's default is
+    // a better fallback than a failed call. Pick a style explicitly for those.
+    if (url.indexOf("localhost") !== -1 || url.indexOf("127.0.0.1") !== -1
+            || url.indexOf("[::1]") !== -1 || url.indexOf("0.0.0.0") !== -1
+            || url.indexOf("vllm") !== -1) {
+        return "vllm";
+    }
+    return "none";
+}
+
+function applyReasoningParams(requestData, style, thinkingEnabled, customJson) {
+    if (style === "deepseek") {
+        // https://api-docs.deepseek.com: thinking.type is enabled/disabled.
+        requestData["thinking"] = { "type": thinkingEnabled === true ? "enabled" : "disabled" };
+    } else if (style === "openai") {
+        requestData["reasoning_effort"] = thinkingEnabled === true ? "medium" : "minimal";
+    } else if (style === "vllm") {
+        requestData["chat_template_kwargs"] = { "enable_thinking": thinkingEnabled === true };
+    } else if (style === "custom" && customJson) {
+        // __THINKING__ is replaced with true/false before parsing.
+        try {
+            const json = customJson.replace(/__THINKING__/g, thinkingEnabled === true ? "true" : "false");
+            const parsed = JSON.parse(json);
+            for (const key in parsed) {
+                if (Object.prototype.hasOwnProperty.call(parsed, key)) {
+                    requestData[key] = parsed[key];
+                }
+            }
+        } catch (e) {
+            // A malformed custom template is ignored rather than breaking the request.
+        }
+    }
+    // "none" deliberately sends nothing and lets the server use its default.
+}
+
+function requestOpenAICompatible(baseUrl, token, model, promptArray, thinkingEnabled, extraHeaders, includeV1, listModel, onStreaming, onComplete, mcpFunctions, reasoningStyle, reasoningCustom) {
     const oldLength = listModel.count;
     let url = baseUrl.replace(/\/$/, '');
     if (includeV1) {
@@ -227,9 +275,7 @@ function requestOpenAICompatible(baseUrl, token, model, promptArray, thinkingEna
         "stream": true
     };
 
-    if (!thinkingEnabled) {
-        requestData["chat_template_kwargs"] = {"enable_thinking": false};
-    }
+    applyReasoningParams(requestData, resolveReasoningStyle(reasoningStyle, baseUrl), thinkingEnabled, reasoningCustom);
 
     if (mcpFunctions && mcpFunctions.length > 0) {
         requestData["tools"] = mcpFunctions.map(function(f) {
@@ -357,6 +403,22 @@ function requestOpenAICompatible(baseUrl, token, model, promptArray, thinkingEna
 
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (typeof onComplete === 'function') {
+                // Without this the caller only ever sees an empty message when the
+                // server answers with an error status (bad key, rate limit, an
+                // unsupported parameter, ...).
+                if (xhr.status !== 200 && text === '' && thinkingText === '') {
+                    text = 'HTTP ' + xhr.status;
+                    if (xhr.responseText) {
+                        try {
+                            const errObj = JSON.parse(xhr.responseText);
+                            if (errObj && errObj.error) {
+                                text = errObj.error.message || errObj.error.code || text;
+                            }
+                        } catch (e) {
+                            text = xhr.responseText.substring(0, 500);
+                        }
+                    }
+                }
                 var finalToolCalls = [];
                 if (hasToolCalls) {
                     var tcKeys = Object.keys(toolCalls);
