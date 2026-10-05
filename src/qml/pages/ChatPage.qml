@@ -7,7 +7,6 @@
 import QtQuick
 import QtQuick.Controls as Controls
 import QtQuick.Layouts
-import Qt.labs.platform as Labs
 import org.kde.kirigami as Kirigami
 import cn.vekaris.kchater
 import cn.vekaris.kchater
@@ -25,26 +24,22 @@ Kirigami.Page {
     // Deleting a chat cannot be undone, so ask first.
     property string sessionPendingDeletion: ""
 
-    Labs.MessageDialog {
+    Controls.Dialog {
         id: deleteSessionDialog
 
         title: i18nc("@title:window", "Delete chat?")
-        text: i18n("This chat and all of its messages will be permanently deleted.")
-        buttons: Labs.MessageDialog.Ok | Labs.MessageDialog.Cancel
+        modal: true
 
-        onAccepted: {
-            if (root.sessionPendingDeletion === "") {
-                return;
-            }
-            if (root.sessionPendingDeletion === root.currentSessionId) {
-                root.clearChat();
-            }
-            SessionStore.deleteSession(root.sessionPendingDeletion);
-            root.refreshSessionList();
-            root.sessionPendingDeletion = "";
+        Controls.Label {
+            text: i18n("This chat and all of its messages will be permanently deleted.")
+            wrapMode: Text.WordWrap
         }
 
-        onRejected: root.sessionPendingDeletion = ""
+        footer: Controls.DialogButtonBox {
+            standardButtons: Controls.DialogButtonBox.Ok | Controls.DialogButtonBox.Cancel
+            onAccepted: root.deletePendingSession()
+            onRejected: root.sessionPendingDeletion = ""
+        }
     }
 
     actions: [
@@ -967,6 +962,19 @@ Kirigami.Page {
         promptArray = [];
         currentSessionId = "";
         appSettings.lastActiveSessionId = "";
+    }
+
+    // Runs only after the delete confirmation has been accepted.
+    function deletePendingSession() {
+        if (sessionPendingDeletion === "") {
+            return;
+        }
+        if (sessionPendingDeletion === currentSessionId) {
+            clearChat();
+        }
+        SessionStore.deleteSession(sessionPendingDeletion);
+        refreshSessionList();
+        sessionPendingDeletion = "";
     }
 
     function updateSessionLoadingState(sessionId, loading) {
