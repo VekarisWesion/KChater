@@ -65,7 +65,7 @@ Kirigami.ApplicationWindow {
             "displayName": "KChater",
             "version": Qt.application.version,
             "shortDescription": i18n("A simple AI chat client for OpenAI-compatible providers"),
-            "copyrightStatement": i18n("© 2024–2026 Denys Madureira\n© 2026 VekarisWesion (KChater modifications)"),
+            "copyrightStatement": i18n("© 2024–2026 Denys Madureira\n© 2026 Vekaris Wesion (KChater modifications)"),
             "otherText": i18n("KChater is an independent project. It is not affiliated with, endorsed by, or sponsored by KDE e.V. \"KDE\" and \"Plasma\" are trademarks of KDE e.V., used here only to describe what the application is built for. Qt is a trademark of The Qt Company Ltd."),
             "homepage": "https://vekaris.cn",
             "bugAddress": "https://github.com/VekarisWesion/KChater/issues",
@@ -86,7 +86,7 @@ Kirigami.ApplicationWindow {
                     "webAddress": "https://denysmadureira.dev"
                 },
                 {
-                    "name": "VekarisWesion",
+                    "name": "Vekaris Wesion",
                     "task": i18nc("@info:credit", "KChater fork author"),
                     "emailAddress": "vekaris@zohomail.com",
                     "webAddress": "https://vekaris.cn"
@@ -95,7 +95,7 @@ Kirigami.ApplicationWindow {
             "credits": [],
             "translators": [
                 {
-                    "name": "VekarisWesion",
+                    "name": "Vekaris Wesion",
                     "emailAddress": "vekaris@zohomail.com"
                 }
             ]

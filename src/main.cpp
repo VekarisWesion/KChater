@@ -42,7 +42,7 @@ KAboutData buildAboutData()
         QStringLiteral(KCHATER_VERSION_STRING),
         i18n("A simple AI chat client for OpenAI-compatible providers"),
         KAboutLicense::GPL_V3,
-        i18n("© 2024–2026 Denys Madureira\n© 2026 VekarisWesion (KChater modifications)"));
+        i18n("© 2024–2026 Denys Madureira\n© 2026 Vekaris Wesion (KChater modifications)"));
     aboutData.setLicenseText(i18n("KChater is distributed under the GNU General Public License, version 3 or later (GPL-3.0-or-later). Individual source files carry an LGPL-2.1-or-later notice."));
     aboutData.setOtherText(i18n("KChater is an independent project. It is not affiliated with, endorsed by, or sponsored by KDE e.V. \"KDE\" and \"Plasma\" are trademarks of KDE e.V., used here only to describe what the application is built for. Qt is a trademark of The Qt Company Ltd."));
     aboutData.setBugAddress("https://github.com/VekarisWesion/KChater/issues");
@@ -53,11 +53,11 @@ KAboutData buildAboutData()
         QStringLiteral("denys@koderoots.org"),
         QStringLiteral("https://denysmadureira.dev"));
     aboutData.addAuthor(
-        i18nc("@info:credit", "VekarisWesion"),
+        i18nc("@info:credit", "Vekaris Wesion"),
         i18nc("@info:credit", "KChater fork author"),
         QStringLiteral("vekaris@zohomail.com"),
         QStringLiteral("https://vekaris.cn"));
-    aboutData.setTranslator(QStringLiteral("VekarisWesion"), QStringLiteral("vekaris@zohomail.com"));
+    aboutData.setTranslator(QStringLiteral("Vekaris Wesion"), QStringLiteral("vekaris@zohomail.com"));
     aboutData.setDesktopFileName(QStringLiteral("cn.vekaris.kchater"));
     return aboutData;
 }

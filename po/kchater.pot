@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kchater\n"
 "Report-Msgid-Bugs-To: https://github.com/VekarisWesion/KChater/issues\n"
-"POT-Creation-Date: 2026-10-04 16:17+0800\n"
+"POT-Creation-Date: 2026-10-05 09:55+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -873,7 +873,7 @@ msgstr ""
 #: src/qml/Main.qml:68
 msgid ""
 "© 2024–2026 Denys Madureira\n"
-"© 2026 VekarisWesion (KChater modifications)"
+"© 2026 Vekaris Wesion (KChater modifications)"
 msgstr ""
 
 #: src/qml/Main.qml:69
@@ -939,5 +939,5 @@ msgstr ""
 
 #: src/main.cpp:56
 msgctxt "@info:credit"
-msgid "VekarisWesion"
+msgid "Vekaris Wesion"
 msgstr ""

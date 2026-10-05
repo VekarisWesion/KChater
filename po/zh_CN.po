@@ -717,10 +717,10 @@ msgstr "一个简单、面向 OpenAI 兼容服务商的 AI 聊天客户端"
 
 msgid ""
 "© 2024–2026 Denys Madureira\n"
-"© 2026 VekarisWesion (KChater modifications)"
+"© 2026 Vekaris Wesion (KChater modifications)"
 msgstr ""
 "© 2024–2026 Denys Madureira\n"
-"© 2026 VekarisWesion（KChater 的修改）"
+"© 2026 Vekaris Wesion（KChater 的修改）"
 
 msgid ""
 "KChater is distributed under the GNU General Public License, version 3 or "
@@ -749,8 +749,8 @@ msgid "ChatQT author"
 msgstr "ChatQT 作者"
 
 msgctxt "@info:credit"
-msgid "VekarisWesion"
-msgstr "VekarisWesion"
+msgid "Vekaris Wesion"
+msgstr "Vekaris Wesion"
 
 msgctxt "@info:credit"
 msgid "KChater fork author"
