@@ -24,22 +24,15 @@ Kirigami.Page {
     // Deleting a chat cannot be undone, so ask first.
     property string sessionPendingDeletion: ""
 
-    Controls.Dialog {
+    Kirigami.PromptDialog {
         id: deleteSessionDialog
 
         title: i18nc("@title:window", "Delete chat?")
-        modal: true
+        subtitle: i18n("This chat and all of its messages will be permanently deleted.")
+        standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
 
-        Controls.Label {
-            text: i18n("This chat and all of its messages will be permanently deleted.")
-            wrapMode: Text.WordWrap
-        }
-
-        footer: Controls.DialogButtonBox {
-            standardButtons: Controls.DialogButtonBox.Ok | Controls.DialogButtonBox.Cancel
-            onAccepted: root.deletePendingSession()
-            onRejected: root.sessionPendingDeletion = ""
-        }
+        onAccepted: root.deletePendingSession()
+        onRejected: root.sessionPendingDeletion = ""
     }
 
     actions: [
