@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kchater\n"
 "Report-Msgid-Bugs-To: https://github.com/VekarisWesion/KChater/issues\n"
-"POT-Creation-Date: 2026-10-05 10:13+0800\n"
+"POT-Creation-Date: 2026-10-05 10:17+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -612,110 +612,105 @@ msgstr ""
 
 #: src/qml/settings/SettingsOpenAICompatible.qml:386
 msgctxt "@item:inlistbox"
-msgid "OpenAI (reasoning_effort)"
+msgid "vLLM / Qwen (chat_template_kwargs)"
 msgstr ""
 
 #: src/qml/settings/SettingsOpenAICompatible.qml:387
 msgctxt "@item:inlistbox"
-msgid "vLLM / Qwen (chat_template_kwargs)"
+msgid "Send nothing"
 msgstr ""
 
 #: src/qml/settings/SettingsOpenAICompatible.qml:388
 msgctxt "@item:inlistbox"
-msgid "Send nothing"
-msgstr ""
-
-#: src/qml/settings/SettingsOpenAICompatible.qml:389
-msgctxt "@item:inlistbox"
 msgid "Custom JSON"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:395
+#: src/qml/settings/SettingsOpenAICompatible.qml:394
 msgctxt "@label:textbox"
 msgid "Custom JSON, with __THINKING__ standing for the toggle:"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:422
+#: src/qml/settings/SettingsOpenAICompatible.qml:421
 #: src/qml/settings/SettingsOpenClaw.qml:353
 msgctxt "@info"
 msgid "Connection has not been tested."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:423
+#: src/qml/settings/SettingsOpenAICompatible.qml:422
 #: src/qml/settings/SettingsOpenClaw.qml:354
 msgctxt "@info"
 msgid "Testing connection…"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:425
+#: src/qml/settings/SettingsOpenAICompatible.qml:424
 msgctxt "@info"
 msgid "Connection successful. %1 model(s) available."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:426
+#: src/qml/settings/SettingsOpenAICompatible.qml:425
 #: src/qml/settings/SettingsOpenClaw.qml:355
 msgctxt "@info"
 msgid "Connection successful!"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:428
+#: src/qml/settings/SettingsOpenAICompatible.qml:427
 #: src/qml/settings/SettingsOpenClaw.qml:356
 msgctxt "@info"
 msgid "Connection timed out after 10 seconds."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:429
+#: src/qml/settings/SettingsOpenAICompatible.qml:428
 #: src/qml/settings/SettingsOpenClaw.qml:357
 msgctxt "@info"
 msgid "Could not reach the server. Check the URL and network connection."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:430
+#: src/qml/settings/SettingsOpenAICompatible.qml:429
 #: src/qml/settings/SettingsOpenClaw.qml:358
 msgctxt "@info"
 msgid "Authentication failed. Check your API token."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:431
+#: src/qml/settings/SettingsOpenAICompatible.qml:430
 #: src/qml/settings/SettingsOpenClaw.qml:359
 msgctxt "@info"
 msgid "Server not found at this URL. Check the API URL."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:432
+#: src/qml/settings/SettingsOpenAICompatible.qml:431
 msgctxt "@info"
 msgid "Please enter an API URL before testing."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:433
+#: src/qml/settings/SettingsOpenAICompatible.qml:432
 msgctxt "@info"
 msgid "Please enter an API token before testing."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:434
+#: src/qml/settings/SettingsOpenAICompatible.qml:433
 msgctxt "@info"
 msgid "Please enter a model name before testing."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:435
+#: src/qml/settings/SettingsOpenAICompatible.qml:434
 #: src/qml/settings/SettingsOpenClaw.qml:362
 msgctxt "@info"
 msgid "URL must start with http:// or https://."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:436
+#: src/qml/settings/SettingsOpenAICompatible.qml:435
 #: src/qml/settings/SettingsOpenClaw.qml:363
 msgctxt "@info"
 msgid "Server returned error %1: %2"
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:437
+#: src/qml/settings/SettingsOpenAICompatible.qml:436
 #: src/qml/settings/SettingsOpenClaw.qml:364
 msgctxt "@info"
 msgid "Unknown connection error."
 msgstr ""
 
-#: src/qml/settings/SettingsOpenAICompatible.qml:441
+#: src/qml/settings/SettingsOpenAICompatible.qml:440
 #: src/qml/settings/SettingsOpenClaw.qml:368
 msgctxt "@action:button"
 msgid "Test Now"

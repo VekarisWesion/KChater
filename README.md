@@ -40,7 +40,7 @@ misspelling of "chatter": its `a…e` is a long *a*, pronounced /eɪ/ as in
 
 - **Streaming responses** — Real-time token-by-token response display
 - **Thinking mode** — Toggle extended thinking/reasoning for supported models
-- **Thinking control** — Servers disagree on how reasoning is switched, so each provider picks a convention: DeepSeek's `thinking.type`, OpenAI's `reasoning_effort`, the vLLM/Qwen `enable_thinking` template flag, nothing at all, or custom JSON
+- **Thinking control** — Servers disagree on how reasoning is switched, so each provider picks a convention: DeepSeek's `thinking.type`, the vLLM/Qwen `enable_thinking` template flag, nothing at all, or custom JSON for anything else
 - **Session management** — Persistent sessions with sidebar, auto-restore on launch
 - **Cancel and stop** — Cancel pending requests or stop mid-stream
 - **Auto-scroll** — Automatic scrolling with manual override option

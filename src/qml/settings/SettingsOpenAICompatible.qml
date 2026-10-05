@@ -383,7 +383,6 @@ Kirigami.ScrollablePage {
                     model: [
                         { value: "auto", label: i18nc("@item:inlistbox", "Automatic (guess from the URL)") },
                         { value: "deepseek", label: i18nc("@item:inlistbox", "DeepSeek (thinking.type)") },
-                        { value: "openai", label: i18nc("@item:inlistbox", "OpenAI (reasoning_effort)") },
                         { value: "vllm", label: i18nc("@item:inlistbox", "vLLM / Qwen (chat_template_kwargs)") },
                         { value: "none", label: i18nc("@item:inlistbox", "Send nothing") },
                         { value: "custom", label: i18nc("@item:inlistbox", "Custom JSON") }

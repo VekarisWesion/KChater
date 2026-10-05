@@ -215,8 +215,6 @@ function applyReasoningParams(requestData, style, thinkingEnabled, customJson) {
     if (style === "deepseek") {
         // https://api-docs.deepseek.com: thinking.type is enabled/disabled.
         requestData["thinking"] = { "type": thinkingEnabled === true ? "enabled" : "disabled" };
-    } else if (style === "openai") {
-        requestData["reasoning_effort"] = thinkingEnabled === true ? "medium" : "minimal";
     } else if (style === "vllm") {
         requestData["chat_template_kwargs"] = { "enable_thinking": thinkingEnabled === true };
     } else if (style === "custom" && customJson) {

@@ -284,10 +284,6 @@ msgid "DeepSeek (thinking.type)"
 msgstr "DeepSeek（thinking.type）"
 
 msgctxt "@item:inlistbox"
-msgid "OpenAI (reasoning_effort)"
-msgstr "OpenAI（reasoning_effort）"
-
-msgctxt "@item:inlistbox"
 msgid "vLLM / Qwen (chat_template_kwargs)"
 msgstr "vLLM / Qwen（chat_template_kwargs）"
 
