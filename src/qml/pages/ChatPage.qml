@@ -21,6 +21,40 @@ Kirigami.Page {
         }
     }
 
+    // Deleting a chat cannot be undone, so ask first.
+    property string sessionPendingDeletion: ""
+
+    Kirigami.PromptDialog {
+        id: deleteSessionDialog
+
+        title: i18nc("@title:window", "Delete chat?")
+        subtitle: i18n("This chat and all of its messages will be permanently deleted.")
+        dialogType: Kirigami.PromptDialog.Warning
+        standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
+
+        Component.onCompleted: {
+            var okButton = standardButton(Kirigami.Dialog.Ok);
+            if (okButton) {
+                okButton.text = i18nc("@action:button", "Delete");
+                okButton.icon.name = "edit-delete-symbolic";
+            }
+        }
+
+        onAccepted: {
+            if (root.sessionPendingDeletion === "") {
+                return;
+            }
+            if (root.sessionPendingDeletion === root.currentSessionId) {
+                root.clearChat();
+            }
+            SessionStore.deleteSession(root.sessionPendingDeletion);
+            root.refreshSessionList();
+            root.sessionPendingDeletion = "";
+        }
+
+        onRejected: root.sessionPendingDeletion = ""
+    }
+
     actions: [
         Kirigami.Action {
             id: thinkingAction
@@ -1144,11 +1178,8 @@ Kirigami.Page {
                 root.loadSessionById(sessionId)
             }
             onSessionDeleteClicked: function(sessionId) {
-                if (sessionId === root.currentSessionId) {
-                    root.clearChat()
-                }
-                SessionStore.deleteSession(sessionId)
-                root.refreshSessionList()
+                root.sessionPendingDeletion = sessionId
+                deleteSessionDialog.open()
             }
             onNewChatClicked: {
                 root.clearChat()

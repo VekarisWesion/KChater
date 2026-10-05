@@ -598,6 +598,13 @@ msgctxt "@action:button"
 msgid "Delete"
 msgstr "删除"
 
+msgctxt "@title:window"
+msgid "Delete chat?"
+msgstr "删除对话？"
+
+msgid "This chat and all of its messages will be permanently deleted."
+msgstr "此对话及其全部消息将被永久删除。"
+
 msgctxt "@info"
 msgid "Unknown provider"
 msgstr "未知服务商"
